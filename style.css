@@ -1,0 +1,48 @@
+header {
+    height: 2rem;
+    position: fixed;
+    display: flex;
+    color: darkblue;
+    margin: auto;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: darkblue;
+}
+
+header.topMenu {
+    background-color: crimson;
+}
+
+header.topMenu nav {
+    display: flex;
+    
+}
+nav div {
+    width: 10rem;
+    height: 2rem;
+    padding: 0 1rem;
+}
+
+.topMenu > div, nav > ul > li {
+    flex: 1;
+}
+
+article.leftMenu {
+    width: 10%;
+    height: 80%;
+    display:block
+}
+
+section {
+    width: 90%;
+    height: 80%;
+    display: block;
+
+}
+
+footer {
+    height: 100%;
+    display: flex;
+    background-color: darkcyan;
+    
+}
