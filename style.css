@@ -2,6 +2,7 @@
 
 * {
     box-sizing: border-box;
+    text-align: center;
 }
 
 header {
@@ -27,7 +28,7 @@ nav ol {
 }
 
 .menu {
-    width: 5rem;
+    width: 8rem;
     flex: 1;
     float: left;
     border: darkblue solid;
@@ -37,22 +38,61 @@ nav ol {
 article {
     float: left;
     width: 10%;
-    height: 2000px;
+    height: 110rem;
     padding: 10px;
     background-color: tomato;
 }
+
 article .category {
     padding-top: 30px;
     height: 90%;
 }
 
 article .contact {
-
+    height: 2rem;
     background: darkgoldenrod;
 } 
 
+.workspace {
+    float: left;
+    margin-top: 2rem;
+    padding: 2rem 0 2rem 5rem;
+}
 
+.topAmongUsers, .Subsribered {
+    text-align: left;
+    padding: 2rem;
+    border: orange solid;
+}
 
+.contents {
+    width: 300px;
+    height: 320px;
+    border: black solid;
+    float: left;
+}
+
+.photos {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    height: 90%;
+    order: black solid;
+}
+
+.autorName {
+    height: 2rem;
+    float: left;
+}
+
+shareOptions {
+    height: 2rem;
+    float: right;
+}
+
+.leftArrow {
+    clear: both;
+}
 
 footer {
     clear: both;
@@ -61,6 +101,7 @@ footer {
 }
 
 footer div {
-    padding: 0.5% 2rem;
+    width: 20%;
+    padding: 0.5% 0;
     flex: 1;
 }
