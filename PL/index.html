@@ -5,6 +5,7 @@
 <head>
 
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portal dla artystów</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
 
@@ -12,84 +13,116 @@
 
 <body>
 
-    <header class="topMenu">
+    <div class="wholePage">
+        <header class="topMenu">
 
-        <h1 class="title">kmknn</h1>
+            <h1 class="title">Portal dla artystów</h1>
 
-        <nav>
-            <ol>
-                <li class="account, menu">Konto</li>
-                <li class="logOut, menu">Wyloguj się</li>
-                <li class="signIn, menu">Zaloguj się</li>
-                <li class="signOut, menu">Zarejestruj się</li>
-            </ol>
-        </nav>
-        
-    </header>
+            <div class="darkMode">Tryb ciemny</div>
 
-    <article class="leftMenu">
-        <h3 class="category">Kategorie</h3>
-        <h3 class="contact">Kontakt</h3>
-    </article>
+            <nav>
 
-    <section class="workspace">
+                <ul>
+                    <li class="account, menu">Konto</li>
+                    <li class="logOut, menu">Wyloguj się</li>
+                    <li class="signIn, menu">Zaloguj się</li>
+                    <li class="signOut, menu">Zarejestruj się</li>
+                </ul>
+
+            </nav>
+            
+        </header>
+
+        <aside class="leftMenu">
+
+            <h3>Kategorie</h3>
+
+            <div class="category">
+
+                <ol>
+                    <li>Rysunki
+                        <ol>
+                            <li>Realistyczne</li>
+                            <li>Manga</li>
+                            <li>Anime</li>
+                            <li>Komiksy</li>
+                        </ol>
+                    </li>
+                    <li>Fotografie</li>
+                    <li>Animacje</li>
+                    <li>Inne</li>
+                </ol>
+
+            </div>
+
+            <div><h3 class="contact">Kontakt</h3></div>
+
+        </aside>
+
+        <section class="workspace">
 
             <h2 class="topAmongUsers">Najlepsze według użytkowników</h2>
 
-        <aside class="conteners">
-                <div class="contents">
+            <div class="articleConteners">
+
+                <article class="contents">
                     <img src="#" alt="Popular among users photo or drawing" class="photos" />
                     <div class="autorName">Z BAZY</div>
                     <div class="shareOptions">Icon/Icons</div>
-                </div>
+                </article>
 
-                <div class="contents">
+                <article class="contents">
                     <img src="#" alt="Popular among users photo or drawing" class="photos" />
                     <div class="autorName">Z BAZY</div>
                     <div class="shareOptions">Icon/Icons</div>
-                </div>
+                </article>
 
-                <div class="contents">
+                <article class="contents">
                     <img src="#" alt="Popular among users photo or drawing" class="photos" />
                     <div class="autorName">Z BAZY</div>
                     <div class="shareOptions">Icon/Icons</div>
-                </div>
+                </article>
 
-                <div class="leftArrow"><img src="../arrow-right.png" alt="array in right"/></div>
-        </aside>
+                <div class="leftArrow"></div>
+            </div>
 
             <h2 class="Subsribered">Zasubskrybowane</h2>
-            
-            <aside class="contents">
-                <img src="#" alt="Subscribered artist" class="photos" />
-                <div class="autorName">Z BAZY</div>
-                <div class="shareOptions">Icon/Icons</div>
-            </aside>
+                
+            <div class="articleConteners">
 
-            <aside class="contents">
-                <img src="#" alt="Subscribered artist" class="photos" />
-                <div class="autorName">Z BAZY</div>
-                <div class="shareOptions">Icon/Icons</div>
-            </aside>
+                <article class="contents">
+                    <img src="#" alt="Popular among users photo or drawing" class="photos" />
+                    <div class="autorName">Z BAZY</div>
+                    <div class="shareOptions">Icon/Icons</div>
+                </article>
 
-            <aside class="contents">
-                <img src="#" alt="Subscribered artist" class="photos" />
-                <div class="autorName">Z BAZY</div>
-                <div class="shareOptions">Icon/Icons</div>
-            </aside>
+                <article class="contents">
+                    <img src="#" alt="Popular among users photo or drawing" class="photos" />
+                    <div class="autorName">Z BAZY</div>
+                    <div class="shareOptions">Icon/Icons</div>
+                </article>
 
-            <div class="leftArrow"><img src="../arrow-right.png" alt="array in right"/></div>
+                <article class="contents">
+                    <img src="#" alt="Popular among users photo or drawing" class="photos" />
+                    <div class="autorName">Z BAZY</div>
+                    <div class="shareOptions">Icon/Icons</div>
+                </article>
+
+                <div class="leftArrow"></div>
+            </div>
 
 
-    </section>
+        </section>
 
-    <footer class="footer">
-        <div class="authors">Autorzy</div>
-        <div class="terms">Warunki korzystania</div>
-        <div class="privacy">Polityka prywatności</div>
-        <div class="faq">FAQ</div>
-        <div class="changeLanguage">Zmiana języka</div>
-    </footer>
+        <footer class="footer">
+            <div class="authors">Autorzy</div>
+            <div class="terms">Warunki korzystania</div>
+            <div class="privacy">Polityka prywatności</div>
+            <div class="faq">FAQ</div>
+            <div class="changeLanguage">Zmiana języka</div>
+        </footer>
+
+    </div>
 
 </body>
 </html>

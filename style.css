@@ -3,14 +3,15 @@
 * {
     box-sizing: border-box;
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 html {
-    font-size:10px;
+    font-size:62.5%;
 }
 
-h1 {
+/* h1 {
     font-size: 4rem;
-}
+} */
 
 h2 {
     font-size: 3rem;
@@ -20,17 +21,25 @@ h3 {
     font-size: 2rem;
 }
 
-
-
 header {
     width: 100%;
-    height: 5rem;;
+    height: 5rem;
     position: fixed;
     display: flex;
     background-color: darkred;
     color: darkblue;
     padding: 0.5rem;
-    font-size: 20px;
+    font-size: 2rem;
+}
+
+
+
+.darkMode {
+    width: 20rem;
+    margin: 1rem 3rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
 }
 
 nav {
@@ -39,19 +48,23 @@ nav {
     float: right;
     width: 15%;
     flex: 1;
-    margin: 1rem 3rem;
+    margin: 0 3rem;
 }
 
-nav ol {
+nav ul {
     float: right;
 }
 
+li {
+    line-height: 1.5;
+    margin: 0 2rem;
+}
 .menu {
     width: 15rem;
     flex: 1;
     float: left;
     border: medium darkblue solid;
-    margin: 0 1rem;
+    margin: auto 1rem;
     
 }
 
@@ -60,89 +73,27 @@ aside {
     width: 10%;
     height: 100vh;
     margin-top: 5rem;
-    padding: 10px;
+    padding: 1rem;
     background-color: tomato;
 }
 
+aside h3 {
+    padding-top: 3rem;
+}
+
 aside .category {
-    padding-top: 30px;
+    font-size: 1.5rem;
+    padding-top: 3rem;
     height: 90%;
 }
 
 aside .contact {
-    height: 2rem;
+    padding-top: 0rem;
+    padding-left: 0;
+    width: 100%;
+    height: 4rem;
     background: darkgoldenrod;
 } 
-
-/* .workspace {
-    width: 90%;
-    height: 100vh;
-    float: left;
-    margin: 2rem auto 0 auto;
-    padding: 2rem 0 2rem 5rem;
-}
-
-.topAmongUsers, .Subsribered {
-    text-align: left;
-    margin-top: 2rem;
-    padding: 2rem;
-    border: orange solid;
-    clear: both;
-}
-
-.articleConteners {
-    width: 100%;
-    height: 30rem;
-    padding: 0 auto;
-}
-
-.conteners {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 auto;
-}
-
-.contents {
-    width: 300px;
-    height: 320px;
-    border: medium black solid;
-    float: left;
-    margin: 25px;
-}
-
-.photos {
-    float: left;
-    height: 90%;
-    order: thick black solid;
-    object-position: center center;
-    
-}
-
-.autorName {
-    height: 2rem;
-    float: left;
-}
-
-.shareOptions {
-    height: 2rem;
-    float: right;
-}
-
-
-.leftArrow {
-    width: 300px;
-    height: 300px;
-    float: left;
-    padding: 100px;
-    margin: 25px;
-}
-
-.leftArrow img {
-    width: 100px;
-    height: 100px;
-} */
-
-
 
 .workspace {
     width: 90%;
@@ -193,42 +144,11 @@ photos {
 
 .leftArrow  {
     width: 30rem;
-    height: inherit;
+    height: 30rem;
     float: left;
-    padding: 10rem 10rem; 
-}
-
-.leftArrow img {
-    width: 10rem;
-    height: 10rem;
+    background-image: url("Pictures/arrayRightDark.png");
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 footer {
     clear: both;
