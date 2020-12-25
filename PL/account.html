@@ -16,14 +16,14 @@
     <div class="wholePage">
         <header class="topMenu">
 
-            <h1 class="title"><a href="/Documents/GitHub/Portal_for_artists/PL/index.html">Portal dla artystów</a></h1>
+            <h1 class="title"><a href="/Portal_for_artists/PL/index.html">Portal dla artystów</a></h1>
             
             <div class="darkMode">Tryb ciemny</div>
 
             <nav>
 
                 <ul>
-                    <li class="account, menu"><a href="/Documents/GitHub/Portal_for_artists/PL/account.html">Konto</a></li>
+                    <li class="account, menu"><a href="/Portal_for_artists/PL/account.html">Konto</a></li>
                     <li class="logOut, menu"><a href="#">Wyloguj się</a></li>
                     <li class="signIn, menu"><a href="#">Zaloguj się</a></li>
                     <li class="signOut, menu"><a href="#">Zarejestruj się</a></li>
@@ -63,76 +63,92 @@
 
             <h2 class="accountH2">Konto</h2>
 
-            <div class="accountMenu">
+            <section class="accountMenu">
 
-                <div>Ogólne</div>
-                <div>Galeria</div>
-                <div>Profil</div>
+                <div><a href="#accountData">Ogólne</a></div>
+                <div><a href="#userGalleryInAccount">Galeria</a></div>
+                <div><a href="#profile">Profil</a></div>
 
-            </div>
+            </section>
 
-            <div class="accountData">
+            <section id="accountData" class="accountData">
 
-                <label>Subskrybcja
-                    <button class="subscriptionCheck">Zmień</button>
-                </label>
+                <div>
 
-                <label>E-mail
-                    <input type="email" name="e-mail">
-                </label>
+                    <label for="subscriptionCheck">Subskrybcja:</label>
+                    <button>Aktualny plan</button>
+                    <button id="subscriptionCheck" class="subscriptionCheck" type="submit">Zmień</button>
 
-                <label>Hasło
-                    <input type="password" name="passwordAccount" placeholder="Wpisz aktualne hasło">
+                </div>
+
+                <div>
+
+                    <label for="mailChange">E-mail:</label>
+                    <button>Aktualny e-mail</button>
+                    <button id="mailChange" type="submit">Zmień adres e-mail</button>
+
+                </div>
+
+                <div>
+
+                    <label for="password">Hasło:</label>
+                    <input id="password" type="password" name="passwordAccount" placeholder="Wpisz aktualne hasło">
                     <input type="password" name="newPassword" placeholder="Wpisz nowe hasło">
                     <input type="password" name="confirmNewAccount" placeholder="Powtórz nowe hasło">
-                </label>
+                    <button type="submit">Zmień hasło</button>
+                </div>
 
-            </div>
+            </section>
                 
-            <div class="userGaleryInAccount">
+            <section id="userGalleryInAccount" class="userGalleryInAccount">
 
-                <p>Twoje zdjęcia i rysunki</p>
+                <em>Twoje zdjęcia i rysunki</em>
 
                 <div class="userPhotos">
+
                     <div class="photos"></div>
                     <div class="photos"></div>
                     <div class="photos"></div>
                     <div class="photos"></div>
                     <div class="photos"></div>
                     <div class="photos"></div>
-                    <div class="photos"></div>
-                    <div class="photos"></div>
-                    <div class="photos"></div>
+
                 </div>
 
-                <p>Polubione zdjęcia i rysunki</p>
+                <em>Polubione zdjęcia i rysunki</em>
 
                 <div class="likePhotos">
+
                     <div class="photos"></div>
                     <div class="photos"></div>
                     <div class="photos"></div>
                     <div class="photos"></div>
                     <div class="photos"></div>
                     <div class="photos"></div>
-                    <div class="photos"></div>
-                    <div class="photos"></div>
-                    <div class="photos"></div>
+
                 </div>
 
-            </div>
-                
-            <div>
+            </section>
+
+            <section id="profile" class="profile">
 
                 <div class="photoProfile"></div>
 
-                <label>Twoja nazwa użytkownika:
-                    <input type="text" name="profilePhoto">
-                </label>
+                <div class="userName">
 
-                <label>O mnie
-                    <input type="text">
-                </label>
-            </div>
+                    <label for="userName">Twoja nazwa użytkownika:</label>
+                    <input id="userName" type="text">
+
+                </div>
+
+                <div class="aboutMe">
+
+                    <label for="aboutMe">O mnie:</label>
+                    <input id="aboutMe" type="text">
+
+                </div>
+
+            </section>
             
 
         </section>

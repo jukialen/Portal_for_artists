@@ -24,6 +24,24 @@ a {
     text-decoration: none;
     color: #000;
 }
+
+a:hover{
+    color: #1E90FF;
+}
+
+a:active{
+    color: #12FFF8;
+}
+
+/*a:visited{*/
+/*    color: #FF7F38;*/
+/*}*/
+
+a:focus {
+    color: #FFD405;
+}
+
+
 /*.wholePage {*/
 /*    height: 90%;*/
 /*}*/
@@ -37,6 +55,8 @@ header {
     color: darkblue;
     padding: 0.5rem;
     font-size: 2rem;
+    border-bottom: 1rem inset darkred;
+    z-index: 9999;
 }
 
 .title {
@@ -75,7 +95,7 @@ li {
 
 aside {
     width: 12%;
-    height: 100vh;
+    height: 105vmax;
     float: left;
     margin-top: 4rem;
     padding: 1rem 0 0;
@@ -113,7 +133,7 @@ aside h3 {
 }
 
 .articleContainers {
-    width: 108rem;
+    width: 82%;
     height: 30rem;
     position: relative;
     margin: 0 auto;
@@ -129,7 +149,7 @@ aside h3 {
     background-color: aqua;
 }
 
-.photos {
+article .photos {
     clear: both;
     width: 28rem;
     height: 28rem;
@@ -160,18 +180,27 @@ aside h3 {
     height: 30rem;
     display: inline-block;
     position: absolute;
-    background-image: url("Pictures/arrayRightDark.png");
     z-index: 9999;
 }
 
 .leftArrow {
+    width: 5rem;
+    height: 5rem;
+    background-repeat: no-repeat;
+    margin: 12.5rem 0;
     float: left;
-    left: 5%;
+    left: 0;
+    background-image: url("Icons/left arrow light mode.svg");
 }
 
 .rightArrow {
+    width: 5rem;
+    height: 5rem;
+    background-repeat: no-repeat;
+    margin: 12.5rem 0;
     float: right;
-    right: 5%;
+    right: 0;
+    background-image: url("Icons/right arrow  light mode.svg");
 }
 
 footer {
@@ -197,11 +226,10 @@ footer div {
     width: 45%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 0 auto 3rem auto;
+    margin: 0 20% 3rem 20%;
 }
 
 .accountMenu div {
-
     height: 4rem;
     margin: 0 2rem;
     font-size: 2rem;
@@ -212,6 +240,101 @@ footer div {
 }
 
 .accountMenu div:hover{
-    border-bottom: 0.3rem inset dodgerblue;
+    border-bottom: 0.3rem inset #1E90FF;
 }
+
+.accountMenu div:active{
+    border-bottom: 0.3rem inset #12FFF8;
+}
+
+.accountMenu div:focus{
+    border-bottom: 0.3rem inset #FFA205;
+}
+
+.accountMenu div:link {
+    border-bottom: 0.3rem inset #FF38D4;
+}
+
+.accountMenu div:visited{
+    border-bottom: 0.3rem inset #0582FF;
+}
+
+.accountData {
+    width: 75%;
+    margin: 3rem auto;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.accountData div {
+    width: 25%;
+    margin: 3rem;
+    flex-flow: column;
+}
+
+.accountData label {
+    width: 50%;
+    height: 3rem;
+    flex-flow: column;
+    font-size: 2rem;
+}
+
+.userGalleryInAccount {
+    font-size: 2rem;
+}
+
+.userGalleryInAccount em {
+    display: inline-block;
+    margin: 3rem auto;
+}
+
+.accountData input, .accountData button {
+    width: 25%;
+    height: 3rem;
+    flex-flow: column;
+}
+
+.userPhotos, .likePhotos {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1.5rem auto;
+}
+
+.photos {
+    width: 25rem;
+    height: 25rem;
+    margin: 1rem;
+    background-color: #1E90FF;
+}
+
+.profile {
+    width: 50%;
+    height: 30rem;
+    margin: 3rem auto;
+    font-size: 2rem;
+}
+
+.photoProfile {
+    width: 10rem;
+    height: 10rem;
+    background-color: #12FFF8;
+    margin: 3rem;
+}
+
+.userName, .aboutMe {
+    width: 25%;
+    margin: 3rem;
+    float: left;
+}
+
+.userName label, .aboutMe label {
+    margin-bottom: 1rem;
+}
+
+.userName input, .aboutMe input {
+    margin-top: 1rem;
+}
+
 
