@@ -16,21 +16,23 @@
     <div class="wholePage">
         <header class="topMenu">
 
-            <h1 class="title"><a href="/JP/index.html">芸術家に取ってポータル</a></h1>
+            <h1 class="title"><a href="/Portal_for_artists/JP/index.html">芸術家に取ってポータル</a></h1>
 
             <div class="darkMode">暗いモード</div>
 
             <nav>
 
                 <ul>
-                    <li class="account, menu"><a href="/JP/account.html">アカウント</a></li>
+                    <li class="account, menu"><a href="/Portal_for_artists/JP/account.html">アカウント</a></li>
                     <li class="logOut, menu"><a href="#">ログアウト</a></li>
                     <li class="signIn, menu"><a href="#">サインイン</a></li>
                     <li class="signOut, menu"><a href="#">サインアップ</a></li>
                 </ul>
 
             </nav>
-            
+
+            <div class="hambugerMenu"></div>
+
         </header>
 
         <aside class="leftMenu">
@@ -40,17 +42,24 @@
             <div class="category">
 
                 <ol>
+                    <li><a href="#">皆</a></li>
+
                     <li><a href="#">描画</a>
+
                         <ol>
+
                             <li><a href="#">写実的</a></li>
                             <li><a href="#">マンガ</a></li>
                             <li><a href="#">アニメ</a></li>
                             <li><a href="#">コミック</a></li>
                         </ol>
+
                     </li>
+
                     <li><a href="#">写真</a></li>
                     <li><a href="#">アニメーション</a></li>
                     <li><a href="#">他</a></li>
+
                 </ol>
 
             </div>
@@ -61,87 +70,159 @@
 
         <section class="workspace">
 
-            <h2>Konto</h2>
-            <div>
-                <div>Ogólne</div>
-                <div>Galeria</div>
-                <div>Profil</div>
+            <h2 class="accountH2">アカウント</h2>
 
-                <div class="accountData">
+            <article class="accountMenu">
 
-                    <label>Subskrybcja
-                        <button class="subscriptionCheck">Zmień</button>
-                    </label>
+                <div><a href="#accountData">総合案内</a></div>
+                <div><a href="#userGalleryInAccount">ギャラリー</a></div>
+                <div><a href="#profile">プロフィール</a></div>
 
-                    <label>E-mail
-                        <input type="email" name="e-mail">
-                    </label>
+            </article>
 
-                    <label>Hasło
-                        <input type="password" name="passwordAccount" placeholder="Wpisz aktualne hasło">
-                        <input type="password" name="newPassword" placeholder="Wpisz nowe hasło">
-                        <input type="password" name="confirnNewAccount" placeholder="Powtórz nowe hasło">
-                    </label>
+            <article id="accountData" class="accountData">
 
-                </div>   
-                
-                <div class="userGaleryInAccount">
+                <form>
 
-                    <p>Twoje zdjęcia i rysunki</p>
+                    <label for="subscriptionInfo">サブスクリプション</label>
+                    <button id="subscriptionInfo">現在のプラン</button>
+                    <button class="subscriptionCheck" type="submit">変える</button>
 
-                    <div class="userPhotos">
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                    </div>
+                </form>
 
-                    <p>Polubione zdjęcia i rysunki</p>
-                    <div class="likePhotos">
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                        <div class="photos"></div>
-                    </div>
+                <form>
+
+                    <label for="mailChange">メール</label>
+                    <input type="text" value="現在のメール"> <!-- here user's e-mail address is appear* todo-->
+                    <button id="mailChange" type="submit">メールが変える</button>
+
+                </form>
+
+                <form>
+
+                    <label for="password"> パスワード</label>
+                    <input id="password" type="password" name="passwordAccount" placeholder="パスポートを現在書く" required="required">
+                    <input type="password" name="newPassword" placeholder="新しいパスポートを書く" required="required">
+                    <input type="password" name="confirmNewAccount" placeholder="新しいパスポートを繰り返す" required="required">
+                    <button type="submit"> パスワードが変える</button>
+                </form>
+
+            </article>
+
+            <article id="userGalleryInAccount" class="userGalleryInAccount">
+
+                <em>写真と絵</em>
+
+                <div class="userPhotos">
+
+                    <div class="photos"></div>
+                    <div class="photos"></div>
+                    <div class="photos"></div>
+                    <div class="photos"></div>
+                    <div class="photos"></div>
+                    <div class="photos"></div>
 
                 </div>
-                
-                <div>
 
-                    <div class="photoProfile"></div>
+                <em>好きだった写真と絵</em>
 
-                    <label>Twoja nazwa użytkownika:
-                        <input type="text" name="profilePhoto">
-                    </label>
+                <div class="likePhotos">
 
-                    <label>O mnie
-                        <input type="text">
-                    </label>
+                    <div class="photos"></div>
+                    <div class="photos"></div>
+                    <div class="photos"></div>
+                    <div class="photos"></div>
+                    <div class="photos"></div>
+                    <div class="photos"></div>
+
                 </div>
 
-            </div>
+            </article>
+
+            <article id="profile" class="profile">
+
+                <div class="photoProfile"></div>
+
+                <div class="userName">
+
+                    <label for="userName">利用者名</label>
+                    <input id="userName" type="text">
+
+                </div>
+
+                <div class="aboutMe">
+
+                    <label for="aboutMe">私は</label>
+                    <input id="aboutMe" type="text">
+
+                </div>
+
+            </article>
+
 
         </section>
+
+        <div class="up"><a href="#topMenu">^</a></div>
 
         <footer class="footer">
             <div class="autors"><a href="#">原著者</a></div>
             <div class="terms"><a href="#">利用条件</a></div>
             <div class="privacy"><a href="#">プライバシーポリシー</a></div>
             <div class="faq"><a href="#">FAQ</a></div>
-            <div class="changeLanguage"><a href="#">言語</a></div>
+            <div class="changeLanguage"><a href="#">言語</a>
+
+                <div id="languages">
+                    <button type="button"><a src="./Portal_for_artists/PL/index.html">PL</a></button>
+                    <button type="button"><a src="./Portal_for_artists/EN/index.html">EN</a></button>
+                    <button type="button"><a src="./Portal_for_artists/JP/index.html">JP</a></button>
+                </div>
+
+            </div>
+
         </footer>
 
     </div>
+
+    <form class="createAccount">
+
+        <h2> 無料録する！</h2>
+
+        <div>
+            <label for="giveName">名前：</label>
+            <input type="text" id="giveName" placeholder="名前が差し出す" required="required">
+        </div>
+
+        <div>
+            <label for="pseudonym">あだ名：</label>
+            <input type="text" id="pseudonym" placeholder="あだ名が差し出す" required="required">
+        </div>
+
+        <div>
+            <label for="email">メール：</label>
+            <input type="email" id="email" placeholder="メールが差し出す" required="required">
+        </div>
+
+        <div>
+            <label for="createPassword">パスポート：</label>
+            <input type="password" id="createPassword" placeholder="パスポートが差し出す" required="required">
+        </div>
+
+        <button type="submit">録する</button>
+    </form>
+
+    <form class="login">
+        <h2>ログイン！</h2>
+
+        <label> ログイン：
+            <input type="text" placeholder="利用者名/ログイン" required="required">
+        </label>
+
+        <label>パスポート：
+            <input type="password" placeholder="パスポート" required="required">
+        </label>
+
+        <button type="submit">ログイン</button>
+    </form>
 
 </body>
 </html>

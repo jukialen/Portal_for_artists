@@ -14,7 +14,8 @@
 <body>
 
     <div class="wholePage">
-        <header class="topMenu">
+
+        <header id="topMenu" class="topMenu">
 
             <h1 class="title"><a href="/Portal_for_artists/PL/index.html">Portal dla artystów</a></h1>
 
@@ -30,6 +31,8 @@
                 </ul>
 
             </nav>
+
+            <div class="hambugerMenu"></div>
             
         </header>
 
@@ -40,17 +43,26 @@
             <div class="category">
 
                 <ol>
+
+                    <li><a href="#">Wszystko</a></li>
+
                     <li><a href="#">Rysunki</a>
+
                         <ol>
+
                             <li><a href="#">Realistyczne</a></li>
                             <li><a href="#">Manga</a></li>
                             <li><a href="#">Anime</a></li>
                             <li><a href="#">Komiksy</a></li>
+
                         </ol>
+
                     </li>
+
                     <li><a href="#">Fotografie</a></li>
                     <li><a href="#">Animacje</a></li>
                     <li><a href="#">Inne</a></li>
+
                 </ol>
 
             </div>
@@ -68,30 +80,39 @@
                 <div class="leftArrow"></div>
 
                 <article class="contents">
+
                     <img src="#" alt="Popular among users photo or drawing" class="photos" />
                     <div class="authorName"><a href="#">Z BAZY</a></div>
                     <div class="shareOptions"><a href="#">Icon/Icons</a></div>
+
                 </article>
 
                 <article class="contents">
+
                     <img src="#" alt="Popular among users photo or drawing" class="photos" />
                     <div class="authorName"><a href="#">Z BAZY</a></div>
                     <div class="shareOptions"><a href="#">Icon/Icons</a></div>
+
                 </article>
 
                 <article class="contents">
+
                     <img src="#" alt="Popular among users photo or drawing" class="photos" />
                     <div class="authorName"><a href="#">Z BAZY</a></div>
                     <div class="shareOptions"><a href="#">Icon/Icons</a></div>
+
                 </article>
 
                 <article class="contents">
+
                     <img src="#" alt="Popular among users photo or drawing" class="photos" />
                     <div class="authorName"><a href="#">Z BAZY</a></div>
                     <div class="shareOptions"><a href="#">Icon/Icons</a></div>
+
                 </article>
 
                 <div class="rightArrow"></div>
+
             </div>
 
             <h2 class="Subscribed">Zasubskrybowane</h2>
@@ -101,44 +122,107 @@
                 <div class="leftArrow"></div>
 
                 <article class="contents">
+
                     <img src="#" alt="Photo or drawing of the subscribed user" class="photos" />
                     <div class="authorName"><a href="#">Z BAZY</a></div>
                     <div class="shareOptions"><a href="#">Icon/Icons</a></div>
+
                 </article>
 
                 <article class="contents">
+
                     <img src="#" alt="Photo or drawing of the subscribed user" class="photos" />
                     <div class="authorName"><a href="#">Z BAZY</a></div>
                     <div class="shareOptions"><a href="#">Icon/Icons</a></div>
+
                 </article>
 
                 <article class="contents">
+
                     <img src="#" alt="Photo or drawing of the subscribed user" class="photos" />
                     <div class="authorName"><a href="#">Z BAZY</a></div>
                     <div class="shareOptions"><a href="#">Icon/Icons</a></div>
+
                 </article>
 
                 <article class="contents">
+
                     <img src="#" alt="Photo or drawing of the subscribed user" class="photos" />
                     <div class="authorName"><a href="#">Z BAZY</a></div>
                     <div class="shareOptions"><a href="#">Icon/Icons</a></div>
+
                 </article>
 
                 <div class="rightArrow"></div>
-            </div>
 
+            </div>
 
         </section>
 
-        <footer class="footer">
+        <div class="up"><a href="#topMenu">^</a></div>
+
+        <footer>
             <div class="authors"><a href="#">Autorzy</a></div>
             <div class="terms"><a href="#">Warunki korzystania</a></div>
             <div class="privacy"><a href="#">Polityka prywatności</a></div>
             <div class="faq"><a href="#">FAQ</a></div>
-            <div class="changeLanguage"><a href="#">Zmiana języka</a></div>
+            <div class="changeLanguage"><a href="#languages">Zmiana języka</a>
+
+                <div id="languages">
+
+                    <button type="button"><a src="./Portal_for_artists/PL/index.html">PL</a></button>
+                    <button type="button"><a src="./Portal_for_artists/EN/index.html">EN</a></button>
+                    <button type="button"><a src="./Portal_for_artists/JP/index.html">JP</a></button>
+
+                </div>
+
+            </div>
         </footer>
 
     </div>
+
+    <form class="createAccount">
+
+        <h2>Zarejestruj się za darmo!</h2>
+
+        <div>
+            <label for="giveName">Imię:</label>
+            <input type="text" id="giveName" placeholder="Podaj imię" required="required">
+        </div>
+
+        <div>
+            <label for="pseudonym">Pseudomin:</label>
+            <input type="text" id="pseudonym" placeholder="Podaj pseudomin" required="required">
+        </div>
+
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="Podaj adres e-mail" required="required">
+        </div>
+
+        <div>
+            <label for="createPassword">Hasło:</label>
+            <input type="password" id="createPassword" placeholder="Podaj hasło" required="required">
+        </div>
+
+        <button type="submit">Zarejestruj się</button>
+    </form>
+
+    <form class="login">
+        <h2>Zaloguj się!</h2>
+
+        <label>Login:
+            <input type="text" placeholder="Nazwa użytkownika/login" required="required">
+        </label>
+
+        <label>Hasło:
+            <input type="password" placeholder="Hasło" required="required">
+        </label>
+
+        <button type="submit">Zaloguj się</button>
+    </form>
+
+
 
 </body>
 </html>

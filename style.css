@@ -5,6 +5,7 @@
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
 }
+
 html {
     font-size:62.5%;
 }
@@ -20,6 +21,7 @@ h2 {
 h3 {
     font-size: 2rem;
 }
+
 a {
     text-decoration: none;
     color: #000;
@@ -42,9 +44,9 @@ a:focus {
 }
 
 
-/*.wholePage {*/
-/*    height: 90%;*/
-/*}*/
+.wholePage {
+    position: relative;
+}
 
 header {
     width: 100%;
@@ -52,10 +54,7 @@ header {
     position: fixed;
     display: flex;
     background-color: darkred;
-    color: darkblue;
     padding: 0.5rem;
-    font-size: 2rem;
-    border-bottom: 1rem inset darkred;
     z-index: 9999;
 }
 
@@ -85,17 +84,20 @@ li {
     line-height: 1.5;
     margin: 0 2rem;
 }
+
 .menu {
     width: 15rem;
     flex: 1;
     float: left;
     margin: 0.5rem 1rem;
-    
+}
+
+.hambugerMenu {
+    display: none;
 }
 
 aside {
     width: 12%;
-    height: 105vmax;
     float: left;
     margin-top: 4rem;
     padding: 1rem 0 0;
@@ -107,7 +109,7 @@ aside h3 {
 }
 
 .category {
-    height: 90%;
+    height: 210vh;
     font-size: 1.5rem;
     padding-top: 3rem;
 }
@@ -133,7 +135,7 @@ aside h3 {
 }
 
 .articleContainers {
-    width: 82%;
+    width: 85%;
     height: 30rem;
     position: relative;
     margin: 0 auto;
@@ -180,7 +182,7 @@ article .photos {
     height: 30rem;
     display: inline-block;
     position: absolute;
-    z-index: 9999;
+    z-index: 9;
 }
 
 .leftArrow {
@@ -206,6 +208,7 @@ article .photos {
 footer {
     clear: both;
     display: flex;
+    position: relative;
     background-color: darkcyan;
 }
 
@@ -215,6 +218,8 @@ footer div {
     padding: 0.5% 0;
     flex: 1;
 }
+
+/*SUBPAGE ACCOUNT*/
 
 .accountH2 {
     width: 50%;
@@ -260,24 +265,23 @@ footer div {
 }
 
 .accountData {
-    width: 75%;
-    margin: 3rem auto;
-    position: relative;
-    display: flex;
-    flex-wrap: nowrap;
+    width: 60%;
+    margin: 3rem 18%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
 }
 
 .accountData div {
-    width: 25%;
-    margin: 3rem;
-    flex-flow: column;
+    margin: 3rem 1rem;
 }
 
 .accountData label {
-    width: 50%;
+    width: 100%;
     height: 3rem;
-    flex-flow: column;
+    display: inline-block;
     font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .userGalleryInAccount {
@@ -290,22 +294,25 @@ footer div {
 }
 
 .accountData input, .accountData button {
-    width: 25%;
+    width: 50%;
     height: 3rem;
+    margin-bottom: 1rem;
     flex-flow: column;
+    text-align: center;
+    text-align-all: center;
 }
 
 .userPhotos, .likePhotos {
     width: 60%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 1.5rem auto;
+    margin: 1.5rem 18%;
 }
 
-.photos {
+.userPhotos .photos, .likePhotos .photos {
     width: 25rem;
     height: 25rem;
-    margin: 1rem;
+    margin: 1rem auto;
     background-color: #1E90FF;
 }
 
@@ -335,6 +342,853 @@ footer div {
 
 .userName input, .aboutMe input {
     margin-top: 1rem;
+}
+
+.up {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    right: 5rem;
+    bottom: 7rem;
+    font-size: 4rem;
+    padding: 1rem 0 ;
+    background-color: #FF38D4;
+    color: black;
+    border-radius: 50%;
+    z-index: 99;
+}
+
+.createAccount, .login {
+    position: absolute;
+    display: none; /*grid*/
+    grid-template-columns: 1fr;
+    top: 8rem;
+    right: 5%;
+    background-color: #1E90FF;
+    border: 0.5rem solid black;
+    z-index: 999;
+}
+
+.createAccount h2 {
+    margin: 2rem 0.5rem;
+}
+
+.createAccount div {
+    width: 30rem;
+    text-align: left;
+    margin: 2rem 5rem;
+}
+
+.createAccount label {
+    width: min-content;
+    font-size: 2rem;
+}
+
+.createAccount input {
+    width: min-content;
+    position: absolute;
+    right: 3rem;
+
+}
+
+.createAccount button {
+    margin: 2rem 10rem;
+}
+
+.login {
+    position: absolute;
+    display: none; /*grid*/
+    grid-template-columns: 1fr;
+    top: 8rem;
+    right: 5%;
+    background-color: #1E90FF;
+    border: 0.5rem solid black;
+    z-index: 999;
+}
+
+.login h2 {margin: 1rem 0.5rem}
+
+.login label {
+    width: max-content;
+    margin: 1rem 3rem;
+    font-size: 2rem;
+}
+
+.login input {
+    margin: 0 1rem;
+}
+
+.login button {
+    margin: 1rem 4rem 1rem 10rem;
+}
+
+
+/*SECTION WITH MEDIA QUERIES*/
+@media (min-width: 320px) and (max-width: 374px) {
+    header {
+        height: 5rem;
+        padding: 0;
+    }
+
+    .title {
+        width: 50%;
+        margin: auto 0;
+        font-size: 2rem;
+    }
+
+    .darkMode {
+        width: 20%;
+        margin: 0.5rem 1rem;
+    }
+
+    nav, nav ul {
+        display: none;
+    }
+
+    .hambugerMenu {
+        width: 4rem;
+        height: 4rem;
+        display: block;
+        margin: auto 4%;
+        background-color: black;
+    }
+
+    aside {
+        width: 100vw;
+        padding: 1rem 0 0;
+        background-color: tomato;
+    }
+
+    .category {
+        height: 22rem;
+        font-size: 1.7rem;
+        margin: 0 auto;
+    }
+
+    .category li a {
+        margin: 3px 7px;
+        padding: 1px 5px;
+        line-height: 1.7;
+        float: left;
+        border: 2px inset orange;
+        border-radius: 25%;
+    }
+
+    .workspace {
+        margin-bottom: 5rem;
+    }
+
+    .topAmongUsers, .Subscribed {
+        font-size: 2rem;
+        text-align: center;
+        width: 100vw;
+    }
+
+    .articleContainers {
+        width: 100vw;
+        height: 31rem;
+        padding: 0 2rem;
+    }
+
+    .contents {
+        float: left;
+        margin: 0;
+        background-color: aqua;
+    }
+
+    .leftArrow, .rightArrow  {
+        width: 4rem;
+        height: 4rem;
+        display: inline-block;
+        position: absolute;
+        z-index: 9;
+    }
+
+    footer div {
+        height: 4rem;
+        padding: 2.5% 0;
+    }
+
+    .up {
+        right: 1rem;
+        bottom: 4rem;
+    }
+
+    .accountH2 {
+        width: 32rem;
+        height: 4rem;
+    }
+
+    .accountMenu {
+        width: 100%;
+        margin: 0 2rem;
+    }
+
+    .accountMenu div {
+        height: 4rem;
+        margin: 0 1rem;
+    }
+
+    .accountData {
+        width: 32rem;
+        margin: 3rem auto;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .accountData input, .accountData button {
+        margin-bottom: 2rem;
+    }
+
+    .userGalleryInAccount {
+        width: 32rem;
+    }
+
+    .userPhotos, .likePhotos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 1.5rem 0;
+    }
+
+    .userPhotos .photos, .likePhotos .photos {
+        width: 14rem;
+        height: 14rem;
+        margin: 1rem;
+        background-color: #1E90FF;
+    }
+
+    .profile {
+        margin: 6rem 3rem 1rem;
+        font-size: 2rem;
+    }
+
+    .photoProfile {
+        width: 10rem;
+        height: 10rem;
+        background-color: #12FFF8;
+        margin: 3rem;
+    }
+
+    .userName, .aboutMe {
+        width: 100%;
+    }
+
+    .userName label, .aboutMe label {
+        width: 15rem;
+        margin: 2rem auto;
+    }
+
+    .userName input, .aboutMe input {
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 375px)  and (max-width: 400px) {
+
+    header {
+        height: 5rem;
+        padding: 0;
+    }
+
+    .title {
+        width: 50%;
+        margin: auto;
+        font-size: 2rem;
+    }
+
+    .darkMode {
+        width: 20%;
+        margin: 0.5rem 2rem;
+    }
+
+    nav, nav ul {
+        display: none;
+    }
+
+    .hambugerMenu {
+        width: 4rem;
+        height: 4rem;
+        display: block;
+        margin: 5px 0.5rem 5px 3rem;
+        background-color: black;
+    }
+
+    aside {
+        width: 100vw;
+        padding: 1rem 0 0;
+        background-color: tomato;
+    }
+
+    .category {
+        height: 20rem;
+        font-size: 1.7rem;
+        margin: 0 auto;
+    }
+
+    .category li a {
+        margin: 5px;
+        padding: 3px 4px;
+        line-height: 1.7;
+        float: left;
+        border: 2px inset orange;
+        border-radius: 25%;
+    }
+
+    .contact {
+        padding-top: 1rem;
+        width: 100vw;
+        height: 4rem;
+        background: darkgoldenrod;
+    }
+
+    .workspace {
+        padding: 3rem 0;
+        margin-bottom: 3rem;
+    }
+
+    .topAmongUsers, .Subscribed {
+        font-size: 2rem;
+        text-align: center;
+        width: 100vw;
+    }
+
+    .articleContainers {
+        width: 100vw;
+        height: 31rem;
+        position: relative;
+        margin: 0;
+        padding: 0 5rem;
+        overflow: scroll hidden;
+        background-color: antiquewhite;
+    }
+
+    .contents {
+        float: left;
+        margin: 0;
+        background-color: aqua;
+    }
+
+    .leftArrow, .rightArrow  {
+        width: 4rem;
+        height: 4rem;
+        display: inline-block;
+        position: absolute;
+        z-index: 9;
+    }
+
+    footer div {
+        height: 4rem;
+        padding: 2.5% 0;
+    }
+
+    .up {
+        right: 1rem;
+        bottom: 4rem;
+    }
+
+    .accountH2 {
+        width: 100vw;
+        height: 4rem;
+    }
+
+    .accountMenu {
+        width: 37.5rem;
+        margin: 0;
+    }
+
+    .accountMenu div {
+        height: 4rem;
+        margin: 0 1rem;
+    }
+
+    .accountData {
+        width: 37.5rem;
+        margin: 3rem auto;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .accountData input, .accountData button {
+        margin-bottom: 2rem;
+    }
+
+    .userGalleryInAccount {
+        width: 37.5rem;
+    }
+
+    .userPhotos, .likePhotos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 1.5rem 0;
+    }
+
+    .userPhotos .photos, .likePhotos .photos {
+        width: 16rem;
+        height: 16rem;
+        margin: 1.5rem;
+        background-color: #1E90FF;
+    }
+
+    .profile {
+        margin: 6rem 3rem 1rem;
+        font-size: 2rem;
+    }
+
+    .photoProfile {
+        width: 10rem;
+        height: 10rem;
+        background-color: #12FFF8;
+        margin: 3rem;
+    }
+
+    .userName, .aboutMe {
+        width: 85%;
+        line-height: 2.5rem;
+    }
+    
+}
+
+@media (min-width: 401px) and (max-width: 767px) {
+    header {
+        height: 5rem;
+        padding: 0;
+    }
+
+    .title {
+        width: 50%;
+        margin: auto 0;
+        font-size: 2rem;
+    }
+
+    .darkMode {
+        width: 20%;
+        margin: 0.5rem 2rem;
+    }
+
+    nav, nav ul {
+            display: none;
+    }
+
+    .hambugerMenu {
+        width: 4rem;
+        height: 4rem;
+        display: block;
+        margin: 5px 0.5rem 5px 4rem;
+        background-color: black;
+    }
+
+    aside {
+        width: 100vw;
+        padding: 1rem 0 0;
+        background-color: tomato;
+    }
+
+    .category {
+        height: 20rem;
+        font-size: 1.7rem;
+        margin: 0 auto;
+    }
+
+    .category li a {
+        margin: 5px;
+        padding: 3px 4px;
+        line-height: 1.7;
+        float: left;
+        border: 2px inset orange;
+        border-radius: 25%;
+    }
+
+    .contact {
+        width: 100vw;
+        height: 4rem;
+        padding-top: 1rem;
+        background: darkgoldenrod;
+    }
+
+    .workspace {
+        padding: 3rem 0;
+        margin-bottom: 3rem;
+    }
+
+    .topAmongUsers, .Subscribed {
+        width: 100vw;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .articleContainers {
+        width: 100vw;
+        height: 31rem;
+        position: relative;
+        margin: 0;
+        padding: 0 20%;
+        overflow: scroll hidden;
+        background-color: antiquewhite;
+    }
+
+    .contents {
+        float: left;
+        margin: 0;
+        padding: 0;
+        background-color: aqua;
+    }
+
+    .leftArrow, .rightArrow  {
+        width: 4rem;
+        height: 4rem;
+        display: inline-block;
+        position: absolute;
+        z-index: 9;
+    }
+
+    footer div {
+        height: 4rem;
+        padding: 2.5% 0;
+    }
+
+    .up {
+        right: 1rem;
+        bottom: 4rem;
+    }
+
+    .accountH2 {
+        width: 100vw;
+        height: 4rem;
+    }
+
+    .accountMenu {
+        width: 100vw;
+        margin: 0;
+    }
+
+    .accountMenu div {
+        height: 4rem;
+        margin: 0 1rem;
+    }
+
+    .accountData {
+        width: 100vw;
+        margin: 3rem auto;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .accountData form {
+        width: 80vw;
+        margin: 0 10%;
+    }
+
+    .accountData input, .accountData button {
+        margin-bottom: 2rem;
+    }
+
+    .userGalleryInAccount {
+        width: 100vw;
+    }
+
+    .userPhotos, .likePhotos {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 1.5rem 0;
+    }
+
+    .userPhotos .photos, .likePhotos .photos {
+        width: 19rem;
+        height: 19rem;
+        margin: 1.1rem;
+        background-color: #1E90FF;
+    }
+
+    .profile {
+        margin: 6rem 3rem 1rem;
+        font-size: 2rem;
+    }
+
+    .photoProfile {
+        width: 10rem;
+        height: 10rem;
+        background-color: #12FFF8;
+        margin: 3rem;
+    }
+
+    .userName, .aboutMe {
+        width: 85%;
+        line-height: 2.5rem;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .wholePage {
+        width: 125vw;
+    }
+
+    header {
+        padding: 0;
+    }
+
+    .title {
+        width: 30%;
+        margin: auto 0;
+        font-size: 2rem;
+    }
+
+    .darkMode {
+        width: 10%;
+        margin: 0.5rem 2rem;
+    }
+
+    nav {
+        width: 60%;
+    }
+
+    aside {
+        width: 20%;
+    }
+
+    .workspace {
+        width: 80%;
+    }
+
+    .topAmongUsers, .Subscribed {
+        width: 100%;
+        text-align: center;
+    }
+
+    .articleContainers {
+        width: 85vw;
+        height: 31rem;
+        position: relative;
+        margin: 0 8%;
+        padding: 0 5%;
+        overflow: scroll hidden;
+        background-color: antiquewhite;
+    }
+
+    .contents {
+        float: left;
+        margin: 0 2rem;
+        padding: 0;
+        background-color: aqua;
+    }
+
+    footer div {
+        height: 4rem;
+        padding: 1% 0;
+        font-size: 1.5rem;
+    }
+
+    .up {
+        right: 1rem;
+        bottom: 4rem;
+    }
+
+    .accountH2 {
+        width: 100vw;
+        height: 4rem;
+    }
+
+    .accountMenu {
+        width: 55vw;
+        margin: 0 28%;
+    }
+
+    .accountMenu div {
+        height: 4rem;
+        margin: 0 1rem;
+    }
+
+    .accountData {
+        width: 100vw;
+        margin: 3rem auto;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .accountData input, .accountData button {
+        width: 60%;
+        margin-bottom: 2rem;
+    }
+
+    .userGalleryInAccount {
+        width: 100vw;
+    }
+
+    .userPhotos, .likePhotos {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 1.5rem 0;
+        padding: 3%;
+    }
+
+    .userPhotos .photos, .likePhotos .photos {
+        width: 19rem;
+        height: 19rem;
+        margin: 3rem auto;
+        background-color: #1E90FF;
+    }
+
+    .profile {
+        margin: 6rem 3rem 1rem;
+        font-size: 2rem;
+    }
+
+    .photoProfile {
+        width: 10rem;
+        height: 10rem;
+        background-color: #12FFF8;
+        margin: 3rem;
+    }
+
+    .userName, .aboutMe {
+        width: 85%;
+        line-height: 2.5rem;
+    }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1919px) {
+    .wholePage {
+        width: 125vw;
+    }
+
+    header {
+        padding: 0;
+    }
+
+    .title {
+        width: 30%;
+        margin: auto 0;
+        font-size: 2rem;
+    }
+
+    .darkMode {
+        width: 10%;
+        margin: 0.5rem 2rem;
+    }
+
+    nav {
+        width: 60%;
+    }
+
+    aside {
+        width: 20%;
+    }
+
+    .workspace {
+        width: 80%;
+    }
+
+    .topAmongUsers, .Subscribed {
+        width: 100%;
+        text-align: center;
+    }
+
+    .articleContainers {
+        width: 85vw;
+        height: 31rem;
+        position: relative;
+        margin: 0 8%;
+        padding: 0 5%;
+        overflow: scroll hidden;
+        background-color: antiquewhite;
+    }
+
+    .contents {
+        float: left;
+        margin: 0 2rem;
+        padding: 0;
+        background-color: aqua;
+    }
+
+    footer div {
+        height: 4rem;
+        padding: 1% 0;
+        font-size: 1.5rem;
+    }
+
+    .up {
+        right: 1rem;
+        bottom: 4rem;
+    }
+
+    .accountH2 {
+        width: 100vw;
+        height: 4rem;
+    }
+
+    .accountMenu {
+        width: 55vw;
+        margin: 0 28%;
+    }
+
+    .accountMenu div {
+        height: 4rem;
+        margin: 0 1rem;
+    }
+
+    .accountData {
+        width: 100vw;
+        margin: 3rem auto;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .accountData input, .accountData button {
+        width: 60%;
+        margin-bottom: 2rem;
+    }
+
+    .userGalleryInAccount {
+        width: 100vw;
+    }
+
+    .userPhotos, .likePhotos {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 1.5rem 0;
+        padding: 3%;
+    }
+
+    .userPhotos .photos, .likePhotos .photos {
+        width: 19rem;
+        height: 19rem;
+        margin: 3rem auto;
+        background-color: #1E90FF;
+    }
+
+    .profile {
+        margin: 6rem 3rem 1rem;
+        font-size: 2rem;
+    }
+
+    .photoProfile {
+        width: 10rem;
+        height: 10rem;
+        background-color: #12FFF8;
+        margin: 3rem;
+    }
+
+    .userName, .aboutMe {
+        width: 85%;
+        line-height: 2.5rem;
+    }
+
+}
+
+
+/*LANGUAGES*/
+#languages {
+    width: 10%;
+    height: 1rem;
+    position: absolute;
+    bottom: 4rem;
+    right: 5%;
+}
+
+#languages button {
+    width: 5rem;
+    border: #12FFF8;
+    border-radius: 10%;
+    background-color: #12FFF8;
 }
 
 

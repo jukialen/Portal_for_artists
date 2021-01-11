@@ -14,7 +14,7 @@
 <body>
 
     <div class="wholePage">
-        <header class="topMenu">
+        <header id="topMenu" class="topMenu">
 
             <h1 class="title"><a href="/Portal_for_artists/PL/index.html">Portal dla artystów</a></h1>
             
@@ -30,6 +30,8 @@
                 </ul>
 
             </nav>
+
+            <div class="hambugerMenu"></div>
             
         </header>
 
@@ -40,17 +42,26 @@
             <div class="category">
 
                 <ol>
+
+                    <li><a href="#">Wszystko</a></li>
+
                     <li><a href="#">Rysunki</a>
+
                         <ol>
+
                             <li><a href="#">Realistyczne</a></li>
                             <li><a href="#">Manga</a></li>
                             <li><a href="#">Anime</a></li>
                             <li><a href="#">Komiksy</a></li>
+
                         </ol>
+
                     </li>
+
                     <li><a href="#">Fotografie</a></li>
                     <li><a href="#">Animacje</a></li>
-                    <li><a href="#">Inne</a></li>
+                    <li><a href="#">Inne</a>
+
                 </ol>
 
             </div>
@@ -63,44 +74,44 @@
 
             <h2 class="accountH2">Konto</h2>
 
-            <section class="accountMenu">
+            <article class="accountMenu">
 
                 <div><a href="#accountData">Ogólne</a></div>
                 <div><a href="#userGalleryInAccount">Galeria</a></div>
                 <div><a href="#profile">Profil</a></div>
 
-            </section>
+            </article>
 
-            <section id="accountData" class="accountData">
+            <article id="accountData" class="accountData">
 
-                <div>
+                <form>
 
-                    <label for="subscriptionCheck">Subskrybcja:</label>
-                    <button>Aktualny plan</button>
-                    <button id="subscriptionCheck" class="subscriptionCheck" type="submit">Zmień</button>
+                    <label for="subscriptionInfo">Subskrybcja:</label>
+                    <button id="subscriptionInfo">Aktualny plan</button>
+                    <button class="subscriptionCheck" type="submit">Zmień</button>
 
-                </div>
+                </form>
 
-                <div>
+                <form>
 
                     <label for="mailChange">E-mail:</label>
-                    <button>Aktualny e-mail</button>
+                    <input type="text" value="Aktualny e-mail"> <!-- here user's e-mail address is appear* todo-->
                     <button id="mailChange" type="submit">Zmień adres e-mail</button>
 
-                </div>
+                </form>
 
-                <div>
+                <form>
 
                     <label for="password">Hasło:</label>
-                    <input id="password" type="password" name="passwordAccount" placeholder="Wpisz aktualne hasło">
-                    <input type="password" name="newPassword" placeholder="Wpisz nowe hasło">
-                    <input type="password" name="confirmNewAccount" placeholder="Powtórz nowe hasło">
+                    <input id="password" type="password" name="passwordAccount" placeholder="Wpisz aktualne hasło" required="required">
+                    <input type="password" name="newPassword" placeholder="Wpisz nowe hasło" required="required">
+                    <input type="password" name="confirmNewAccount" placeholder="Powtórz nowe hasło" required="required">
                     <button type="submit">Zmień hasło</button>
-                </div>
+                </form>
 
-            </section>
+            </article>
                 
-            <section id="userGalleryInAccount" class="userGalleryInAccount">
+            <article id="userGalleryInAccount" class="userGalleryInAccount">
 
                 <em>Twoje zdjęcia i rysunki</em>
 
@@ -128,9 +139,9 @@
 
                 </div>
 
-            </section>
+            </article>
 
-            <section id="profile" class="profile">
+            <article id="profile" class="profile">
 
                 <div class="photoProfile"></div>
 
@@ -148,20 +159,73 @@
 
                 </div>
 
-            </section>
+            </article>
             
 
         </section>
 
-        <footer class="footer">
+        <div class="up"><a href="#topMenu">^</a></div>
+
+        <footer>
             <div class="authors"><a href="#">Autorzy</a></div>
             <div class="terms"><a href="#">Warunki korzystania</a></div>
             <div class="privacy"><a href="#">Polityka prywatności</a></div>
             <div class="faq"><a href="#">FAQ</a></div>
-            <div class="changeLanguage"><a href="#">Zmiana języka</a></div>
+            <div class="changeLanguage"><a href="#">Zmiana języka</a>
+
+                <div id="languages">
+                    <button type="button"><a src="./Portal_for_artists/PL/index.html">PL</a></button>
+                    <button type="button"><a src="./Portal_for_artists/EN/index.html">EN</a></button>
+                    <button type="button"><a src="./Portal_for_artists/JP/index.html">JP</a></button>
+                </div>
+
+            </div>
+
         </footer>
 
     </div>
 
+    <form class="createAccount">
+
+        <h2>Zarejestruj się za darmo!</h2>
+
+        <div>
+            <label for="giveName">Imię:</label>
+            <input type="text" id="giveName" placeholder="Podaj imię" required="required">
+        </div>
+
+        <div>
+            <label for="pseudonym">Pseudonim:</label>
+            <input type="text" id="pseudonym" placeholder="Podaj pseudomin" required="required">
+        </div>
+
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="Podaj adres e-mail" required="required">
+        </div>
+
+        <div>
+            <label for="createPassword">Hasło:</label>
+            <input type="password" id="createPassword" placeholder="Podaj hasło" required="required">
+        </div>
+
+        <button type="submit">Zarejestruj się</button>
+    </form>
+
+    <form class="login">
+        <h2>Zaloguj się!</h2>
+
+        <label>Login:
+            <input type="text" placeholder="Nazwa użytkownika/login" required="required">
+        </label>
+
+        <label>Hasło:
+            <input type="password" placeholder="Hasło" required="required">
+        </label>
+
+        <button type="submit">Zaloguj się</button>
+    </form>
+
+    <script src="../main.js"></script>
 </body>
 </html>
