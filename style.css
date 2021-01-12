@@ -92,7 +92,13 @@ li {
     margin: 0.5rem 1rem;
 }
 
+.zapychacz {
+    display: none;
+}
+
 .hambugerMenu {
+    width: 5rem;
+    height: 5rem;
     display: none;
 }
 
@@ -406,7 +412,9 @@ footer div {
     z-index: 999;
 }
 
-.login h2 {margin: 1rem 0.5rem}
+.login h2 {
+    margin: 1rem 0.5rem
+}
 
 .login label {
     width: max-content;
@@ -424,6 +432,7 @@ footer div {
 
 
 /*SECTION WITH MEDIA QUERIES*/
+
 @media (min-width: 320px) and (max-width: 374px) {
     header {
         height: 5rem;
@@ -438,18 +447,24 @@ footer div {
 
     .darkMode {
         width: 20%;
-        margin: 0.5rem 1rem;
+        margin: 0.5rem 3rem;
+    }
+
+    nav {
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        margin: 0;
     }
 
     nav, nav ul {
-        display: none;
+        display: block;
+        background-color: #1E90FF;
     }
 
     .hambugerMenu {
-        width: 4rem;
-        height: 4rem;
         display: block;
-        margin: auto 4%;
+        margin-left: 1rem;
         background-color: black;
     }
 
@@ -597,18 +612,24 @@ footer div {
 
     .darkMode {
         width: 20%;
-        margin: 0.5rem 2rem;
+        margin: 1.5rem 2rem;
+    }
+
+    nav {
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        margin: 0;
     }
 
     nav, nav ul {
-        display: none;
+        display: block;
+        background-color: #1E90FF;
     }
 
     .hambugerMenu {
-        width: 4rem;
-        height: 4rem;
         display: block;
-        margin: 5px 0.5rem 5px 3rem;
+        margin-left: 3rem;
         background-color: black;
     }
 
@@ -759,19 +780,25 @@ footer div {
     }
 
     .darkMode {
-        width: 20%;
-        margin: 0.5rem 2rem;
+        width: 40%;
+        margin: 1.5rem 1rem;
+    }
+
+    nav {
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        margin: 0;
     }
 
     nav, nav ul {
-            display: none;
+        display: block;
+        background-color: #1E90FF;
     }
 
     .hambugerMenu {
-        width: 4rem;
-        height: 4rem;
         display: block;
-        margin: 5px 0.5rem 5px 4rem;
+        margin-left: 2rem;
         background-color: black;
     }
 
@@ -1191,4 +1218,53 @@ footer div {
     background-color: #12FFF8;
 }
 
+/*DARK MODE*/
 
+a {
+    color: #fff;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    background-color: darkred;
+}
+
+aside {
+    background-color: tomato;
+}
+
+.contact {
+    background: darkgoldenrod;
+}
+
+.articleContainers {
+    background-color: antiquewhite;
+}
+
+.contents {
+    background-color: aqua;
+}
+
+article .photos {
+    background-color: blue;
+}
+
+.authorName {
+    background-color: blueviolet;
+}
+
+.shareOptions {
+    background-color: brown;
+}
+
+.leftArrow {
+    background-image: url("Icons/left arrow dark mode.svg");
+}
+
+.rightArrow {
+    background-image: url("Icons/right arrow dark mode.svg");
+}
