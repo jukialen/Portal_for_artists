@@ -50,10 +50,10 @@ a:focus {
 
 header {
     width: 100%;
-    height: 5%;
+    height: 5rem;
     position: fixed;
     display: flex;
-    background-color: darkred;
+    background-color: #085E8F;
     padding: 0.5rem;
     z-index: 9999;
 }
@@ -64,8 +64,22 @@ header {
 
 .darkMode {
     width: 20rem;
-    margin: 1rem 3rem;
+    height: 4rem;
+    margin: 0 3rem;
     font-size: 2rem;
+    background: url("Icons/darkMode.svg") no-repeat;
+    background-size: 4rem;
+    border: none;
+    cursor: pointer;
+}
+
+.lightMode {
+    width: 20rem;
+    height: 4rem;
+    margin: 0 3rem;
+    font-size: 2rem;
+    background: url("Icons/lightMode.svg") no-repeat;
+    background-size: 4rem;
 }
 
 nav {
@@ -92,14 +106,13 @@ li {
     margin: 0.5rem 1rem;
 }
 
-.zapychacz {
-    display: none;
-}
-
-.hambugerMenu {
+.hamburgerMenu {
     width: 5rem;
     height: 5rem;
     display: none;
+    margin: 0 0.5rem;
+    background: url("Icons/menu.svg") no-repeat;
+    border: none;
 }
 
 aside {
@@ -107,7 +120,7 @@ aside {
     float: left;
     margin-top: 4rem;
     padding: 1rem 0 0;
-    background-color: tomato;
+    background-color: #8C230E;
 }
 
 aside h3 {
@@ -124,7 +137,7 @@ aside h3 {
     padding-top: 1rem;
     width: 100%;
     height: 4rem;
-    background: darkgoldenrod;
+    background: #8C560E;
 } 
 
 .workspace {
@@ -147,14 +160,14 @@ aside h3 {
     margin: 0 auto;
     padding: 0 3rem;
     overflow: scroll hidden;
-    background-color: antiquewhite;
+    /*background-color: antiquewhite;*/
 }
 
 .contents {
     float: left;
     margin: 0 2rem;
     padding: 0 1rem;
-    background-color: aqua;
+    /*background-color: aqua;*/
 }
 
 article .photos {
@@ -162,7 +175,7 @@ article .photos {
     width: 28rem;
     height: 28rem;
     display: block;
-    background-color: blue;
+    /*background-color: blue;*/
 }
 
 .authorName {
@@ -171,41 +184,63 @@ article .photos {
     float: left;
     text-align: left;
     padding: 1rem 0 2rem 1rem;
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
 }
 
 .shareOptions {
     width: 50%;
-    height: 2rem;
+    height: 3rem;
     float: right;
     text-align: right;
-    padding: 1rem 1rem 2rem 0;
-    background-color: brown;
+    padding: 0 1rem 2rem 0.5rem;
+    /*background-color: brown;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+}
+
+.firstShareIcon, .secondShareIcon, .thirdShareIcon, .fourthShareIcon {
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    margin: 5px;
+    background-repeat: no-repeat;
+}
+
+.firstShareIcon {
+    background-image: url("Icons/facebook.svg");
+
+}
+
+.secondShareIcon {
+    background-image: url("Icons/discord.svg");
+}
+
+.thirdShareIcon {
+    background-image: url("Icons/twitter.svg");
+}
+
+.fourthShareIcon {
+    background-image: url("Icons/copy.svg");
 }
 
 .leftArrow, .rightArrow  {
-    width: 20rem;
-    height: 30rem;
-    display: inline-block;
-    position: absolute;
-    z-index: 9;
-}
-
-.leftArrow {
     width: 5rem;
     height: 5rem;
     background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    z-index: 9;
     margin: 12.5rem 0;
+}
+
+.leftArrow {
     float: left;
     left: 0;
     background-image: url("Icons/left arrow light mode.svg");
 }
 
 .rightArrow {
-    width: 5rem;
-    height: 5rem;
-    background-repeat: no-repeat;
-    margin: 12.5rem 0;
     float: right;
     right: 0;
     background-image: url("Icons/right arrow  light mode.svg");
@@ -358,21 +393,26 @@ footer div {
     bottom: 7rem;
     font-size: 4rem;
     padding: 1rem 0 ;
-    background-color: #FF38D4;
+    background-color: #078C58;
     color: black;
     border-radius: 50%;
     z-index: 99;
 }
 
+/*REGISTRATION AND LOGIN*/
+
 .createAccount, .login {
     position: absolute;
-    display: none; /*grid*/
     grid-template-columns: 1fr;
     top: 8rem;
     right: 5%;
     background-color: #1E90FF;
     border: 0.5rem solid black;
     z-index: 999;
+}
+
+.createAccount {
+    display: none;
 }
 
 .createAccount h2 {
@@ -402,14 +442,7 @@ footer div {
 }
 
 .login {
-    position: absolute;
-    display: none; /*grid*/
-    grid-template-columns: 1fr;
-    top: 8rem;
-    right: 5%;
-    background-color: #1E90FF;
-    border: 0.5rem solid black;
-    z-index: 999;
+    display: none;
 }
 
 .login h2 {
@@ -458,20 +491,17 @@ footer div {
     }
 
     nav, nav ul {
-        display: block;
+        display: none;
         background-color: #1E90FF;
     }
 
-    .hambugerMenu {
+    .hamburgerMenu {
         display: block;
-        margin-left: 1rem;
-        background-color: black;
     }
 
     aside {
         width: 100vw;
         padding: 1rem 0 0;
-        background-color: tomato;
     }
 
     .category {
@@ -522,11 +552,6 @@ footer div {
     footer div {
         height: 4rem;
         padding: 2.5% 0;
-    }
-
-    .up {
-        right: 1rem;
-        bottom: 4rem;
     }
 
     .accountH2 {
@@ -595,6 +620,37 @@ footer div {
     .userName input, .aboutMe input {
         margin-top: 1rem;
     }
+
+    .up {
+        right: 1rem;
+        bottom: 4rem;
+    }
+
+    .createAccount, .login {
+        top: 5rem;
+        right: 0;
+    }
+
+    .createAccount div {
+        margin: 1.5rem 0.5rem;
+    }
+
+    .createAccount input {
+        width: 15rem;
+    }
+
+    .login label {
+        width: 20rem;
+        margin: 1rem;
+    }
+
+    .login input {
+        margin: 0;
+    }
+
+    .login button {
+        margin: 1rem 7rem;
+    }
 }
 
 @media (min-width: 375px)  and (max-width: 400px) {
@@ -612,7 +668,7 @@ footer div {
 
     .darkMode {
         width: 20%;
-        margin: 1.5rem 2rem;
+        margin: 0.5rem 2rem;
     }
 
     nav {
@@ -623,20 +679,17 @@ footer div {
     }
 
     nav, nav ul {
-        display: block;
+        display: none;
         background-color: #1E90FF;
     }
 
-    .hambugerMenu {
+    .hamburgerMenu {
         display: block;
-        margin-left: 3rem;
-        background-color: black;
     }
 
     aside {
         width: 100vw;
         padding: 1rem 0 0;
-        background-color: tomato;
     }
 
     .category {
@@ -701,11 +754,6 @@ footer div {
         padding: 2.5% 0;
     }
 
-    .up {
-        right: 1rem;
-        bottom: 4rem;
-    }
-
     .accountH2 {
         width: 100vw;
         height: 4rem;
@@ -764,6 +812,37 @@ footer div {
         width: 85%;
         line-height: 2.5rem;
     }
+
+    .up {
+        right: 1rem;
+        bottom: 4rem;
+    }
+
+    .createAccount, .login {
+        top: 5rem;
+        right: 0;
+    }
+
+    .createAccount div {
+        margin: 1.5rem 0.5rem;
+    }
+
+    .createAccount input {
+        width: 15rem;
+    }
+
+    .login label {
+        width: 20rem;
+        margin: 1rem;
+    }
+
+    .login input {
+        margin: 0;
+    }
+
+    .login button {
+        margin: 1rem 7rem;
+    }
     
 }
 
@@ -781,7 +860,7 @@ footer div {
 
     .darkMode {
         width: 40%;
-        margin: 1.5rem 1rem;
+        margin: 0.5rem 1rem;
     }
 
     nav {
@@ -792,14 +871,12 @@ footer div {
     }
 
     nav, nav ul {
-        display: block;
+        display: none;
         background-color: #1E90FF;
     }
 
-    .hambugerMenu {
+    .hamburgerMenu {
         display: block;
-        margin-left: 2rem;
-        background-color: black;
     }
 
     aside {
@@ -871,11 +948,6 @@ footer div {
         padding: 2.5% 0;
     }
 
-    .up {
-        right: 1rem;
-        bottom: 4rem;
-    }
-
     .accountH2 {
         width: 100vw;
         height: 4rem;
@@ -941,6 +1013,36 @@ footer div {
         line-height: 2.5rem;
     }
 
+    .up {
+        right: 1rem;
+        bottom: 4rem;
+    }
+
+    .createAccount, .login {
+        top: 5rem;
+        right: 0;
+    }
+
+    .createAccount div {
+        margin: 1.5rem 0.5rem;
+    }
+
+    .createAccount input {
+        width: 15rem;
+    }
+
+    .login label {
+        width: 20rem;
+        margin: 1rem;
+    }
+
+    .login input {
+        margin: 0;
+    }
+
+    .login button {
+        margin: 1rem 7rem;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -1206,6 +1308,7 @@ footer div {
 #languages {
     width: 10%;
     height: 1rem;
+    display: none;
     position: absolute;
     bottom: 4rem;
     right: 5%;
@@ -1220,51 +1323,33 @@ footer div {
 
 /*DARK MODE*/
 
-a {
+.aDark {
     color: #fff;
 }
 
-body {
-    background-color: #000;
+.dark {
+    background-color: #333;
     color: #fff;
 }
 
-header {
-    background-color: darkred;
+.leftArrowDark {
+    width: 5rem;
+    height: 5rem;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    z-index: 9;
+    margin: 12.5rem 0;
 }
 
-aside {
-    background-color: tomato;
-}
-
-.contact {
-    background: darkgoldenrod;
-}
-
-.articleContainers {
-    background-color: antiquewhite;
-}
-
-.contents {
-    background-color: aqua;
-}
-
-article .photos {
-    background-color: blue;
-}
-
-.authorName {
-    background-color: blueviolet;
-}
-
-.shareOptions {
-    background-color: brown;
-}
-
-.leftArrow {
+.leftArrowDark {
+    float: left;
+    left: 0;
     background-image: url("Icons/left arrow dark mode.svg");
 }
 
-.rightArrow {
+.rightArrowDark {
+    float: right;
+    right: 0;
     background-image: url("Icons/right arrow dark mode.svg");
 }

@@ -1,62 +1,70 @@
-// const createAccount = document.getElementsByClassName(createAccount);
-//
-// window.onload = function () {
-// 	console.log(`Hello ${createAccount}`)
-// }
-//
-// const arr = [1, 3, true, 4];
-//
-// console.log(arr.unshift(5, 8));
-//
-// const newArray = arr;
-//
-// console.log(newArray.shift());
-//
-// console.log(newArray);
-//
-// const numbers = [];
-//
-// numbers.push(1, 2, 3, 4);
-//
-// console.log(numbers);
-//
-// const numbers2 = [5, 6, 7, 8];
-//
-// //const numbers3 = numbers.concat(numbers2);
-//
-// const numbers3 = [...numbers, ...numbers2];
+//DARK MODE
 
-// console.log(numbers3);
+const darkMode = document.querySelector('.darkMode');
+const wholePage = document.querySelector('.wholePage');
+const aPropertyAll = document.querySelector(' body a');
 
+const leftArrow = document.querySelectorAll('.leftArrow');
+const rightArrow = document.querySelectorAll('.rightArrow');
 
-const numbers = [1, 2, 3, 4];
+changeMode = () => {
+    darkMode.classList.toggle('lightMode');
+    wholePage.classList.toggle('dark');
+    leftArrow.classList.toggle('leftArrowDark');
+    rightArrow.classList.toggle('rightArrowDark');
+    aPropertyAll.classList.toggle('aDark');
 
-const newNumbers = numbers.forEach(e => console.log(e * 5));
-
-const colors = ["blue"];
-
-colors.unshift("red");
-
-colors.push("green");
-
-for(let i =0; i < colors.length; i++) {
-	//console.log(`My favorite color is ${colors[i].toUpperCase()}.`)
-	console.log(`My favorite color is ${colors[i][0].toUpperCase() + colors[i].slice(1)} .`)
 };
 
-const cars = "Audi, Toyota, Mercedes, Ford";
+darkMode.addEventListener('click', changeMode);
 
-const carsArray = cars.split(', ');
+//SHOW FORM CREATEACCOUNT AND LOGIN
 
-console.log(carsArray);
+const signIn = document.querySelector('.signIn');
+const signOut = document.querySelector('.signOut');
+const login = document.querySelector('.login');
+const createAccount = document.querySelector('.createAccount');
 
-console.log(carsArray.length > 3 ? "It's ok." : "It isn't ok...");
+const showLoginForm = () => login.style.display = 'grid';
+const showCreateAccountForm = () => createAccount.style.display = 'grid';
+
+signIn.addEventListener('click', showLoginForm);
+signOut.addEventListener('click', showCreateAccountForm);
+
+//SHOW MENU
+
+const hamburgerMenu = document.querySelector('.hamburgerMenu');
+const nav = document.querySelector('nav ul');
+
+const showMenu = () => nav.style.display = 'block';
+
+hamburgerMenu.addEventListener('click', showMenu);
+
+//DYNAMIC SHOW LI IN NAV
+
+// const account = document.querySelector('.account');
+// const logOut = document.querySelector('.logOut');
+//
+//
+// const changeNavMenu = () => {
+//     // signIn.innerHTML = '<li class="account, menu"><a href="/Portal_for_artists/PL/account.html">Konto</a></li>';
+//     // signOut.innerHTML = '<li class="logOut, menu"><a href="#">Wyloguj się</a></li>';
+//     signOut.remove();
+// };
+//
+// loginSubmit.addEventListener('click', changeNavMenu);
+//
+// createAccountSubmit.addEventListener('click', changeNavMenu);
+
+//SHOW AND CHANGE LANGUAGE
+
+const changeLanguage = document.querySelector('.changeLanguage a')
+const languages = document.querySelector('#languages');
+
+const showLanguages = () => languages.style.display = 'block';
+const hideLanguages = () => languages.style.display = 'none';
+
+changeLanguage.addEventListener('click', showLanguages);
+wholePage.addEventListener('click', hideLanguages);
 
 
-if (carsArray.includes("Audi")) {
-	carsArray.push("Fiat")
-} else carsArray.pop();
-
-for (let i = 0; i < carsArray.length; i++) {
-	console.log(carsArray[i].toUpperCase())
-}
