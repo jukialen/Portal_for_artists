@@ -1,15 +1,15 @@
 //DARK MODE
 
 const darkMode = document.querySelector('.darkMode');
-const wholePage = document.querySelector('.wholePage');
-const aPropertyAll = document.querySelector(' body a');
+const workspace = document.querySelector('.workspace');
+const aPropertyAll = document.querySelectorAll('body a');
 
 const leftArrow = document.querySelectorAll('.leftArrow');
 const rightArrow = document.querySelectorAll('.rightArrow');
 
 changeMode = () => {
     darkMode.classList.toggle('lightMode');
-    wholePage.classList.toggle('dark');
+    workspace.classList.toggle('dark');
     leftArrow.classList.toggle('leftArrowDark');
     rightArrow.classList.toggle('rightArrowDark');
     aPropertyAll.classList.toggle('aDark');
@@ -34,11 +34,14 @@ signOut.addEventListener('click', showCreateAccountForm);
 //SHOW MENU
 
 const hamburgerMenu = document.querySelector('.hamburgerMenu');
-const nav = document.querySelector('nav ul');
+const nav = document.querySelector('nav');
 
 const showMenu = () => nav.style.display = 'block';
+const hideMenu = () => nav.style.display = 'none';
 
 hamburgerMenu.addEventListener('click', showMenu);
+workspace.addEventListener('click', hideMenu);
+
 
 //DYNAMIC SHOW LI IN NAV
 
@@ -64,7 +67,7 @@ const languages = document.querySelector('#languages');
 const showLanguages = () => languages.style.display = 'block';
 const hideLanguages = () => languages.style.display = 'none';
 
-changeLanguage.addEventListener('click', showLanguages);
-wholePage.addEventListener('click', hideLanguages);
+changeLanguage.addEventListener('mouseover', showLanguages);
+workspace.addEventListener('mouseout', hideLanguages);
 
 
