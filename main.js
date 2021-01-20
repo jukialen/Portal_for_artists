@@ -1,7 +1,7 @@
 //DARK MODE
 
 const darkMode = document.querySelector('.darkMode');
-const workspace = document.querySelector('.workspace');
+const wholePage = document.querySelector('.wholePage');
 const aPropertyAll = document.querySelectorAll('body a');
 
 const leftArrow = document.querySelectorAll('.leftArrow');
@@ -9,7 +9,7 @@ const rightArrow = document.querySelectorAll('.rightArrow');
 
 changeMode = () => {
     darkMode.classList.toggle('lightMode');
-    workspace.classList.toggle('dark');
+    wholePage.classList.toggle('dark');
     leftArrow.classList.toggle('leftArrowDark');
     rightArrow.classList.toggle('rightArrowDark');
     aPropertyAll.classList.toggle('aDark');
@@ -40,7 +40,7 @@ const showMenu = () => nav.style.display = 'block';
 const hideMenu = () => nav.style.display = 'none';
 
 hamburgerMenu.addEventListener('click', showMenu);
-workspace.addEventListener('click', hideMenu);
+wholePage.addEventListener('click', hideMenu);
 
 
 //DYNAMIC SHOW LI IN NAV
@@ -68,6 +68,6 @@ const showLanguages = () => languages.style.display = 'block';
 const hideLanguages = () => languages.style.display = 'none';
 
 changeLanguage.addEventListener('mouseover', showLanguages);
-workspace.addEventListener('mouseout', hideLanguages);
+wholePage.addEventListener('mouseout', hideLanguages);
 
 
