@@ -35,9 +35,9 @@ a:active{
     color: #12FFF8;
 }
 
-a:visited{
-    color: #FF7F38;
-}
+/*a:visited{*/
+/*    color: #FF7F38;*/
+/*}*/
 
 a:focus {
     color: #FFD405;
@@ -363,6 +363,12 @@ footer div {
     float: left;
 }
 
+label p {
+    width: 50%;
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+
 .userName label, .aboutMe label {
     margin-bottom: 1rem;
 }
@@ -390,7 +396,7 @@ footer div {
 .createAccount, .login {
     position: absolute;
     grid-template-columns: 1fr;
-    top: 8rem;
+    top: -34rem;
     right: 5%;
     background-color: #1E90FF;
     border: 0.5rem solid black;
@@ -449,22 +455,30 @@ footer div {
     margin: 1rem 4rem 1rem 10rem;
 }
 
+
 /*LANGUAGES*/
-#languages {
-    width: 10%;
-    height: 1rem;
-    display: none;
+
+.languages {
+    width: 15rem;
+    height: 4rem;
     position: absolute;
+    font-size: 1.5rem;
     bottom: 4rem;
-    right: 5%;
+    right: 110vw;
 }
 
-#languages button {
-    width: 5rem;
+.languages a {
+    width: 6rem;
+    display: inline-block;
     border: #12FFF8;
     border-radius: 10%;
     background-color: #12FFF8;
+    padding: 0.5rem;
+    cursor: pointer;
 }
+
+
+/*LIGHT MODE*/
 
 .lightMode {
     width: 20rem;
@@ -496,10 +510,11 @@ footer div {
     }
 
     nav {
-        display: none;
+        width: 17rem;
+        display: block;
         position: absolute;
         top: 5rem;
-        right: 0;
+        right: -17rem;
         margin: 0;
     }
 
@@ -699,10 +714,11 @@ footer div {
     }
 
     nav {
-        display: none;
+        width: 17rem;
+        display: block;
         position: absolute;
         top: 5rem;
-        right: 0;
+        right: -17rem;
         margin: 0;
     }
 
@@ -802,11 +818,6 @@ footer div {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    /*.accountData form {*/
-    /*    width: 80vw;*/
-    /*    margin: 0 10%;*/
-    /*}*/
-
     .accountData input, .accountData button {
         width: 80%;
         margin-bottom: 2rem;
@@ -892,7 +903,7 @@ footer div {
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .wholePage {
-        width: 125vw;
+        width: 100vw;
     }
 
     header {
@@ -963,7 +974,7 @@ footer div {
     /*SUBPAGE ACCOUNT*/
 
     .accountH2 {
-        width: 100vw;
+        width: 80vw;
         height: 4rem;
     }
 
@@ -978,31 +989,31 @@ footer div {
     }
 
     .accountData {
-        width: 100vw;
+        width: 80vw;
         margin: 3rem auto;
         grid-template-columns: repeat(3, 1fr);
     }
 
     .accountData input, .accountData button {
-        width: 60%;
+        width: 70%;
         margin-bottom: 2rem;
     }
 
     .userGalleryInAccount {
-        width: 100vw;
+        width: 80vw;
     }
 
     .userPhotos, .likePhotos {
-        width: 100vw;
+        width: 80vw;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        margin: 1.5rem 0;
+        margin: 1.5rem auto;
     }
 
     .userPhotos .photos, .likePhotos .photos {
-        width: 23rem;
-        height: 23rem;
-        margin: 3rem auto;
+        width: 16rem;
+        height: 16rem;
+        margin: 2rem auto;
         background-color: #1E90FF;
     }
 
@@ -1230,6 +1241,7 @@ footer div {
     }
 }
 
+
 /*DARK MODE*/
 
 .aDark {
@@ -1242,8 +1254,8 @@ footer div {
 }
 
 .leftArrowDark {
-    width: 5rem;
-    height: 5rem;
+    width: 10rem;
+    height: 10rem;
     background-repeat: no-repeat;
     display: inline-block;
     position: absolute;
@@ -1261,4 +1273,21 @@ footer div {
     float: right;
     right: 0;
     background-image: url("Icons/right arrow dark mode.svg");
+}
+
+/*MENU*/
+
+.activeMenu {
+    right: 0;
+}
+
+.activeFormMenu {
+    display: grid;
+    top: 8rem;
+}
+
+/*LANGUAGES*/
+
+.showLanguages {
+    right: 5%;
 }

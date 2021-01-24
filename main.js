@@ -2,17 +2,17 @@
 
 const darkMode = document.querySelector('.darkMode');
 const wholePage = document.querySelector('.wholePage');
-const aPropertyAll = document.querySelectorAll('body a');
+const aPropertyAll = document.getElementsByTagName('a');
 
-const leftArrow = document.querySelectorAll('.leftArrow');
-const rightArrow = document.querySelectorAll('.rightArrow');
+const leftArrow = document.getElementsByClassName('leftArrow');
+const rightArrow = document.getElementsByClassName('rightArrow');
 
 changeMode = () => {
     darkMode.classList.toggle('lightMode');
     wholePage.classList.toggle('dark');
-    leftArrow.classList.toggle('leftArrowDark');
-    rightArrow.classList.toggle('rightArrowDark');
-    aPropertyAll.classList.toggle('aDark');
+    // leftArrow.classList.toggle('leftArrowDark');
+    // rightArrow.classList.toggle('rightArrowDark');
+    // aPropertyAll.classList.toggle('aDark');
 
 };
 
@@ -25,8 +25,8 @@ const signOut = document.querySelector('.signOut');
 const login = document.querySelector('.login');
 const createAccount = document.querySelector('.createAccount');
 
-const showLoginForm = () => login.style.display = 'grid';
-const showCreateAccountForm = () => createAccount.style.display = 'grid';
+const showLoginForm = () => login.classList.toggle('activeFormMenu');
+const showCreateAccountForm = () => createAccount.classList.toggle('activeFormMenu');
 
 signIn.addEventListener('click', showLoginForm);
 signOut.addEventListener('click', showCreateAccountForm);
@@ -36,11 +36,9 @@ signOut.addEventListener('click', showCreateAccountForm);
 const hamburgerMenu = document.querySelector('.hamburgerMenu');
 const nav = document.querySelector('nav');
 
-const showMenu = () => nav.style.display = 'block';
-const hideMenu = () => nav.style.display = 'none';
+const showMenu = () => nav.classList.toggle('activeMenu');
 
 hamburgerMenu.addEventListener('click', showMenu);
-wholePage.addEventListener('click', hideMenu);
 
 
 //DYNAMIC SHOW LI IN NAV
@@ -62,12 +60,10 @@ wholePage.addEventListener('click', hideMenu);
 //SHOW AND CHANGE LANGUAGE
 
 const changeLanguage = document.querySelector('.changeLanguage a')
-const languages = document.querySelector('#languages');
+const languages = document.querySelector('.languages');
 
-const showLanguages = () => languages.style.display = 'block';
-const hideLanguages = () => languages.style.display = 'none';
+const showLanguages = () => languages.classList.toggle('showLanguages');
 
-changeLanguage.addEventListener('mouseover', showLanguages);
-wholePage.addEventListener('mouseout', hideLanguages);
+changeLanguage.addEventListener('click', showLanguages);
 
 
