@@ -35,9 +35,9 @@ a:active{
     color: #12FFF8;
 }
 
-/*a:visited{*/
-/*    color: #FF7F38;*/
-/*}*/
+a:visited{
+    color: #FF7F38;
+}
 
 a:focus {
     color: #FFD405;
