@@ -20,16 +20,16 @@ darkMode.addEventListener('click', changeMode);
 
 //SHOW FORM CREATEACCOUNT AND LOGIN
 
-const signIn = document.querySelector('.signIn');
-const signOut = document.querySelector('.signOut');
+const linkSignIn = document.querySelector('.signIn');
+const linkSignOut = document.querySelector('.signOut');
 const login = document.querySelector('.login');
 const createAccount = document.querySelector('.createAccount');
 
 const showLoginForm = () => login.classList.toggle('activeFormMenu');
 const showCreateAccountForm = () => createAccount.classList.toggle('activeFormMenu');
 
-signIn.addEventListener('click', showLoginForm);
-signOut.addEventListener('click', showCreateAccountForm);
+linkSignIn.addEventListener('click', showLoginForm);
+linkSignOut.addEventListener('click', showCreateAccountForm);
 
 //SHOW MENU
 
@@ -44,10 +44,11 @@ hamburgerMenu.addEventListener('click', showMenu);
 //REPLACE LI MENU AND REMOVE FORM LOGIN AND REGISTRATION
 
 const ulNavbar = document.querySelector('nav ul');
+const buttonLogin = document.querySelector('.login button')
+const buttonCreateAccount = document.querySelector('.createAccount button')
 
-
-function replaceMenu() {
-    if (signIn.classList.contains('signIn') && signOut.classList.contains('signOut')) {
+const replaceMenu = () => {
+    if (linkSignIn.classList.contains('signIn') && linkSignOut.classList.contains('signOut')) {
         const accountNavbar = document.createElement('li');
         accountNavbar.classList.add('menu');
         ulNavbar.appendChild(accountNavbar);
@@ -68,34 +69,43 @@ function replaceMenu() {
         linkLogOut.textContent = 'Wyloguj';
         logOutNavbar.appendChild(linkLogOut);
 
-        signIn.parentElement.remove();
-        signOut.parentElement.remove();
+        linkSignIn.parentElement.remove();
+        linkSignOut.parentElement.remove();
 
         login.style.display = 'none';
         createAccount.style.display = 'none';
+
+
+        // this.aliasLogOut = linkLogOut;
+        // this.aliasAccount = linkAccount;
+
     }
+
 }
 
 
-createAccount.addEventListener('click', replaceMenu);
-login.addEventListener('click', replaceMenu);
+buttonCreateAccount.addEventListener('click', replaceMenu);
+buttonLogin.addEventListener('click', replaceMenu);
+
+
 
 //LOGOFF MENU
 
-const linkAccount = document.querySelector('.account');
-const linkLogOut = document.querySelector('.logOut');
 
-function logoff() {
+const logoff = () => {
     if (linkAccount.classList.contains('account') && linkLogOut.classList.contains('logOut')) {
+
+        // this.linkAccount = aliasAccount;
+        // this.linkLogOut = aliasLogOut;
 
         const signInNavbar = document.createElement('li');
         signInNavbar.classList.add('menu');
         ulNavbar.appendChild(signInNavbar);
 
         const linkSignIn = document.createElement('a');
-        linkSighIn.classList.add('signIn');
-        linkSighIn.setAttribute('href', '#');
-        signIn.textContent = 'Zaloguj się';
+        linkSignIn.classList.add('signIn');
+        linkSignIn.setAttribute('href', '#');
+        linkSignIn.textContent = 'Zaloguj się';
         signInNavbar.appendChild(linkSignIn);
 
         const signOutNavbar = document.createElement('li');
@@ -103,10 +113,16 @@ function logoff() {
         ulNavbar.appendChild(signOutNavbar);
 
         const linkSignOut = document.createElement('a');
-        linkSighOut.classList.add('signIn');
-        linkSighOut.setAttribute('href', '#');
-        signOut.textContent = 'Zaloguj się';
+        linkSignOut.classList.add('signOut');
+        linkSignOut.setAttribute('href', '#');
+        linkSignOut.textContent = 'Zaloguj się';
         signOutNavbar.appendChild(linkSignOut);
+
+        ulNavbar.addEventListener('click', e => {
+            if (e.target.tagName === 'LI' && e.target.classList.contains('.logOut')) {
+                linkLogOut.addEventListener('click', logoff);
+            }
+        });
 
         linkAccount.parentElement.remove();
         linkLogOut.parentElement.remove();
@@ -117,12 +133,12 @@ function logoff() {
     }
 }
 
-const linkSighIn = document.querySelector('.signIn');
-const linkSighOut = document.querySelector('.signOut');
-
-
-linkLogOut.addEventListener('click', logoff);
-
+// if (aPropertyAll) {
+//     const linkLogOut = document.querySelector('.logOut');
+//     linkLogOut.addEventListener('click', logoff);
+// } else {
+//     console.warn(`There is no element with class logOut`);
+// }
 
 //SHOW AND CHANGE LANGUAGE
 
