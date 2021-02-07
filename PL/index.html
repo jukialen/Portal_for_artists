@@ -230,10 +230,14 @@
             <input type="text" id="giveName" placeholder="Podaj imię" required="required">
         </div>
 
+        <p class="unCorrectName"></p>
+
         <div>
-            <label for="pseudonym">Pseudomin:</label>
-            <input type="text" id="pseudonym" placeholder="Podaj pseudomin" required="required">
+            <label for="userName">Nazwa użytkownika:</label>
+            <input type="text" id="userName" placeholder="Podaj nazwę użytkownika" required="required">
         </div>
+
+        <p class="unCorrectUserName"></p>
 
         <div>
             <label for="email">E-mail:</label>
@@ -245,14 +249,16 @@
             <input type="password" id="createPassword" placeholder="Podaj hasło" required="required">
         </div>
 
-        <button type="submit">Zarejestruj się</button>
+        <p class="unCorrectPassword"></p>
+
+        <button type="submit" id="submitCreatedAccount">Zarejestruj się</button>
     </form>
 
     <form class="login">
         <h2>Zaloguj się!</h2>
 
         <label>Login:
-            <input type="text" placeholder="Nazwa użytkownika/login" required="required">
+            <input type="text" placeholder="Nazwa użytkownika" required="required">
         </label>
 
         <label>Hasło:

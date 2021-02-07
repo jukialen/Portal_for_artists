@@ -396,11 +396,19 @@ label p {
 .createAccount, .login {
     position: absolute;
     grid-template-columns: 1fr;
-    top: -34rem;
-    right: 5%;
+    right: 0;
     background-color: #1E90FF;
-    border: 0.5rem solid black;
+    border-bottom: 0.5rem inset #6BB5FF;
+    border-left: 0.5rem inset #6BB5FF;
+    border-right: 0.5rem inset #6BB5FF;
     z-index: 999;
+}
+
+.createAccount p, .login p {
+    width: 30rem;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    line-height: 1.4;
 }
 
 .createAccount {
@@ -426,7 +434,7 @@ label p {
     width: min-content;
     position: absolute;
     right: 3rem;
-
+    border: none;
 }
 
 .createAccount button {
@@ -680,6 +688,7 @@ label p {
 
     .createAccount input {
         width: 15rem;
+        border: none;
     }
 
     .login label {
@@ -885,6 +894,7 @@ label p {
 
     .createAccount input {
         width: 15rem;
+        border: none;
     }
 
     .login label {
@@ -1283,7 +1293,7 @@ label p {
 
 .activeFormMenu {
     display: grid;
-    top: 8rem;
+    top: 5rem;
 }
 
 /*LANGUAGES*/
