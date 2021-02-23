@@ -1,0 +1,107 @@
+.wrapper {
+    width: 100%;
+    max-width: 964px;
+    position: relative;
+    margin: 10rem auto;
+}
+
+.carousel {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    height: 0;
+}
+
+.leftArrow,
+.rightArrow {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+}
+
+.leftArrow {
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    display: flex;
+    background-image: url("Icons/leftArrowLightMode.svg");
+}
+
+.rightArrow {
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    background-image: url("Icons/rightArrowLightMode.svg");
+}
+
+.content {
+    display: grid;
+    grid-gap: 2rem;
+    grid-auto-flow: column;
+    margin: auto;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+
+.content article {
+    background-color: #008B8B;
+}
+
+.item {
+    width: 25rem;
+    height: 25rem;
+    background: green;
+    display: block;
+}
+
+.authorName {
+    width: 12.5rem;
+    height: 2rem;
+    float: left;
+    text-align: left;
+    margin: 0.5rem 0 0.5rem 0.5rem;
+    padding: .5rem 0;
+}
+
+.shareOptions {
+    width: 12rem;
+    height: 2.5rem;
+    float: right;
+    display: flex;
+}
+
+.firstShareIcon, .secondShareIcon, .thirdShareIcon, .fourthShareIcon {
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    margin: .5rem .25rem;
+    background-repeat: no-repeat;
+    flex: 1;
+}
+
+.firstShareIcon {
+    background-image: url("Icons/facebook.svg");
+}
+
+.secondShareIcon {
+    background-image: url("Icons/twitter.svg");
+}
+
+.thirdShareIcon {
+    background-image: url("Icons/discord.svg");
+
+}
+
+.fourthShareIcon {
+    background-image: url("Icons/copy.svg");
+}
