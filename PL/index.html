@@ -37,7 +37,7 @@
         </header>
 
         <aside id="topMenu" class="leftMenu">
-
+            
             <h3>Kategorie</h3>
 
             <div class="category">
@@ -332,18 +332,18 @@
         <h2>Zarejestruj się za darmo!</h2>
 
         <div>
-            <label for="giveName">Imię:</label>
-            <input type="text" id="giveName" placeholder="Podaj imię" required="required">
+            <label for="createName">Imię:</label>
+            <input type="text" id="createName" placeholder="Podaj imię" required="required">
         </div>
 
-        <p class="unCorrectName"></p>
+        <p id="unCorrectCorrectName"></p>
 
         <div>
             <label for="userName">Nazwa użytkownika:</label>
             <input type="text" id="userName" placeholder="Podaj nazwę użytkownika" required="required">
         </div>
 
-        <p class="unCorrectUserName"></p>
+        <p id="unCorrectCreateUserName"></p>
 
         <div>
             <label for="email">E-mail:</label>
@@ -355,7 +355,7 @@
             <input type="password" id="createPassword" placeholder="Podaj hasło" required="required">
         </div>
 
-        <p class="unCorrectPassword"></p>
+        <p id="unCorrectCreatePassword"></p>
 
         <button type="submit" id="submitCreatedAccount">Zarejestruj się</button>
     </form>
@@ -364,11 +364,13 @@
         <h2>Zaloguj się!</h2>
 
         <label>Login:
-            <input type="text" placeholder="Nazwa użytkownika" required="required">
+            <input type="text" id="loginUserName" placeholder="Nazwa użytkownika" required="required">
         </label>
 
+
+
         <label>Hasło:
-            <input type="password" placeholder="Hasło" required="required">
+            <input type="password" id="loginPassword" placeholder="Hasło" required="required">
         </label>
 
         <button type="submit">Zaloguj się</button>

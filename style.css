@@ -50,7 +50,7 @@ a:focus {
 }
 
 header {
-    width: 100%;
+    width: 100vw;
     height: 5rem;
     position: fixed;
     display: flex;
@@ -106,22 +106,50 @@ li {
     border: none;
 }
 
+aside, aside::before {
+    transition: transform .3s .1s ease-in-out;
+}
+
 aside {
-    width: 12%;
-    float: left;
-    margin-top: 4rem;
+    width: 30rem;
+    position: absolute;
+    top: 5rem;
     padding: 1rem 0 0;
     background-color: #8C230E;
+    z-index: 1;
 }
 
 aside h3 {
     padding-top: 3rem;
 }
 
+.aside--active {
+    transform: translateX(0);
+}
+
+aside::before {
+    content: '<';
+    width: 2rem;
+    height: 5rem;
+    display: none;
+    margin-left: 26rem;
+    font-size: 2rem;
+    line-height: 2;
+    background-color: #6BB5FF;
+    transform: translateX(3rem);
+    cursor: pointer;
+
+}
+
 .category {
-    height: 210vh;
+    height: 100vh;
     font-size: 1.5rem;
+    line-height: 1.6;
     padding-top: 3rem;
+}
+
+.category li a {
+    line-height: 2;
 }
 
 .contact {
@@ -132,15 +160,14 @@ aside h3 {
 } 
 
 .workspace {
-    width: 88%;
-    padding-top: 8rem;
-    float: left;
+    width: 100vw;
+    padding: 8rem 0;
+    margin: 0 auto;
 }
 
 .topAmongUsers, .Subscribed {
     width: 80rem;
-    text-align: left;
-    clear: both;
+    text-align: center;
     margin: 3rem auto 5rem auto;
 }
 
@@ -431,7 +458,7 @@ label p {
 
     nav {
         width: 17rem;
-        display: block;
+        display: grid;
         position: absolute;
         top: 5rem;
         right: -17rem;
@@ -447,23 +474,21 @@ label p {
     }
 
     aside {
-        width: 100vw;
-        padding: 1rem 0 0;
+        transform: translateX(-30rem);
+    }
+
+    aside::before {
+        display: inline-block;
+        transform: translateX(3rem);
+    }
+
+    aside h3 {
+        padding: 0;
     }
 
     .category {
-        height: 22rem;
         font-size: 1.7rem;
         margin: 0 auto;
-    }
-
-    .category li a {
-        margin: 3px 7px;
-        padding: 1px 5px;
-        line-height: 1.7;
-        float: left;
-        border: 2px inset orange;
-        border-radius: 25%;
     }
 
     .workspace {
@@ -633,36 +658,16 @@ label p {
     }
 
     aside {
-        width: 100vw;
-        padding: 1rem 0 0;
+        transform: translateX(-30rem);
     }
 
-    .category {
-        height: 20rem;
-        font-size: 1.7rem;
-        margin: 0 auto;
+    aside::before {
+        display: inline-block;
+        transform: translateX(3rem);
     }
 
-    .category li a {
-        margin: 5px;
-        padding: 3px 4px;
-        line-height: 1.7;
-        float: left;
-        border: 2px inset orange;
-        border-radius: 25%;
-    }
-
-    .contact {
-        width: 100vw;
-        height: 4rem;
-        padding-top: 1rem;
-        background: darkgoldenrod;
-    }
-
-    .workspace {
-        width: 100vw;
-        padding: 3rem 0;
-        margin-bottom: 3rem;
+    aside h3 {
+        padding: 0;
     }
 
     .topAmongUsers, .Subscribed {
@@ -791,7 +796,7 @@ label p {
     }
 
     .title {
-        width: 30%;
+        width: 40%;
         margin: auto 0;
     }
 
@@ -809,19 +814,20 @@ label p {
     }
 
     aside {
-        width: 20%;
+        transform: translateX(-30rem);
     }
 
-    .category {
-        height: 250vh;
+    aside::before {
+        display: inline-block;
+        transform: translateX(3rem);
     }
 
     .workspace {
-        width: 80%;
+        width: 85vw;
     }
 
     .topAmongUsers, .Subscribed {
-        width: 100vw;
+        width: 85vw;
         text-align: center;
     }
 
@@ -919,9 +925,6 @@ label p {
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
-    .wholePage {
-        width: 100vw;
-    }
 
     header {
         padding: 0;
@@ -943,16 +946,12 @@ label p {
     }
 
     .menu {
-        width: 25%;
-        margin: 1rem 0;
-    }
-
-    aside {
-        width: 18%;
+        width: 15rem;
+        margin: 1rem;
     }
 
     .category {
-        height: 250vh;
+        height: 100vh;
     }
 
     .category li {
@@ -960,7 +959,19 @@ label p {
     }
 
     .workspace {
-        width: 82%;
+        width: 64%;
+        margin: 0 32% 0;
+    }
+
+    .wrapper {
+        margin: 0;
+    }
+
+    .content {
+    display: grid;
+    margin: auto;
+    box-sizing: border-box;
+    font-size: 1.2rem;
     }
 
     footer div {
@@ -1051,11 +1062,13 @@ label p {
     }
 
     .category {
-        height: 225vh;
+        height: 100vh;
     }
 
     .workspace {
-        width: 86%;
+        width: 70vw;
+        padding: 8rem 0;
+        margin: 0 20vw auto;
     }
 
     .accountH2 {
