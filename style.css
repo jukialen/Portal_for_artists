@@ -959,8 +959,8 @@ label p {
     }
 
     .workspace {
-        width: 64%;
-        margin: 0 32% 0;
+        width: 68%;
+        margin: 0 32% 0 31%;
     }
 
     .wrapper {
@@ -980,20 +980,20 @@ label p {
         font-size: 1.5rem;
     }
 
-    /*SUBPAGE ACCOUNT*/
-
     .topAmongUsers, .Subscribed {
         width: 100%;
         text-align: center;
     }
 
+    /*SUBPAGE ACCOUNT*/
+
     .accountH2 {
-        width: 82vw;
+        width: 68vw;
         height: 4rem;
     }
 
     .accountMenu {
-        width: 55vw;
+        width: 48vw;
         margin: 0 15%;
     }
 
@@ -1003,24 +1003,24 @@ label p {
     }
 
     .accountData {
-        width: 82vw;
+        width: 67vw;
         margin: 3rem auto;
         grid-template-columns: repeat(3, 1fr);
     }
 
     .accountData input, .accountData button {
-        width: 60%;
-        margin-bottom: 2rem;
+        width: 15rem;
+        margin: 0 2rem 2rem;
     }
 
     .userGalleryInAccount {
-        width: 82vw;
+        width: 68vw;
     }
 
     .userPhotos, .likePhotos {
-        width: 82vw;
+        width: 100%;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         margin: 1.5rem 0;
         padding: 3%;
     }
@@ -1066,7 +1066,7 @@ label p {
     }
 
     .workspace {
-        width: 70vw;
+        width: 75vw;
         padding: 8rem 0;
         margin: 0 20vw auto;
     }
@@ -1076,7 +1076,7 @@ label p {
     }
 
     .accountMenu {
-        margin: 0 25% 3rem 25%;
+        margin: 4rem 25%;
     }
 
     .accountData {
@@ -1084,11 +1084,12 @@ label p {
     }
 
     .accountData input, .accountData button {
+        width: 17rem;
         margin-bottom: 2rem;
     }
 
     .userPhotos, .likePhotos {
-        width: 86%;
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         margin: 1.5rem auto;

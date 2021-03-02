@@ -99,7 +99,7 @@ const prepareDOMElements = () => {
     $languages = document.querySelector('.languages');
 
     $aside = document.querySelector('aside');
-    $asideBefore = document.querySelector('aside::before')
+    // $asideBefore = document.querySelector('aside::before')
 };
 
 const prepareDOMEvents = () => {
