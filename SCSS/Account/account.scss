@@ -1,0 +1,432 @@
+@use "../variables" as *;
+
+.account__h2 {
+  width: 50%;
+  height: 4rem;
+  margin: 3rem 0;
+}
+
+.account__menu {
+  width: 45%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 20% 3rem 20%;
+
+  & div {
+    height: 4rem;
+    margin: 0 2rem;
+    font-size: 2rem;
+
+    &:first-child{
+      border-bottom: 0.3rem inset black;
+    }
+
+    &:hover{
+      border-bottom: 0.3rem inset #1E90FF;
+    }
+
+    &:active{
+      border-bottom: 0.3rem inset #12FFF8;
+    }
+
+    &:focus{
+      border-bottom: 0.3rem inset #FFA205;
+    }
+
+    &:link {
+      border-bottom: 0.3rem inset #FF38D4;
+    }
+
+    &:visited{
+      border-bottom: 0.3rem inset #0582FF;
+    }
+  }
+}
+
+.account__data {
+  width: 60%;
+  margin: 3rem 18%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+
+  & div {
+    margin: 3rem 1rem;
+  }
+
+  & label {
+    width: 100%;
+    height: 3rem;
+    display: inline-block;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  & input, & button {
+    width: 50%;
+    height: 3rem;
+    margin-bottom: 1rem;
+    flex-flow: column;
+    text-align: center;
+    text-align-all: center;
+  }
+}
+
+.user__gallery__in__account {
+  font-size: 2rem;
+
+  & em {
+    display: inline-block;
+    margin: 3rem auto;
+  }
+}
+
+.user__photos, .like__photos {
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1.5rem 18%;
+
+  & .photos, & .photos {
+    width: 25rem;
+    height: 25rem;
+    margin: 1rem auto;
+    background-color: #1E90FF;
+  }
+}
+
+.profile {
+  width: 50%;
+  height: 30rem;
+  margin: 3rem auto;
+  font-size: 2rem;
+}
+
+.photo__profile {
+  width: 10rem;
+  height: 10rem;
+  background-color: #12FFF8;
+  margin: 3rem;
+}
+
+.user__name, .about__me {
+  width: 25%;
+  margin: 3rem;
+  float: left;
+
+  & label, & label {
+    margin-bottom: 1rem;
+  }
+
+  & input, & input {
+    margin-top: 1rem;
+  }
+}
+
+label p {
+  width: 50%;
+  height: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 320px) and (max-width: 424px) {
+
+  .account__h2 {
+    width: 100vw;
+    height: 4rem;
+  }
+
+  .account__menu {
+    width: 96%;
+    margin: 0 2%;
+
+    & div {
+      height: 4rem;
+      margin: 0 1rem;
+    }
+  }
+
+  .account__data {
+    width: 90%;
+    margin: 3rem auto;
+    grid-template-columns: repeat(1, 1fr);
+
+    & input, & button {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .user__gallery__in__account {
+    width: 100vw;
+  }
+
+  .user__photos, .like__photos {
+    width: 96vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1.5rem 2%;
+
+    & .photos, & .photos {
+      width: 87%;
+      height: 14rem;
+      margin: 7%;
+      background-color: #1E90FF;
+    }
+  }
+
+  .profile {
+    width: 85%;
+    margin: 6rem 3rem 1rem;
+    font-size: 2rem;
+  }
+
+  .photo__profile {
+    width: 10rem;
+    height: 10rem;
+    background-color: #12FFF8;
+    margin: 3rem;
+  }
+
+  .user__name, .about__me {
+    width: 80%;
+
+    & label, & label {
+      width: 15rem;
+      margin: 2rem auto;
+    }
+
+    & input, & input {
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+
+  .account__h2 {
+    width: 100vw;
+    height: 4rem;
+  }
+
+  .account__menu {
+    width: 100vw;
+    margin: 0;
+
+    & div {
+      height: 4rem;
+      margin: 0 1rem;
+    }
+  }
+
+  .account__data {
+    width: 100vw;
+    margin: 3rem 0;
+    grid-template-columns: repeat(3, 1fr);
+
+    & input, & button {
+      width: 80%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .user__gallery__in__account {
+    width: 100vw;
+  }
+
+  .user__photos, .like__photos {
+    width: 96%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1.5rem 2%;
+
+    & .photos, & .photos {
+      width: 83%;
+      height: 20rem;
+      margin: 2rem;
+      background-color: #1E90FF;
+    }
+  }
+
+  .profile {
+    margin: 6rem 3rem 1rem;
+    font-size: 2rem;
+  }
+
+  .photo__profile {
+    width: 10rem;
+    height: 10rem;
+    background-color: #12FFF8;
+    margin: 3rem;
+  }
+
+  .user__name, .about__me {
+    width: 85%;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .account__h2 {
+    width: 80vw;
+    height: 4rem;
+  }
+
+  .account__menu {
+    width: 55vw;
+    margin: 0 12%;
+
+    & div {
+      height: 4rem;
+      margin: 0 3rem;
+    }
+  }
+
+  .account__data {
+    width: 80vw;
+    margin: 3rem auto;
+    grid-template-columns: repeat(3, 1fr);
+
+    & input, & button {
+      width: 70%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .user__gallery__in__account {
+    width: 80vw;
+  }
+
+  .user__photos, .like__photos {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1.5rem auto;
+
+    & .photos, & .photos {
+      width: 16rem;
+      height: 16rem;
+      margin: 2rem auto;
+      background-color: #1E90FF;
+    }
+  }
+
+  .profile {
+    height: 40rem;
+    margin: 6rem 3rem 1rem;
+    font-size: 2rem;
+  }
+
+  .photo__profile {
+    width: 10rem;
+    height: 10rem;
+    background-color: #12FFF8;
+    margin: 3rem;
+  }
+
+  .user__name, .about__me {
+    width: 85%;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .account__h2 {
+    width: 68vw;
+    height: 4rem;
+  }
+
+  .account__menu {
+    width: 48vw;
+    margin: 0 15%;
+
+    & div {
+      height: 4rem;
+      margin: 0 1rem;
+    }
+  }
+
+  .account__data {
+    width: 67vw;
+    margin: 3rem auto;
+    grid-template-columns: repeat(3, 1fr);
+
+    & input, & button {
+      width: 15rem;
+      margin: 0 2rem 2rem;
+    }
+  }
+
+  .user__gallery__in__account {
+    width: 68vw;
+  }
+
+  .user__photos, .like__photos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1.5rem 0;
+    padding: 3%;
+
+    & .photos, & .photos {
+      width: 19rem;
+      height: 19rem;
+      margin: 3rem auto;
+      background-color: #1E90FF;
+    }
+  }
+
+  .profile {
+    margin: 6rem 6rem 1rem;
+    font-size: 2rem;
+  }
+
+  .photo__profile {
+    width: 10rem;
+    height: 10rem;
+    background-color: #12FFF8;
+    margin: 3rem;
+  }
+
+  .user__name, .about__me {
+    width: 85%;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .account__h2 {
+    width: 100%;
+  }
+
+  .account__menu {
+    margin: 4rem 25%;
+  }
+
+  .account__data {
+    margin: 3rem auto;
+
+    & input, & button {
+      width: 17rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .user__photos, .like__photos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 1.5rem auto;
+
+    & .photos, & .photos {
+      margin: 3rem auto;
+    }
+  }
+
+  .profile {
+    width: 86%;
+    margin: 8rem auto;
+  }
+}

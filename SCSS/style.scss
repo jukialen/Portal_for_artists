@@ -1,0 +1,183 @@
+@use 'reset.scss';
+@use 'homeGaleries';
+@use 'header';
+@use "aside";
+@use "workspace";
+@use "footer";
+
+@use "Account/account";
+@use "Account/NavForm";
+
+@use 'variables.scss' as *;
+
+* {
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+}
+
+html {
+    font-size:62.5%;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: $link__Color;
+
+    &:hover{
+        color: #1E90FF;
+    }
+
+    &:active{
+        color: #12FFF8;
+    }
+
+    &:visited{
+        color: $link__visited__color;
+    }
+
+    &:focus {
+        color: #FFD405;
+    }
+}
+
+.whole__page {
+    position: relative;
+}
+
+.up {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    right: 5rem;
+    bottom: 7rem;
+    font-size: 4rem;
+    padding: 1rem 0 ;
+    background-color: $another__background__color;
+    color: black;
+    border-radius: 50%;
+    z-index: 99;
+}
+
+
+/*LANGUAGES*/
+
+.languages {
+    width: 15rem;
+    height: 4rem;
+    position: absolute;
+    font-size: 1.5rem;
+    bottom: 4rem;
+    right: 110vw;
+
+    & a {
+        width: 6rem;
+        display: inline-block;
+        border: #12FFF8;
+        border-radius: 10%;
+        background-color: #12FFF8;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+}
+
+
+/*LIGHT MODE*/
+
+.lightMode {
+    width: 20rem;
+    height: 4rem;
+    margin: 0 3rem;
+    font-size: 2rem;
+    background: url("../Icons/lightMode.svg") no-repeat;
+    background-size: 4rem;
+}
+
+/*SECTION WITH MEDIA QUERIES*/
+
+@media (min-width: 320px) and (max-width: 424px) {
+    .up {
+        right: 2rem;
+        bottom: 7rem;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+    .up {
+        right: 2rem;
+        bottom: 6rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .up {
+        right: 2rem;
+        bottom: 6rem;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .up {
+        right: 3rem;
+        bottom: 6rem;
+    }
+}
+
+/*DARK MODE*/
+
+.a__dark {
+    color: #fff;
+}
+
+.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.left__arrow__dark {
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    display: flex;
+    background-image: url("../Icons/leftArrowDarkMode.svg");
+}
+
+.right__arrow__dark {
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    background-image: url("../Icons/rightArrowDarkMode.svg");
+}
+
+/*MENU*/
+
+.menu--active {
+    right: 0;
+}
+
+.form__menu--active {
+    display: grid;
+    top: 5rem;
+}
+
+/*LANGUAGES*/
+
+.languages--show {
+    right: 5%;
+}

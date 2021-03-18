@@ -7,40 +7,42 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portal for artists</title>
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="../dist/style.css">
 
 </head>
 
 <body>
 
-    <div class="wholePage">
+    <div class="whole__page">
 
         <header>
 
             <h1 class="title"><a href="index.html">Portal for artists</a></h1>
 
-            <div class="darkMode"></div>
+            <div class="dark__mode"></div>
             
             <nav>
 
                 <ul>
 
-                    <li class="menu"><a class="signIn" href="#">Sign in</a></li>
-                    <li class="menu"><a class="signOut" href="#">Sign out</a></li>
+                    <li class="menu"><a class="sign__in" href="#">Sign in</a></li>
+                    <li class="menu"><a class="sign__out" href="#">Sign out</a></li>
 
                 </ul>
 
             </nav>
 
-            <div class="hamburgerMenu"></div>
+            <div class="hamburger__menu"></div>
 
         </header>
 
-        <aside id="topMenu" class="leftMenu">
+        <aside id="top__menu" class="aside">
+
+            <div class="aside__right"><</div>
 
             <h3>Categories</h3>
 
-            <div class="category">
+            <div class="categories">
 
                 <ol>
 
@@ -67,37 +69,63 @@
 
             </div>
 
+            <div class="groups">
+
+                <h3>Groups</h3>
+
+                <h4><button class="groups__item">Give the group</button></h4>
+                <h4><a href="#" class="groups__item">Mangowcy Polska</a></h4>
+                <h4><a href="#" class="groups__item">Fani krajobrazów</a></h4>
+                <h4><a href="#" class="groups__item">Filmowcy World</a></h4>
+                <h4><a href="#" class="groups__item">Pomalowany świat</a></h4>
+                <h4><a href="#" class="groups__item">Ołówkiem po mapie</a></h4>
+
+            </div>
+
+            <h3>Friends</h3>
+
+            <div class="friends">
+
+                <img src="#" class="friends__item" alt="friend one" />
+                <img src="#" class="friends__item" alt="friend two" />
+                <img src="#" class="friends__item" alt="friend three" />
+                <img src="#" class="friends__item" alt="friend four" />
+                <img src="#" class="friends__item" alt="friend five" />
+                <img src="#" class="friends__item" alt="friend six" />
+
+            </div>
+
             <div><h3 class="contact">Contact</h3></div>
 
         </aside>
 
         <section class="workspace">
 
-            <h2 class="accountH2">Account</h2>
+            <h2 class="account__h2">Account</h2>
 
-            <article class="accountMenu">
+            <article class="account__menu">
 
-                <div><a href="#accountData">General</a></div>
-                <div><a href="#userGalleryInAccount">Gallery</a></div>
+                <div><a href="#account__data">General</a></div>
+                <div><a href="#user__gallery__in__account">Gallery</a></div>
                 <div><a href="#profile">Profile</a></div>
 
             </article>
 
-            <article id="accountData" class="accountData">
+            <article id="account__data" class="account__data">
 
                 <form>
 
-                    <label for="subscriptionInfo">Subscription:</label>
-                    <button id="subscriptionInfo">Current plan</button>
-                    <button class="subscriptionCheck" type="submit">Change</button>
+                    <label for="subscription__info">Subscription:</label>
+                    <button id="subscription__info">Current plan</button>
+                    <button class="subscription__check" type="submit">Change</button>
 
                 </form>
 
                 <form>
 
-                    <label for="mailChange">E-mail:</label>
-                    <input type="text" value="Current e-mail"> <!-- here user's e-mail address is appear* todo-->
-                    <button id="mailChange" type="submit">Change e-mail</button>
+                    <label for="mail__change">E-mail:</label>
+                    <input type="text" value="Current e-mail">
+                    <button id="mail__change" type="submit">Change e-mail</button>
 
                 </form>
 
@@ -112,11 +140,11 @@
 
             </article>
 
-            <article id="userGalleryInAccount" class="userGalleryInAccount">
+            <article id="user__gallery__in__account" class="user__gallery__in__account">
 
                 <em>Your photos and drawings</em>
 
-                <div class="userPhotos">
+                <div class="user__photos">
 
                     <div class="photos"></div>
                     <div class="photos"></div>
@@ -129,7 +157,7 @@
 
                 <em>Liked photos and drawings</em>
 
-                <div class="likePhotos">
+                <div class="like__photos">
 
                     <div class="photos"></div>
                     <div class="photos"></div>
@@ -144,19 +172,19 @@
 
             <article id="profile" class="profile">
 
-                <div class="photoProfile"></div>
+                <div class="photo__profile"></div>
 
-                <div class="userName">
+                <div class="user__name">
 
-                    <label for="userName">Your user name:</label>
-                    <input id="userName" type="text">
+                    <label for="user__name">Your user name:</label>
+                    <input id="user__name" type="text">
 
                 </div>
 
-                <div class="aboutMe">
+                <div class="about__me">
 
-                    <label for="aboutMe">About me:</label>
-                    <input id="aboutMe" type="text">
+                    <label for="about__me">About me:</label>
+                    <input id="about__me" type="text">
 
                 </div>
 
@@ -170,7 +198,7 @@
             <div class="terms"><a href="#">Terms of use</a></div>
             <div class="privacy"><a href="#">Privacy police</a></div>
             <div class="faq"><a href="#">FAQ</a></div>
-            <div class="changeLanguage"><a href="#">Change language</a>
+            <div class="change__language"><a href="#">Change language</a>
 
                 <div class="languages">
 
@@ -185,19 +213,23 @@
 
     </div>
 
-    <form class="createAccount">
+    <form class="create__account">
 
         <h2>Register for free!</h2>
 
         <div>
-            <label for="giveName">Name:</label>
-            <input type="text" id="giveName" placeholder="Give name" required="required">
+            <label for="create__name">Name:</label>
+            <input type="text" id="create__name" placeholder="Give name" required="required">
         </div>
 
+        <p id="un__correct__correct__name"></p>
+
         <div>
-            <label for="pseudonym">Pseudomin:</label>
-            <input type="text" id="pseudonym" placeholder="Give pseudomyn" required="required">
+            <label for="pseudonym">Pseudonym:</label>
+            <input type="text" id="pseudonym" placeholder="Give pseudonym" required="required">
         </div>
+
+        <p id="un__correct__create__pseudonym"></p>
 
         <div>
             <label for="email">E-mail:</label>
@@ -205,25 +237,30 @@
         </div>
 
         <div>
-            <label for="createPassword">Password:</label>
-            <input type="password" id="createPassword" placeholder="Give password" required="required">
+            <label for="create__password">Password:</label>
+            <input type="password" id="create__password" placeholder="Give password" required="required">
         </div>
 
-        <button type="submit">Register</button>
+        <p id="un__correct__create__password"></p>
+
+        <button type="submit" id="submit__created__account">Register</button>
+
     </form>
 
     <form class="login">
+
         <h2>Login!</h2>
 
         <label>Login:
-            <input type="text" placeholder="User name/login" required="required">
+            <input type="text" id="login__pseudonym" placeholder="Give pseudonym" required="required">
         </label>
 
         <label>Password:
-            <input type="password" placeholder="Password" required="required">
+            <input type="password" id="login__password" placeholder="Give password" required="required">
         </label>
 
         <button type="submit">Login</button>
+
     </form>
 
     <script src="../main.js"></script>

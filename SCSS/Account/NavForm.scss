@@ -1,0 +1,138 @@
+
+.create__account, .login {
+  position: absolute;
+  grid-template-columns: 1fr;
+  right: 0;
+  background-color: #1E90FF;
+  border-bottom: 0.5rem inset #6BB5FF;
+  border-left: 0.5rem inset #6BB5FF;
+  border-right: 0.5rem inset #6BB5FF;
+  z-index: 999;
+
+  & p, & p {
+    width: 30rem;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+}
+
+.create__account {
+  display: none;
+
+  & h2 {
+    margin: 2rem 0.5rem;
+  }
+
+  & div {
+    width: 30rem;
+    text-align: left;
+    margin: 2rem 5rem;
+  }
+
+  & label {
+    width: min-content;
+    font-size: 2rem;
+  }
+
+  & input {
+    width: min-content;
+    position: absolute;
+    right: 3rem;
+    border: none;
+  }
+
+  & button {
+    margin: 2rem 10rem;
+  }
+}
+
+.login {
+  display: none;
+
+  & h2 {
+    margin: 1rem 0.5rem
+  }
+
+  & label {
+    width: max-content;
+    margin: 1rem 3rem;
+    font-size: 2rem;
+  }
+
+  & input {
+    margin: 0 1rem;
+  }
+
+  & button {
+    margin: 1rem 4rem 1rem 10rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 424px) {
+
+  .create__account, .login {
+    top: 5rem;
+    right: 0;
+  }
+
+  .create__account {
+    & div {
+      margin: 1.5rem 0.5rem;
+    }
+
+    & input {
+      width: 15rem;
+      border: none;
+    }
+  }
+
+  .login {
+    & label {
+      width: 20rem;
+      margin: 1rem;
+    }
+
+    & input {
+      margin: 0;
+    }
+
+    & button {
+      margin: 1rem 7rem;
+    }
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+
+  .create__account, .login {
+    top: 5rem;
+    right: 0;
+  }
+
+  .create__account {
+    & div {
+      margin: 1.5rem 0.5rem;
+    }
+
+    & input {
+      width: 15rem;
+      border: none;
+    }
+  }
+
+  .login {
+    & label {
+      width: 20rem;
+      margin: 1rem;
+    }
+
+    & input {
+      margin: 0;
+    }
+
+    & button {
+      margin: 1rem 7rem;
+    }
+  }
+}

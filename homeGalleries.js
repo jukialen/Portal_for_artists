@@ -17,15 +17,15 @@ let width = carousel.offsetWidth;
 window.addEventListener("resize", e => (width = carousel.offsetWidth));
 
 
-const carouseSub = document.getElementById('carouseSub'),
-    nextSub = document.getElementById('nextSub'),
-    prevSub = document.getElementById('prevSub');
+const carouseSub = document.getElementById('carousel__sub'),
+    next__arrow = document.getElementById('next__sub'),
+    prev__arrow = document.getElementById('prev__sub');
 
-nextSub.addEventListener("click", e => {
+next__arrow.addEventListener("click", e => {
   carouseSub.scrollTo(widthSub + gap, 0);
 });
 
-prevSub.addEventListener("click", e => {
+prev__arrow.addEventListener("click", e => {
   carouseSub.scrollBy(-(widthSub + gap), 0);
 });
 

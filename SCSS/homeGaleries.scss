@@ -1,7 +1,9 @@
+@use 'variables' as *;
+
 .wrapper {
     width: 100%;
     position: relative;
-    margin: 10rem auto;
+    margin: 5rem auto;
 }
 
 .carousel {
@@ -14,8 +16,8 @@
     height: 0;
 }
 
-.leftArrow,
-.rightArrow {
+.left__arrow,
+.right__arrow {
     width: 4rem;
     height: 4rem;
     display: flex;
@@ -28,19 +30,27 @@
     position: absolute;
 }
 
-.leftArrow {
+.left__arrow {
     top: 50%;
     left: 0;
     transform: translate(50%, -50%);
     display: flex;
-    background-image: url("Icons/leftArrowLightMode.svg");
+<<<<<<< Updated upstream
+    background-image: url("../Icons/left__arrow__light__mode.svg");
+=======
+    background-image: url("../Icons/leftArrowLightMode.svg");
+>>>>>>> Stashed changes
 }
 
-.rightArrow {
+.right__arrow {
     top: 50%;
     right: 0;
     transform: translate(-50%, -50%);
-    background-image: url("Icons/rightArrowLightMode.svg");
+<<<<<<< Updated upstream
+    background-image: url("../Icons/right__arrow__light__mode.svg");
+=======
+    background-image: url("../Icons/rightArrowLightMode.svg");
+>>>>>>> Stashed changes
 }
 
 .content {
@@ -50,20 +60,20 @@
     margin: auto;
     box-sizing: border-box;
     font-size: 1.2rem;
-}
 
-.content article {
-    background-color: #008B8B;
+    & article {
+        background-color: $third__background__color;
+    }
 }
 
 .item {
     width: 25rem;
     height: 25rem;
-    background: green;
+    background: $third__background__color;
     display: block;
 }
 
-.authorName {
+.author__name {
     width: 12.5rem;
     height: 2rem;
     float: left;
@@ -72,14 +82,14 @@
     padding: .5rem 0;
 }
 
-.shareOptions {
+.share__options {
     width: 12rem;
     height: 2.5rem;
     float: right;
     display: flex;
 }
 
-.firstShareIcon, .secondShareIcon, .thirdShareIcon, .fourthShareIcon {
+.first__share__icon, .second__share__icon, .third__share__icon, .fourth__share__icon {
     width: 2rem;
     height: 2rem;
     display: block;
@@ -88,19 +98,22 @@
     flex: 1;
 }
 
-.firstShareIcon {
-    background-image: url("Icons/facebook.svg");
+.first__share__icon {
+    background-image: url("../Icons/facebook.svg");
 }
 
-.secondShareIcon {
-    background-image: url("Icons/twitter.svg");
+.second__share__icon {
+    background-image: url("../Icons/twitter.svg");
 }
 
-.thirdShareIcon {
-    background-image: url("Icons/discord.svg");
+.third__share__icon {
+    background-image: url("../Icons/discord.svg");
+<<<<<<< Updated upstream
+=======
 
+>>>>>>> Stashed changes
 }
 
-.fourthShareIcon {
-    background-image: url("Icons/copy.svg");
+.fourth__share__icon {
+    background-image: url("../Icons/copy.svg");
 }

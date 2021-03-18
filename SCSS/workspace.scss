@@ -1,0 +1,89 @@
+@use "variables" as *;
+@use "homeGaleries";
+.workspace {
+  width: 100vw;
+  padding: 8rem 0;
+  margin: 0 auto;
+}
+
+.top__among__users, .subscribed {
+  width: 80rem;
+  text-align: center;
+  margin: 3rem auto 5rem auto;
+}
+
+@media (min-width: 320px) and (max-width: 424px) {
+
+  .workspace {
+    width: 100vw;
+    margin-bottom: 5rem;
+    padding-top: 4rem;
+  }
+
+  .top__among__users, .subscribed {
+    font-size: 2rem;
+    text-align: center;
+    width: 100vw;
+    margin: 6rem auto;
+  }
+
+  .wrapper {
+    margin: 5rem auto;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+  .top__among__users, .subscribed {
+    width: 100vw;
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .whole__page {
+    width: 100vw;
+  }
+
+  .workspace {
+    width: 85vw;
+  }
+
+  .top__among__users, .subscribed {
+    width: 85vw;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .workspace {
+    width: 68%;
+    margin: 0 32% 0 31%;
+  }
+
+  .top__among__users, .subscribed {
+    width: 100%;
+    text-align: center;
+  }
+
+  .wrapper {
+    margin: 0;
+  }
+
+  .content {
+    display: grid;
+    margin: auto;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .workspace {
+    width: 75vw;
+    padding: 8rem 0;
+    margin: 0 20vw auto;
+  }
+}

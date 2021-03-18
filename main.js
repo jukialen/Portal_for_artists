@@ -4,7 +4,7 @@
 let $darkMode;
 let $wholePage;
 let $leftArrow;
-let $rightArrow
+let $rightArrow;
 
 
 //SHOW FORM CREATEACCOUNT AND LOGIN
@@ -32,20 +32,20 @@ let linkAccount;
 //CREATE FORM (+ LOGOFF - inside the function)
 
 let $createName;
-let $userName;
+let $createPseudonym;
 // let $email;
 let $createPassword;
 
 let $unCorrectCreatePassword;
 let $unCorrectCreateName;
-let $unCorrectCreateUserName;
+let $unCorrectCreatePseudonym;
 
-let $loginUserName;
+let $loginPseudonym;
 let $loginPassword;
 
 let $unCorrectLoginPassword;
 let $unCorrectLoginName;
-let $unCorrectLoginUserName;
+let $unCorrectLoginPseudonym;
 
 //SHOW AND CHANGE LANGUAGE
 
@@ -56,7 +56,7 @@ let $languages;
 //ICON TO ASIDE
 
 let $aside;
-let $asideBefore;
+let $asideRight;
 
 function main() {
     prepareDOMElements();
@@ -64,42 +64,42 @@ function main() {
 }
 
 const prepareDOMElements = () => {
-    $darkMode = document.querySelector('.darkMode');
-    $wholePage = document.querySelector('.wholePage');
-    $leftArrow = document.querySelectorAll('.leftArrow');
-    $rightArrow = document.querySelectorAll('.rightArrow');
+    $darkMode = document.querySelector('.dark__mode');
+    $wholePage = document.querySelector('.whole__page');
+    $leftArrow = document.querySelectorAll('.left__arrow');
+    $rightArrow = document.querySelectorAll('.right__arrow');
 
-    $linkSignIn = document.querySelector('.signIn');
-    $linkSignOut = document.querySelector('.signOut');
+    $linkSignIn = document.querySelector('.sign__in');
+    $linkSignOut = document.querySelector('.sign__out');
     $login = document.querySelector('.login');
-    $createAccount = document.querySelector('.createAccount');
+    $createAccount = document.querySelector('.create__account');
 
-    $hamburgerMenu = document.querySelector('.hamburgerMenu');
+    $hamburgerMenu = document.querySelector('.hamburger__menu');
     $nav = document.querySelector('nav');
 
     $ulNavbar = document.querySelector('nav ul');
     $buttonLogin = document.querySelector('.login button');
-    $buttonCreateAccount = document.querySelector('.createAccount button');
+    $buttonCreateAccount = document.querySelector('.create__account button');
 
-    $createName = document.querySelector('#createName');
-    $userName = document.querySelector('#userName');
+    $createName = document.querySelector('#create__name');
+    $createPseudonym = document.querySelector('#pseudonym');
     //$email = document.querySelector('#email');
-    $createPassword = document.querySelector('#createPassword');
-    $unCorrectCreatePassword = document.querySelector('#unCorrectPassword');
-    $unCorrectCreateName = document.querySelector('#unCorrectName');
-    $unCorrectCreateUserName = document.querySelector('#unCorrectUserName');
+    $createPassword = document.querySelector('#create__password');
+    $unCorrectCreateName = document.querySelector('#un__correct__create__name');
+    $unCorrectCreatePseudonym = document.querySelector('#un__correct__create__pseudonym');
+    $unCorrectCreatePassword = document.querySelector('#un__correct__create__password');
 
-    $loginUserName = document.querySelector('#loginUserName');
-    $loginPassword = document.querySelector('#loginPassword');
+    $loginPseudonym = document.querySelector('#login__pseudonym');
+    $loginPassword = document.querySelector('#login__password');
 
-    $unCorrectLoginName = document.querySelector('#unCorrectLoginName');
-    $unCorrectLoginPassword = document.querySelector('#unCorrectLoginPassword');
+    $unCorrectLoginName = document.querySelector('#un__correct__login__name');
+    $unCorrectLoginPassword = document.querySelector('#un__correct__login__password');
 
-    $changeLanguage = document.querySelector('.changeLanguage a');
+    $changeLanguage = document.querySelector('.change__language a');
     $languages = document.querySelector('.languages');
 
-    $aside = document.querySelector('aside');
-    // $asideBefore = document.querySelector('aside::before')
+    $aside = document.getElementsByClassName('aside');
+    $asideRight = document.getElementsByClassName('aside__right')
 };
 
 const prepareDOMEvents = () => {
@@ -111,42 +111,41 @@ const prepareDOMEvents = () => {
     $hamburgerMenu.addEventListener('click', showMenu);
 
     $createName.addEventListener('click', hideNavAfter);
-    $loginUserName.addEventListener('click', hideNavAfter);
+    $loginPseudonym.addEventListener('click', hideNavAfter);
 
     $buttonCreateAccount.addEventListener('click', submitCreateButton);
     $buttonLogin.addEventListener('click', submitLoginButton);
 
     $changeLanguage.addEventListener('click', showLanguages);
 
-    // $asideBefore.addEventListener('click', leftMenuClick);
+    $asideRight.addEventListener('click', leftMenuClick);
 };
 
 const changeMode = () => {
-    $darkMode.classList.toggle('lightMode');
+    $darkMode.classList.toggle('light__mode');
     $wholePage.classList.toggle('dark');
-    $leftArrow.classList.toggle('leftArrowDark');
-    $rightArrow.classList.toggle('rightArrowDark');
+    $leftArrow.classList.toggle('left__arrow__dark');
+    $rightArrow.classList.toggle('right__arrow__dark');
 };
 
 
 let $toggleLogin = false
 let $toggleCreateAccount = false
 const showLoginForm = () => {
-    $login.classList.toggle('activeFormMenu');
+    $login.classList.toggle('form__menu--active');
     $toggleLogin = true
 }
 const showCreateAccountForm = () => {
-    $createAccount.classList.toggle('activeFormMenu');
+    $createAccount.classList.toggle('form__menu--active');
     $toggleCreateAccount = true
 }
 
 const showMenu = () => {
-    $nav.classList.toggle('activeMenu');
-
+    $nav.classList.toggle('menu--active');
 }
 
 const replaceMenu = () => {
-    if ($linkSignIn.classList.contains('signIn') && $linkSignOut.classList.contains('signOut')) {
+    if ($linkSignIn.classList.contains('sign__in') && $linkSignOut.classList.contains('sign__out')) {
         const accountNavbar = document.createElement('li');
         accountNavbar.classList.add('menu');
         $ulNavbar.appendChild(accountNavbar);
@@ -162,7 +161,7 @@ const replaceMenu = () => {
         $ulNavbar.appendChild(logOutNavbar);
 
         linkLogOut = document.createElement('a');
-        linkLogOut.classList.add('logOut');
+        linkLogOut.classList.add('log__out');
         linkLogOut.setAttribute('href', '#');
         linkLogOut.textContent = 'Wyloguj';
         linkLogOut.addEventListener('click',() => logoff())
@@ -177,13 +176,11 @@ const replaceMenu = () => {
 
     }
 
-    console.log('Wyloguj')
-
 }
 
 const hideNavAfter = () => {
     if ($hamburgerMenu) {
-        $nav.classList.remove('activeMenu');
+        $nav.classList.remove('active__menu');
     }
 }
 
@@ -196,7 +193,7 @@ const checkPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]+)
 const submitCreateButton = e => {
 
     e.preventDefault();
-    if (checkName.test($createName.value) && checkUserName.test($userName.value) && checkPassword.test($createPassword.value)) {
+    if (checkName.test($createName.value) && checkUserName.test($createPseudonym.value) && checkPassword.test($createPassword.value)) {
         replaceMenu();
         console.log('Działa')
     }
@@ -208,9 +205,9 @@ const submitCreateButton = e => {
         }
     }
 
-    if(checkUserName.test($userName.value) === false) {
-        if ($unCorrectCreateUserName.innerText === '') {
-            $unCorrectCreateUserName.innerText = 'Dane nie są poprawne. \n\
+    if(checkUserName.test($createPseudonym.value) === false) {
+        if ($unCorrectCreatePseudonym.innerText === '') {
+            $unCorrectCreatePseudonym.innerText = 'Dane nie są poprawne. \n\
             Pole Nazwa użytkownika wymaga conajmniej jedną cyfrę i nie może być dłuższe niż 10 \n\
             znaków.';
         }
@@ -227,13 +224,13 @@ const submitCreateButton = e => {
 
 const submitLoginButton = e => {
     e.preventDefault();
-    if (checkName.test($loginUserName.value) && checkPassword.test($loginPassword.value)) {
+    if (checkName.test($loginPseudonym.value) && checkPassword.test($loginPassword.value)) {
         replaceMenu();
         console.log('Działa')
     }
 
-    if(checkUserName.test($userName.value) === false) {
-        $unCorrectLoginUserName.innerText += 'Dane nie są poprawne. \n\
+    if(checkUserName.test($createPseudonym.value) === false) {
+        $unCorrectLoginPseudonym.innerText += 'Dane nie są poprawne. \n\
             Pole Hasło musi zawierać conajmniej jedną cyfrę, dużą literę, jeden symbol (#?!@$%^&*-) \n\
             i nie może być krótsze niż 9 znaków';
     }
@@ -246,14 +243,13 @@ const submitLoginButton = e => {
 }
 
 const logoff = () => {
-    console.log('logoff start')
 
     const signInNavbar = document.createElement('li');
     signInNavbar.classList.add('menu');
     $ulNavbar.appendChild(signInNavbar);
 
     $linkSignIn = document.createElement('a');
-    $linkSignIn.classList.add('signIn');
+    $linkSignIn.classList.add('sign__in');
     $linkSignIn.setAttribute('href', '#');
     $linkSignIn.textContent = 'Zaloguj się';
 
@@ -265,7 +261,7 @@ const logoff = () => {
     $ulNavbar.appendChild(signOutNavbar);
 
     $linkSignOut = document.createElement('a');
-    $linkSignOut.classList.add('signOut');
+    $linkSignOut.classList.add('sign__out');
     $linkSignOut.setAttribute('href', '#');
     $linkSignOut.textContent = 'Zarejestruj się';
 
@@ -277,13 +273,10 @@ const logoff = () => {
 
 }
 
-const showLanguages = () => $languages.classList.toggle('showLanguages');
+const showLanguages = () => $languages.classList.toggle('languages--show');
 
 
 // LEFT MENU CLICK
-const leftMenuClick = () => {
-    $aside.classList.toggle('aside--active');
-    // $asideBefore.classList.toggle('aside--before::active')
-}
+const leftMenuClick = () => $aside.classList.toggle('aside--active')
 
 document.addEventListener('DOMContentLoaded', main)
