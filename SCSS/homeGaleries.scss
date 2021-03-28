@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
 .wrapper {
-    width: 100%;
+    width: 75%;
     position: relative;
     margin: 5rem auto;
 }
@@ -35,22 +35,14 @@
     left: 0;
     transform: translate(50%, -50%);
     display: flex;
-<<<<<<< Updated upstream
     background-image: url("../Icons/left__arrow__light__mode.svg");
-=======
-    background-image: url("../Icons/leftArrowLightMode.svg");
->>>>>>> Stashed changes
 }
 
 .right__arrow {
     top: 50%;
     right: 0;
     transform: translate(-50%, -50%);
-<<<<<<< Updated upstream
     background-image: url("../Icons/right__arrow__light__mode.svg");
-=======
-    background-image: url("../Icons/rightArrowLightMode.svg");
->>>>>>> Stashed changes
 }
 
 .content {
@@ -108,10 +100,6 @@
 
 .third__share__icon {
     background-image: url("../Icons/discord.svg");
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 }
 
 .fourth__share__icon {

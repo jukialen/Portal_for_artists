@@ -57,6 +57,7 @@ let $languages;
 
 let $aside;
 let $asideRight;
+let $firstH3;
 
 function main() {
     prepareDOMElements();
@@ -98,8 +99,9 @@ const prepareDOMElements = () => {
     $changeLanguage = document.querySelector('.change__language a');
     $languages = document.querySelector('.languages');
 
-    $aside = document.getElementsByClassName('aside');
-    $asideRight = document.getElementsByClassName('aside__right')
+    $aside = document.querySelector('.aside');
+    $asideRight = document.querySelector('.aside__right');
+    $firstH3 = document.querySelector('h3:nth-child(2)');
 };
 
 const prepareDOMEvents = () => {
@@ -277,6 +279,9 @@ const showLanguages = () => $languages.classList.toggle('languages--show');
 
 
 // LEFT MENU CLICK
-const leftMenuClick = () => $aside.classList.toggle('aside--active')
+const leftMenuClick = () => {
+    $aside.classList.toggle('aside--active');
+    $firstH3.classList.toggle('first__h3')
+}
 
 document.addEventListener('DOMContentLoaded', main)

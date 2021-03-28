@@ -9,7 +9,7 @@
   border-right: 0.5rem inset #6BB5FF;
   z-index: 999;
 
-  & p, & p {
+  p {
     width: 30rem;
     margin: 0 auto;
     font-size: 1.6rem;
@@ -20,29 +20,29 @@
 .create__account {
   display: none;
 
-  & h2 {
+  h2 {
     margin: 2rem 0.5rem;
   }
 
-  & div {
+  div {
     width: 30rem;
     text-align: left;
     margin: 2rem 5rem;
   }
 
-  & label {
+  label {
     width: min-content;
     font-size: 2rem;
   }
 
-  & input {
+  input {
     width: min-content;
     position: absolute;
     right: 3rem;
     border: none;
   }
 
-  & button {
+  button {
     margin: 2rem 10rem;
   }
 }
@@ -50,21 +50,21 @@
 .login {
   display: none;
 
-  & h2 {
+  h2 {
     margin: 1rem 0.5rem
   }
 
-  & label {
+  label {
     width: max-content;
     margin: 1rem 3rem;
     font-size: 2rem;
   }
 
-  & input {
+  input {
     margin: 0 1rem;
   }
 
-  & button {
+  button {
     margin: 1rem 4rem 1rem 10rem;
   }
 }
@@ -77,27 +77,27 @@
   }
 
   .create__account {
-    & div {
+    div {
       margin: 1.5rem 0.5rem;
     }
 
-    & input {
+    input {
       width: 15rem;
       border: none;
     }
   }
 
   .login {
-    & label {
+    label {
       width: 20rem;
       margin: 1rem;
     }
 
-    & input {
+    input {
       margin: 0;
     }
 
-    & button {
+    button {
       margin: 1rem 7rem;
     }
   }
@@ -111,27 +111,27 @@
   }
 
   .create__account {
-    & div {
+    div {
       margin: 1.5rem 0.5rem;
     }
 
-    & input {
+    input {
       width: 15rem;
       border: none;
     }
   }
 
   .login {
-    & label {
+    label {
       width: 20rem;
       margin: 1rem;
     }
 
-    & input {
+    input {
       margin: 0;
     }
 
-    & button {
+    button {
       margin: 1rem 7rem;
     }
   }

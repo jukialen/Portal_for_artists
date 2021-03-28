@@ -18,7 +18,7 @@
         <header>
 
             <h1 class="title"><a href="index.html">Portal dla artystów</a></h1>
-            
+
             <button class="dark__mode"></button>
 
             <nav>
@@ -33,12 +33,12 @@
             </nav>
 
             <button class="hamburger__menu"></button>
-            
+
         </header>
 
         <aside id="top__menu" class="aside">
 
-            <div class="aside__right"><</div>
+            <button class="aside__right"><</button>
 
             <h3>Kategorie</h3>
 
@@ -63,7 +63,7 @@
 
                     <li><a href="#">Fotografie</a></li>
                     <li><a href="#">Animacje</a></li>
-                    <li><a href="#">Inne</a>
+                    <li><a href="#">Inne</a></li>
 
                 </ol>
 
@@ -95,101 +95,22 @@
 
             </div>
 
-            <div><h3 class="contact">Kontakt</h3></div>
+            <div><h3 class="contact"><a href="#">Kontakt</a></h3></div>
 
         </aside>
 
         <section class="workspace">
 
-            <h2 class="account__h2">Konto</h2>
+                <h2>Częste pytania</h2>
 
-            <article class="account__menu">
+                <div class="questions__faq">Czy korzystanie z serwisu jest darmowe?</div>
+                <p class="answers__faq">Tak. Z serwisu można korzystać za darmo. Jednak aby skorzystać z dodatkowych korzyści, należy wykupić plan Premium.</p>
 
-                <div><a href="#account__data">Ogólne</a></div>
-                <div><a href="#user__gallery__in__account">Galeria</a></div>
-                <div><a href="#profile">Profil</a></div>
+                <div class="questions__faq">Jakie korzyści daje plan Premium?</div>
+                <p class="answers__faq">Plan Premium m. in. zapewnia priorytetowe wsparcie naszegu wsparcia klienta oraz brak reklam. Jeśli chcesz się więcej dowiedzieć, możesz dowiedzieć się <a href="#">tutaj</a>.</p>
 
-            </article>
-
-            <article id="account__data" class="account__data">
-
-                <form>
-
-                    <label for="subscription__info">Subskrybcja:</label>
-                    <button id="subscription__info">Aktualny plan</button>
-                    <button class="subscription__check" type="submit">Zmień</button>
-
-                </form>
-
-                <form>
-
-                    <label for="mail__change">E-mail:</label>
-                    <input type="text" placeholder="Aktualny e-mail"> <!-- here user's e-mail address is appear* todo-->
-                    <button id="mail__change" type="submit">Zmień adres e-mail</button>
-
-                </form>
-
-                <form>
-
-                    <label for="password">Hasło:</label>
-                    <input id="password" type="password" placeholder="Wpisz aktualne hasło" required="required">
-                    <input type="password" placeholder="Wpisz nowe hasło" required="required">
-                    <input type="password" placeholder="Powtórz nowe hasło" required="required">
-                    <button type="submit">Zmień hasło</button>
-                </form>
-
-            </article>
-                
-            <article id="user__gallery__in__account" class="user__gallery__in__account">
-
-                <em>Twoje zdjęcia i rysunki</em>
-
-                <div class="user__photos">
-
-                    <div class="photos"></div>
-                    <div class="photos"></div>
-                    <div class="photos"></div>
-                    <div class="photos"></div>
-                    <div class="photos"></div>
-                    <div class="photos"></div>
-
-                </div>
-
-                <em>Polubione zdjęcia i rysunki</em>
-
-                <div class="like__photos">
-
-                    <div class="photos"></div>
-                    <div class="photos"></div>
-                    <div class="photos"></div>
-                    <div class="photos"></div>
-                    <div class="photos"></div>
-                    <div class="photos"></div>
-
-                </div>
-
-            </article>
-
-            <article id="profile" class="profile">
-
-                <div class="photo__profile"></div>
-
-                <div class="user__name">
-
-                    <label for="user__name">Twoja nazwa użytkownika:</label>
-                    <input id="user__name" type="text">
-
-                </div>
-
-                <div class="about__me">
-
-                    <label for="about__me">O mnie:</label>
-                    <textarea id="about__me"></textarea>
-
-                </div>
-
-            </article>
-            
+                <div class="questions__faq">Czy wykupienie usługi Premium jest potrzebne do korzystania z planu Premium?</div>
+                <p class="answers__faq">Nie jest potrzebne. Możesz korzystać z serwisu bez planu Premium.</p>
 
         </section>
 
@@ -198,16 +119,17 @@
     </div>
 
     <footer>
+
             <div class="authors"><a href="#">Autorzy</a></div>
             <div class="terms"><a href="#">Warunki korzystania</a></div>
             <div class="privacy"><a href="#">Polityka prywatności</a></div>
-            <div class="faq"><a href="#">FAQ</a></div>
+            <div class="faq"><a href="./faq.html">FAQ</a></div>
             <div class="change__language"><a href="#">Zmiana języka</a>
 
                 <div class="languages">
 
-                    <a href="../EN/account.html">EN</a>
-                    <a href="../JP/account.html">JP</a>
+                    <a href="../EN/index.html">EN</a>
+                    <a href="../JP/index.html">JP</a>
 
                 </div>
 
@@ -266,5 +188,6 @@
     </form>
 
     <script src="../main.js"></script>
+    <script src="../homeGalleries.js" async></script>
 </body>
 </html>

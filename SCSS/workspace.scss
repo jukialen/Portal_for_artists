@@ -1,18 +1,21 @@
 @use "variables" as *;
 @use "homeGaleries";
+
+@use "account/account";
+@use "linkFooter/faq";
+
 .workspace {
-  width: 100vw;
+  width: 75vw;
   padding: 8rem 0;
   margin: 0 auto;
 }
 
 .top__among__users, .subscribed {
-  width: 80rem;
   text-align: center;
   margin: 3rem auto 5rem auto;
 }
 
-@media (min-width: 320px) and (max-width: 424px) {
+@media (min-width: 320px) and (max-width: 767px) {
 
   .workspace {
     width: 100vw;
@@ -28,47 +31,26 @@
   }
 
   .wrapper {
-    margin: 5rem auto;
-  }
-}
-
-@media (min-width: 425px) and (max-width: 767px) {
-  .top__among__users, .subscribed {
+    margin: 5rem 0;
     width: 100vw;
-    font-size: 2rem;
-    text-align: center;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .whole__page {
-    width: 100vw;
-  }
 
-  .workspace {
-    width: 85vw;
-  }
-
-  .top__among__users, .subscribed {
-    width: 85vw;
-    text-align: center;
+  .wrapper {
+    width: 75vw;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
 
-  .workspace {
-    width: 68%;
-    margin: 0 32% 0 31%;
-  }
-
   .top__among__users, .subscribed {
-    width: 100%;
-    text-align: center;
+    width: 75vw;
   }
 
   .wrapper {
-    margin: 0;
+    margin: 0 auto;
   }
 
   .content {
@@ -84,6 +66,5 @@
   .workspace {
     width: 75vw;
     padding: 8rem 0;
-    margin: 0 20vw auto;
   }
 }

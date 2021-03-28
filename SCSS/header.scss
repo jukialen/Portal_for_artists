@@ -6,23 +6,19 @@ header {
   position: fixed;
   display: flex;
   background-color: $primary__background__color;
-  padding: 0.5rem;
   z-index: 9999;
 }
 
 .title {
   margin: auto 1rem;
+
 }
 
 .dark__mode {
   width: 20rem;
   height: 4rem;
-  margin: 0 3rem;
-<<<<<<< Updated upstream
+  margin: auto 3rem;
   background: url("../Icons/dark__mode.svg") no-repeat;
-=======
-  background: url("../Icons/darkMode.svg") no-repeat;
->>>>>>> Stashed changes
   background-size: 4rem;
   border: none;
   cursor: pointer;
@@ -33,9 +29,9 @@ nav {
   display: block;
   width: 15%;
   flex: 1;
-  margin: 0 3rem;
+  margin: auto 3rem;
 
-  & ul {
+  ul {
     float: right;
   }
 }
@@ -62,14 +58,9 @@ li {
 }
 
 @media (min-width: 320px) and (max-width: 424px) {
-  header {
-    height: 5rem;
-    padding: 0;
-  }
 
   .title {
     width: 70%;
-    margin: auto 1rem;
     font-size: 2rem;
   }
 
@@ -83,10 +74,10 @@ li {
     display: grid;
     position: absolute;
     top: 5rem;
-    right: -17rem;
-    margin: 0;
+    right: 0;
+    margin-right: -17rem;
 
-    & ul {
+    ul {
       background-color: #1E90FF;
     }
   }
@@ -98,31 +89,24 @@ li {
 
 @media (min-width: 425px) and (max-width: 767px) {
 
-  header {
-    height: 5rem;
-    padding: 0;
-  }
-
   .title {
     width: 70%;
-    margin: auto 1rem;
     font-size: 2.5rem;
   }
 
   .dark__mode {
     width: 10%;
-    margin: 0.5rem 1rem;
+    margin: 0.5rem 2rem;
   }
 
   nav {
     width: 17rem;
-    display: none;
     position: absolute;
     top: 5rem;
-    right: -17rem;
-    margin: 0;
+    right: 0;
+    margin-right: -17rem;
 
-    & ul {
+    ul {
       background-color: #1E90FF;
     }
   }
@@ -133,10 +117,6 @@ li {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-
-  header {
-    padding: 0;
-  }
 
   .title {
     width: 40%;
@@ -158,10 +138,6 @@ li {
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
-
-  header {
-    padding: 0;
-  }
 
   .title {
     width: 27%;

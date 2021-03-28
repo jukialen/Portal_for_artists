@@ -4,9 +4,8 @@ footer {
   display: flex;
   position: relative;
   background-color: $third__background__color;
-  margin-top: 3rem;
 
-  & div {
+  div {
     width: 20%;
     height: 5%;
     padding: 0.5% 0;

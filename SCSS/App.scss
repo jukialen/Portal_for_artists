@@ -5,8 +5,7 @@
 @use "workspace";
 @use "footer";
 
-@use "Account/account";
-@use "Account/NavForm";
+@use "account/NavForm";
 
 @use 'variables.scss' as *;
 
@@ -59,22 +58,22 @@ a {
 
 .whole__page {
 	position: relative;
+	display: flex;
 }
 
 .up {
 	width: 5rem;
 	height: 5rem;
 	position: absolute;
-	right: 5rem;
-	bottom: 7rem;
+	right: 3rem;
+	bottom: 4rem;
 	font-size: 4rem;
 	padding: 1rem 0 ;
 	background-color: $another__background__color;
 	color: black;
 	border-radius: 50%;
-	z-index: 99;
+	z-index: 1;
 }
-
 
 /*LANGUAGES*/
 
@@ -109,36 +108,6 @@ a {
 	background-size: 4rem;
 }
 
-/*SECTION WITH MEDIA QUERIES*/
-
-@media (min-width: 320px) and (max-width: 424px) {
-	.up {
-		right: 2rem;
-		bottom: 7rem;
-	}
-}
-
-@media (min-width: 425px) and (max-width: 767px) {
-	.up {
-		right: 2rem;
-		bottom: 6rem;
-	}
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-	.up {
-		right: 2rem;
-		bottom: 6rem;
-	}
-}
-
-@media (min-width: 1024px) and (max-width: 1439px) {
-	.up {
-		right: 3rem;
-		bottom: 6rem;
-	}
-}
-
 /*DARK MODE*/
 
 .a__dark {
@@ -168,7 +137,8 @@ a {
 /*MENU*/
 
 .menu--active {
-	right: 0;
+	margin-right: 0;
+	transition: margin-right .8s ease-in-out;
 }
 
 .form__menu--active {
@@ -180,4 +150,9 @@ a {
 
 .languages--show {
 	right: 5%;
+}
+
+.aside--active {
+	margin-left: 0;
+	transition: margin-left .8s ease-in-out;
 }
