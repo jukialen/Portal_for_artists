@@ -1,0 +1,15 @@
+.categories {
+	padding: 3rem;
+
+	a {
+		line-height: 2;
+	}
+}
+
+@media (min-width: 280px) and (max-width: 424px) {
+
+	.categories {
+		font-size: 1.7rem;
+		margin: 0 auto;
+	}
+}

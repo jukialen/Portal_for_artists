@@ -1,0 +1,44 @@
+@use "../../../generalSCSS/variables" as *;
+@use "../../atoms/ArticleSubscribed/ArticleSubscribed";
+
+.workspace {
+  width: 75vw;
+  padding: 8rem 0;
+  margin: 0 auto;
+}
+
+.top__among__users, .subscribed {
+  text-align: center;
+  margin: 3rem auto 5rem auto;
+}
+
+@media (min-width: 280px) and (max-width: 767px) {
+
+  .workspace {
+    width: 100vw;
+    margin-bottom: 5rem;
+    padding-top: 4rem;
+  }
+
+  .top__among__users, .subscribed {
+    font-size: 2rem;
+    text-align: center;
+    width: 100vw;
+    margin: 6rem auto;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .top__among__users, .subscribed {
+    width: 75vw;
+  }
+}
+
+@media (min-width: 1440px) {
+
+  .workspace {
+    width: 75vw;
+    padding: 8rem 0;
+  }
+}
