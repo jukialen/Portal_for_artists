@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import '../NavForm.scss';
 
-function Create() {
+import { NavFormContext } from 'providers/NavFormProvider';
+
+export function Create() {
+  const { isCreate } = useContext(NavFormContext);
+
   return (
-    <form className="create__account">
+    <form className={`create__account ${isCreate ? 'form__menu--active' : ''}`}>
       <h2>Zarejestruj się za darmo!</h2>
 
       <div>
@@ -59,5 +63,3 @@ function Create() {
     </form>
   );
 }
-
-export default Create;

@@ -4,7 +4,7 @@ import SubscribedWrapper from '../../molecules/SubscribedWrapper/SubscribedWrapp
 
 import 'components/organisms/workspace/Workspace.scss';
 
-function Workspace() {
+export function Workspace() {
   return (
     <section className="workspace">
       <h2 className="top__among__users">Najlepsze według użytkowników</h2>
@@ -17,5 +17,3 @@ function Workspace() {
     </section>
   );
 }
-
-export default Workspace;

@@ -6,7 +6,7 @@ import Friends from '../../atoms/Friends/Friends';
 
 import './Aside.scss';
 
-function Aside() {
+export function Aside() {
   const [isLeftMenu, setLeftMenu] = useState(false);
   const leftMenuClick = () => setLeftMenu(!isLeftMenu);
 
@@ -39,5 +39,3 @@ function Aside() {
     </aside>
   );
 }
-
-export default Aside;

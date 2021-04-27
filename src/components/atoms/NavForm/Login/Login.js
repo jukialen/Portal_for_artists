@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import '../NavForm.scss';
 
-function Login() {
+import { NavFormContext } from 'providers/NavFormProvider';
+
+export function Login() {
+  const { isLogin } = useContext(NavFormContext);
+
   return (
-    <form className="login">
+    <form className={`login ${isLogin ? 'form__menu--active' : ''}`}>
       <h2>Zaloguj się!</h2>
 
       <label>
@@ -31,5 +35,3 @@ function Login() {
     </form>
   );
 }
-
-export default Login;

@@ -97,15 +97,15 @@
   background-image: url('../../../resources/Icons/copy.svg');
 }
 
-@media (min-width: 280px) and (max-width: 767px) {
-  .subscribed__wrapper {
+@media (min-width: 280px) and (max-width: 1023px) {
+  .top__wrapper {
     margin: 5rem 0;
     width: 100%;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
-  .subscribed__wrapper {
+  .top__wrapper {
     margin: 0 auto;
   }
 

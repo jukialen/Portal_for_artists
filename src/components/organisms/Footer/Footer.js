@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Footer.scss';
 
-function Footer() {
+export function Footer() {
   const [isLanguage, setLanguage] = useState(false);
 
   const showLanguages = () => {
@@ -34,6 +34,3 @@ function Footer() {
     </footer>
   );
 }
-
-
-export default Footer

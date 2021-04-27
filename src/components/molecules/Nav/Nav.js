@@ -1,35 +1,33 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+
 import './Nav.scss';
 
-function Nav() {
-  const [isLogin, setLogin] = useState(false);
-  const [isCreate, setCreate] = useState(false);
+import { NavFormProvider } from 'providers/NavFormProvider';
 
-  const showLoginForm = () => {
-    setLogin(!isLogin);
-    // login.classList.toggle('form__menu--active');
-  };
-  const showCreateAccountForm = () => {
-    setCreate(!isCreate);
-    // createAccount.classList.toggle('form__menu--active');
-  };
+import { NavFormContext } from 'providers/NavFormProvider';
+import { ShowMenuContext } from 'providers/ShowMenuProvider';
+
+export function Nav() {
+  const { isMenu } = useContext(ShowMenuContext);
+  const { showLoginForm } = useContext(NavFormContext);
+  const { showCreateAccountForm } = useContext(NavFormContext);
 
   return (
-    <nav>
-      <ul>
-        <li className="menu">
-          <a href="#" className="sign__in" onClick={showLoginForm}>
-            Zaloguj się
-          </a>
-        </li>
-        <li className="menu" onClick={showCreateAccountForm}>
-          <a href="#" className="sign__out">
-            Zarejestruj się
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <NavFormProvider>
+      <nav className={isMenu ? 'menu--active' : null}>
+        <ul>
+          <li className="menu">
+            <a href="#" className="sign__in" onClick={showLoginForm}>
+              Zaloguj się
+            </a>
+          </li>
+          <li className="menu" onClick={showCreateAccountForm}>
+            <a href="#" className="sign__out">
+              Zarejestruj się
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </NavFormProvider>
   );
 }
-
-export default Nav;

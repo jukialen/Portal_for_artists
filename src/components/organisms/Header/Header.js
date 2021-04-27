@@ -1,31 +1,35 @@
-import React, { useState } from 'react';
-import Nav from '../../molecules/Nav/Nav';
-import '../../../generalSCSS/darkLightMode.scss';
+import React, { useContext } from 'react';
+
+import 'generalSCSS/darkLightMode.scss';
 import './Header.scss';
 
-export function Header() {
-  const [isMode, setMode] = useState('false');
+import { Nav } from 'components/molecules/Nav/Nav';
 
-  const changeMode = () => {
-    setMode(!isMode);
-  };
+import { ShowMenuProvider } from 'providers/ShowMenuProvider';
+import { DarkModeContext } from 'providers/DarkModeProvider';
+import { ShowMenuContext } from 'providers/ShowMenuProvider';
+
+export function Header() {
+  const { isMode, changeMode } = useContext(DarkModeContext);
+
+  const { showMenu } = useContext(ShowMenuContext);
 
   return (
-    <header>
-      <h1 className="title">
-        <a href="/">Portal dla artystów</a>
-      </h1>
+    <ShowMenuProvider>
+      <header>
+        <h1 className="title">
+          <a href="/">Portal dla artystów</a>
+        </h1>
 
-      <button
-        className={isMode ? 'dark__mode' : 'light__mode'}
-        onClick={changeMode}
-      />
+        <button
+          className={isMode ? 'dark__mode' : 'light__mode'}
+          onClick={changeMode}
+        />
 
-      <Nav />
+        <Nav />
 
-      <button className="hamburger__menu" />
-    </header>
+        <button className="hamburger__menu" onClick={showMenu} />
+      </header>
+    </ShowMenuProvider>
   );
 }
-
-export default Header;
