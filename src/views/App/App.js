@@ -19,23 +19,23 @@ function App() {
 
   return (
     <Router>
-      <div className={`whole__page ${isMode ? 'dark' : ''}`}>
-        <Header />
-        <Aside />
-        <DarkModeProvider>
+      <DarkModeProvider>
+        <div className={`whole__page ${isMode ? 'dark' : ''}`}>
+          <Header />
+          <Aside />
           <Switch>
             <Route path="/">
               <Workspace />
             </Route>
           </Switch>
-        </DarkModeProvider>
-        <div className="up">
-          <Link href="#top__menu">^</Link>
+          <div className="up">
+            <a href="#top__menu">^</a>
+          </div>
         </div>
-      </div>
-      <Footer />
-      <Create />
-      <Login />
+        <Footer />
+        <Create />
+        <Login />
+      </DarkModeProvider>
     </Router>
   );
 }
