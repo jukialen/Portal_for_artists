@@ -6,9 +6,11 @@ import ProfileAccount from '../../molecules/ProfileAccount/ProfileAccount';
 
 import './Account.scss';
 
-function Account() {
+export function Account() {
   return (
-    <section className="workspace">
+    <section to='/account'
+
+             className="workspace">
 
       <h2 className="account__h2">Konto</h2>
 

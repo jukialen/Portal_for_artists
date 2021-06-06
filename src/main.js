@@ -253,8 +253,8 @@ const submitLoginButton = (e) => {
 };
 
 const logoff = () => {
-  const signInNavbar = document.createElement('li');
-  signInNavbar.classList.add('menu');
+
+  const signInNavbar = <li className='menu'></li>
   $ulNavbar.appendChild(signInNavbar);
 
   $linkSignIn = document.createElement('a');

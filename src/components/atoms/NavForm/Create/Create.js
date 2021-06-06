@@ -5,13 +5,14 @@ import '../NavForm.scss';
 import { NavFormContext } from 'providers/NavFormProvider';
 
 export function Create() {
+
   const { isCreate } = useContext(NavFormContext);
 
   return (
     <form className={`create__account ${isCreate ? 'form__menu--active' : ''}`}>
       <h2>Zarejestruj się za darmo!</h2>
 
-      <div>
+      <div className="form__field">
         <label htmlFor="create__name">Imię:</label>
         <input
           type="text"
@@ -21,9 +22,9 @@ export function Create() {
         />
       </div>
 
-      <p id="un__correct__correct__name" />
+      <p id="un__correct__create__name" />
 
-      <div>
+      <div className="form__field">
         <label htmlFor="pseudonym">Pseudonim:</label>
         <input
           type="text"
@@ -35,7 +36,7 @@ export function Create() {
 
       <p id="un__correct__create__pseudonym" />
 
-      <div>
+      <div className="form__field">
         <label htmlFor="email">E-mail:</label>
         <input
           type="email"
@@ -45,7 +46,7 @@ export function Create() {
         />
       </div>
 
-      <div>
+      <div className="form__field">
         <label htmlFor="create__password">Hasło:</label>
         <input
           type="password"
@@ -57,7 +58,7 @@ export function Create() {
 
       <p id="un__correct__create__password" />
 
-      <button type="submit" id="submit__created__account">
+      <button type="submit" id="submit__created__account" className='button'>
         Zarejestruj się
       </button>
     </form>

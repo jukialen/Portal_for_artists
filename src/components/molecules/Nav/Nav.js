@@ -1,30 +1,36 @@
 import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './Nav.scss';
 
-import { NavFormProvider } from 'providers/NavFormProvider';
+import { NavFormContext, NavFormProvider } from 'providers/NavFormProvider';
 
-import { NavFormContext } from 'providers/NavFormProvider';
-import { ShowMenuContext } from 'providers/ShowMenuProvider';
-
-export function Nav() {
-  const { isMenu } = useContext(ShowMenuContext);
-  const { showLoginForm } = useContext(NavFormContext);
-  const { showCreateAccountForm } = useContext(NavFormContext);
+export function Nav({ isMenu }) {
+  const { showLoginForm, showCreateForm } = useContext(NavFormContext);
 
   return (
     <NavFormProvider>
       <nav className={isMenu ? 'menu--active' : null}>
         <ul>
           <li className="menu">
-            <a href="#" className="sign__in" onClick={showLoginForm}>
+            <NavLink
+              to="/user_in"
+              href="#"
+              className="sign__in"
+              onClick={showLoginForm}
+            >
               Zaloguj się
-            </a>
+            </NavLink>
           </li>
-          <li className="menu" onClick={showCreateAccountForm}>
-            <a href="#" className="sign__out">
+          <li className="menu">
+            <NavLink
+              to="sign_out"
+              href="#"
+              className="sign__out"
+              onClick={showCreateForm}
+            >
               Zarejestruj się
-            </a>
+            </NavLink>
           </li>
         </ul>
       </nav>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export const DarkModeContext = React.createContext({
-  isMode: '',
+  isMode: false,
   changeMode: () => {},
 });
 

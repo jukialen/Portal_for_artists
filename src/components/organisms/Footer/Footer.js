@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Footer.scss';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   const [isLanguage, setLanguage] = useState(false);
@@ -11,25 +12,31 @@ export function Footer() {
   return (
     <footer>
       <div className="authors">
-        <a href="#">Autorzy</a>
+        <Link to="/authors" href="#">
+          Autorzy
+        </Link>
       </div>
       <div className="terms">
-        <a href="#">Warunki korzystania</a>
+        <Link to="/terms" href="#">
+          Warunki korzystania
+        </Link>
       </div>
       <div className="privacy">
-        <a href="#">Polityka prywatności</a>
+        <Link to="/privacy" href="#">
+          Polityka prywatności
+        </Link>
       </div>
       <div className="faq">
-        <a href="../../atoms/Faq/Faq.js">FAQ</a>
+        <Link to='/faq' href='../../atoms/Faq/Faq.js'>FAQ</Link>
       </div>
       <div className="change__language">
-        <a href="#" onClick={showLanguages}>
+        <Link href="#" onClick={showLanguages}>
           Zmiana języka
-        </a>
-        <div className={`languages ${isLanguage ? 'languages--show' : ''}`}>
-          <a href="#">EN</a>
-          <a href="#">JP</a>
-        </div>
+          <div className={`languages ${isLanguage ? 'languages--show' : ''}`}>
+            <Link to='/en' href="#">EN</Link>
+            <Link to='jp' href="#">JP</Link>
+          </div>
+        </Link>
       </div>
     </footer>
   );

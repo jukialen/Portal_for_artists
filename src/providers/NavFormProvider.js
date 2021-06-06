@@ -11,14 +11,9 @@ export const NavFormProvider = ({ children }) => {
   const [isLogin, setLogin] = useState('false');
   const [isCreate, setCreate] = useState('false');
 
-  const showLoginForm = () => {
-    setLogin(!isLogin);
-    // login.classList.toggle('form__menu--active');
-  };
-  const showCreateAccountForm = () => {
-    setCreate(!isCreate);
-    // createAccount.classList.toggle('form__menu--active');
-  };
+  const showLoginForm = () => setLogin(!isLogin);
+
+  const showCreateForm = () => setCreate(!isCreate);
 
   return (
     <NavFormContext.Provider
@@ -26,7 +21,7 @@ export const NavFormProvider = ({ children }) => {
         isLogin,
         showLoginForm,
         isCreate,
-        showCreateAccountForm,
+        showCreateForm,
       }}
     >
       {children}

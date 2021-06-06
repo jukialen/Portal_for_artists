@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 export const ShowMenuContext = React.createContext({
-  isMenu: 'false',
+  isMenu: false,
   showMenu: () => {},
 });
 
 export const ShowMenuProvider = ({ children }) => {
-  const [isMenu, setMenu] = useState('false');
+  const [isMenu, setMenu] = useState(false);
 
   const showMenu = () => {
     setMenu(!isMenu);
