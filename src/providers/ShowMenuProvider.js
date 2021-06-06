@@ -6,7 +6,7 @@ export const ShowMenuContext = React.createContext({
 });
 
 export const ShowMenuProvider = ({ children }) => {
-  const [isMenu, setMenu] = useState(false);
+  const [isMenu, setMenu] = useState('');
 
   const showMenu = () => {
     setMenu(!isMenu);

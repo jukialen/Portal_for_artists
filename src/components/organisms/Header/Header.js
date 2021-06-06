@@ -23,7 +23,7 @@ export function Header() {
       </h1>
 
       <button
-        className={isMode ? 'dark__mode' : 'light__mode'}
+        className={isMode ? 'light__mode' : 'dark__mode'}
         onClick={changeMode}
       />
 

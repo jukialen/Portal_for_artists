@@ -6,7 +6,7 @@ export const DarkModeContext = React.createContext({
 });
 
 export const DarkModeProvider = ({ children }) => {
-  const [isMode, setMode] = useState('false');
+  const [isMode, setMode] = useState(false);
 
   const changeMode = () => {
     setMode(!isMode);

@@ -1,10 +1,6 @@
-<<<<<<< Updated upstream:src/views/App.scss
-@use '../generalSCSS/reset';
-@use '../generalSCSS/variables' as *;
-=======
-@use '../../generalSCSS/reset';
 @use '../../generalSCSS/variables' as *;
->>>>>>> Stashed changes:src/views/App/App.scss
+@use '../../generalSCSS/reset';
+
 
 * {
   box-sizing: border-box;
