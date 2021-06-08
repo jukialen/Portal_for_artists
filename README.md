@@ -20,4 +20,4 @@ b) Back-end:
 - REST API;
   
 
-Site's in full responsive on target devices jest i. e. from small smartphones to TV and SMART TV.
+Site's in full responsive on target devices from small smartphones to TV and SMART TV.
