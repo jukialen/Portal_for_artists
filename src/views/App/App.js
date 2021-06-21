@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.scss';
@@ -9,35 +9,67 @@ import { Aside } from 'components/organisms/Aside/Aside';
 import { Workspace } from 'components/organisms/workspace/Workspace';
 import { Footer } from 'components/organisms/Footer/Footer';
 
-import { DarkModeProvider } from 'providers/DarkModeProvider';
-import { DarkModeContext } from 'providers/DarkModeProvider';
 import { Create } from 'components/atoms/NavForm/Create/Create';
 import { Login } from 'components/atoms/NavForm/Login/Login';
 
-function App() {
-  const { isMode } = useContext(DarkModeContext);
+import { Authors } from 'components/atoms/Authors/Authors';
+import { Terms } from 'components/atoms/Terms/Terms';
+import { Privacy } from 'components/atoms/Privacy/Privacy';
+import { Faq } from '../../components/atoms/Faq/Faq';
+
+export function App() {
+  //DARK MODE
+  const [isMode, setMode] = useState(false);
+
+  const changeMode = () => {
+    setMode(!isMode);
+  };
+
+  // OPEN AND HIDE NAVIGATION FORMS
+
+  const [isLogin, setLogin] = useState();
+  const [isCreate, setCreate] = useState();
+
+  const showLoginForm = () => setLogin(!isLogin);
+
+  const showCreateForm = () => setCreate(!isCreate);
 
   return (
     <Router>
       <div className={`whole__page ${isMode ? 'dark' : ''}`}>
-        <Header />
+        <Header
+          isMode={isMode}
+          changeMode={changeMode}
+          showLoginForm={showLoginForm}
+          showCreateForm={showCreateForm}
+        />
+        <Create isCreate={isCreate} />
+        <Login isLogin={isLogin} />
         <Aside />
-        <DarkModeProvider>
-          <Switch>
-            <Route path="/">
-              <Workspace />
-            </Route>
-          </Switch>
-        </DarkModeProvider>
-        <div className="up">
-          <a href="#top__menu">^</a>
+        <Switch>
+          <Route exact path='/'>
+            <Workspace isMode={isMode} />
+          </Route>
+          <Route path='/authors'>
+            <Authors />
+          </Route>
+          <Route path='/terms'>
+            <Terms />
+          </Route>
+          <Route path='/privacy'>
+            <Privacy />
+          </Route>
+          <Route path='/faq'>
+            <Faq />
+          </Route>
+        </Switch>
+        <div className='up'>
+          <a href='#top__menu' aria-label='top of page button'>
+            ^
+          </a>
         </div>
       </div>
       <Footer />
-      <Create />
-      <Login />
     </Router>
   );
 }
-
-export default App;

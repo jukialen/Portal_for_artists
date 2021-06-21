@@ -12,10 +12,10 @@ export function Aside() {
 
   return (
     <aside
-      id="top__menu"
+      id='top__menu'
       className={`aside ${isLeftMenu ? 'aside--active' : ''}`}
     >
-      <button className="aside__right" onClick={leftMenuClick}>
+      <button className='aside__right' aria-label='left menu button' onClick={leftMenuClick}>
         X
       </button>
 

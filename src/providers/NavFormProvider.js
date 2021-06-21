@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
 export const NavFormContext = React.createContext({
-  isLogin: '',
-  isCreate: '',
+  isLogin: false,
+  isCreate: false,
   showLoginForm: () => {},
   showCreateAccountForm: () => {},
 });
 
 export const NavFormProvider = ({ children }) => {
-  const [isLogin, setLogin] = useState('false');
-  const [isCreate, setCreate] = useState('false');
+  const [isLogin, setLogin] = useState();
+  const [isCreate, setCreate] = useState();
 
   const showLoginForm = () => setLogin(!isLogin);
 

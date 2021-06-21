@@ -10,34 +10,32 @@ export function Footer() {
   };
 
   return (
-    <footer>
-      <div className="authors">
-        <Link to="/authors" href="#">
+    <footer className="footer">
+      <button className='authors'>
+        <Link to='/authors'>
           Autorzy
         </Link>
-      </div>
-      <div className="terms">
-        <Link to="/terms" href="#">
+      </button>
+      <button className='terms'>
+        <Link to='/terms'>
           Warunki korzystania
         </Link>
-      </div>
-      <div className="privacy">
-        <Link to="/privacy" href="#">
+      </button>
+      <button className='privacy'>
+        <Link to='/privacy'>
           Polityka prywatności
         </Link>
-      </div>
-      <div className="faq">
-        <Link to='/faq' href='../../atoms/Faq/Faq.js'>FAQ</Link>
-      </div>
-      <div className="change__language">
-        <Link href="#" onClick={showLanguages}>
+      </button>
+      <button className='faq'>
+        <Link to='/faq'>FAQ</Link>
+      </button>
+      <button className='change__language' onClick={showLanguages}>
           Zmiana języka
           <div className={`languages ${isLanguage ? 'languages--show' : ''}`}>
-            <Link to='/en' href="#">EN</Link>
-            <Link to='jp' href="#">JP</Link>
+            <Link to='/en'>EN</Link>
+            <Link to='jp'>JP</Link>
           </div>
-        </Link>
-      </div>
+      </button>
     </footer>
   );
 }

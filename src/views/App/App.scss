@@ -1,7 +1,6 @@
 @use '../../generalSCSS/variables' as *;
 @use '../../generalSCSS/reset';
 
-
 * {
   box-sizing: border-box;
   text-align: center;
@@ -68,41 +67,9 @@ a {
   border-radius: 50%;
   z-index: 1;
 }
-
-/*LANGUAGES*/
-
-.languages {
-  width: 15rem;
-  height: 4rem;
-  position: absolute;
-  font-size: 1.5rem;
-  bottom: 4rem;
-  right: 110vw;
-
-  & a {
-    width: 6rem;
-    display: inline-block;
-    border: #12fff8;
-    border-radius: 10%;
-    background-color: #12fff8;
-    padding: 0.5rem;
-    cursor: pointer;
-  }
-}
-
 /*MENU*/
 
 .menu--active {
   margin-right: 0;
   transition: margin-right 0.8s ease-in-out;
-}
-
-.form__menu--active {
-  display: grid;
-}
-
-/*LANGUAGES*/
-
-.languages--show {
-  right: 5%;
 }

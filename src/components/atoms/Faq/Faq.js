@@ -4,7 +4,7 @@ import './Faq.scss';
 
 export function Faq() {
   return (
-    <section to='/faq' className="workspace">
+    <section className="workspace">
       <h2>Częste pytania</h2>
 
       <div className="questions__faq">

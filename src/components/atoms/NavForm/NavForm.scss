@@ -20,16 +20,15 @@
   }
 
   p {
-    width: 30rem;
-    margin: 0 auto;
-    font-size: 1.6rem;
-    line-height: 1.4;
+    margin: auto 14%;
+    font-size: 1.5rem;
+    line-height: 1.2;
   }
 
   .form__field {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 1rem 3rem;
+    margin: 1rem;
 
     label {
       margin: auto 1rem;
@@ -37,7 +36,7 @@
     }
 
     input {
-      margin: 0 1rem;
+      margin: 0;
       width: 16rem;
     }
   }
@@ -53,4 +52,8 @@
 
 .login {
   display: none;
+}
+
+.form__menu--active {
+  display: grid;
 }
