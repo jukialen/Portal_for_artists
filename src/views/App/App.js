@@ -6,16 +6,17 @@ import 'generalSCSS/reset.scss';
 
 import { Header } from 'components/organisms/Header/Header';
 import { Aside } from 'components/organisms/Aside/Aside';
-import { Workspace } from 'components/organisms/workspace/Workspace';
+import { Workspace } from 'views/Workspace/Workspace';
 import { Footer } from 'components/organisms/Footer/Footer';
 
-import { Create } from 'components/atoms/NavForm/Create/Create';
-import { Login } from 'components/atoms/NavForm/Login/Login';
+import { Create } from 'components/organisms/NavForm/Create/Create';
+import { Login } from 'components/organisms/NavForm/Login/Login';
 
-import { Authors } from 'components/atoms/Authors/Authors';
-import { Terms } from 'components/atoms/Terms/Terms';
-import { Privacy } from 'components/atoms/Privacy/Privacy';
-import { Faq } from '../../components/atoms/Faq/Faq';
+import { Authors } from 'views/Authors/Authors';
+import { Terms } from 'views/Terms/Terms';
+import { Privacy } from 'views/Privacy/Privacy';
+import { Faq } from '../Faq/Faq';
+import { Account } from '../Acconut/Account';
 
 export function App() {
   //DARK MODE
@@ -61,6 +62,9 @@ export function App() {
           </Route>
           <Route path='/faq'>
             <Faq />
+          </Route>
+          <Route path='/account'>
+            <Account />
           </Route>
         </Switch>
         <div className='up'>

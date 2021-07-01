@@ -15,20 +15,20 @@ export function Header({ isMode, changeMode, showCreateForm, showLoginForm }) {
 
   return (
     <header>
-      <h1 className="title">
-        <NavLink to="/">Portal dla artystów</NavLink>
+      <h1 className='title'>
+        <NavLink to='/'>Portal dla artystów</NavLink>
       </h1>
 
       <button
         className={isMode ? 'light__mode' : 'dark__mode'}
-        aria-label="mode button"
+        aria-label='mode button'
         onClick={changeMode}
       />
 
       <Nav isMenu={isMenu} showCreateForm={showCreateForm} showLoginForm={showLoginForm} />
       <button
-        className="hamburger__menu"
-        aria-label="menu button"
+        className='hamburger__menu'
+        aria-label='menu button'
         onClick={showMenu}
       />
     </header>

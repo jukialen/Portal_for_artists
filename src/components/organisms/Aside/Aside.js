@@ -32,8 +32,8 @@ export function Aside() {
       <Friends />
 
       <div>
-        <a href="#">
-          <h3 className="contact">Kontakt</h3>
+        <a href='#'>
+          <h3 className='contact'>Kontakt</h3>
         </a>
       </div>
     </aside>

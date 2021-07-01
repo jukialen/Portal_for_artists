@@ -10,7 +10,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="footer">
+    <footer className='footer'>
       <button className='authors'>
         <Link to='/authors'>
           Autorzy
@@ -30,11 +30,11 @@ export function Footer() {
         <Link to='/faq'>FAQ</Link>
       </button>
       <button className='change__language' onClick={showLanguages}>
-          Zmiana języka
-          <div className={`languages ${isLanguage ? 'languages--show' : ''}`}>
-            <Link to='/en'>EN</Link>
-            <Link to='jp'>JP</Link>
-          </div>
+        Zmiana języka
+        <div className={`languages ${isLanguage ? 'languages--show' : ''}`}>
+          <Link to='/en'>EN</Link>
+          <Link to='jp'>JP</Link>
+        </div>
       </button>
     </footer>
   );
