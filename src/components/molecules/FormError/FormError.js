@@ -1,10 +1,10 @@
 import React from 'react';
 import { ErrorMessage } from 'formik';
 
-export const FormEmailError = () => {
+export const FormError = ({ nameError }) => {
   return (
     <p>
-      <ErrorMessage name='email' />
+      <ErrorMessage name={nameError} />
     </p>
   );
-};
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Photos from '../../atoms/Photos';
+import { Photos } from '../../atoms/Photos/Photos';
 
 import './GalleryAccount.scss';
 

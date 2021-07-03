@@ -3,10 +3,8 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 import '../NavForm.scss';
-import { FormPseudonymField } from 'components/molecules/FormPseudonymField/FormPseudonymField';
-import { FormPseudonymError } from 'components/molecules/FormPseudonnymError/FormPseudonymError';
-import { FormPasswordField } from 'components/molecules/FormPasswordField/FormPasswordField';
-import { FormPasswordError } from 'components/molecules/FormPasswordError/FormPasswordError';
+import { FormField } from 'components/molecules/FormField/FormField';
+import { FormError } from '../../../molecules/FormError/FormError';
 
 const submitAccountData = (values, { setSubmitting }) => {
   setTimeout(() => {
@@ -17,7 +15,6 @@ const submitAccountData = (values, { setSubmitting }) => {
 };
 
 export const Login = ({ isLogin }) => {
-
   return (
     <Formik
       initialValues={{ pseudonym: '', password: '' }}
@@ -43,22 +40,32 @@ export const Login = ({ isLogin }) => {
             /(?=.*?[#?!@$%^&*-]+)/,
             'Pseudonym musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
           )
-          .required('Required')
+          .required('Required'),
       })}
       onSubmit={submitAccountData}
     >
       <Form className={`login ${isLogin ? 'form__menu--active' : ''}`}>
         <h2>Zaloguj się!</h2>
 
-        <FormPseudonymField />
+        <FormField
+          titleField="Pseudonim:"
+          nameField="pseudonym"
+          typeField="text"
+          placeholderField="Pseudonym"
+        />
 
-        <FormPseudonymError />
+        <FormError nameError="pseudonym" />
 
-        <FormPasswordField />
+        <FormField
+          titleField="Hasło:"
+          nameField="password"
+          typeField="password"
+          placeholderField="Password"
+        />
 
-        <FormPasswordError />
+        <FormError nameError="password" />
 
-        <button type='submit' className='button' aria-label='login button'>
+        <button type="submit" className="button" aria-label="login button">
           Submit
         </button>
       </Form>

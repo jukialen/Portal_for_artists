@@ -2,7 +2,7 @@ import React from 'react';
 
 import './AccountMenu.scss';
 
-function AccountMenu() {
+export const AccountMenu = () => {
   return (
     <article className='account__menu'>
 
@@ -11,7 +11,6 @@ function AccountMenu() {
       <div><a href='#profile'>Profil</a></div>
 
     </article>
-  );
+  )
 }
 
-export default AccountMenu;

@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Photos() {
+import './Photos.scss';
+
+export const Photos = () => {
   return <div className='photos' />;
 }
-
-export default Photos;

@@ -1,5 +1,5 @@
 import React from 'react';
-import AccountMenu from '../../components/molecules/AccountMenu/AccountMenu';
+import { AccountMenu } from '../../components/molecules/AccountMenu/AccountMenu';
 import { AccountData } from '../../components/organisms/AccountData/AccountData';
 import { GalleryAccount } from '../../components/organisms/GalleryAccount/GalleryAccount';
 import { ProfileAccount } from '../../components/organisms/ProfileAccount/ProfileAccount';

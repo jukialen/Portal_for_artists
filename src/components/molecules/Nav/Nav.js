@@ -1,8 +1,6 @@
 import React from 'react';
-// import { NavLink } from 'react-router-dom';
 
 import './Nav.scss';
-
 
 export function Nav({ isMenu, showCreateForm, showLoginForm }) {
 

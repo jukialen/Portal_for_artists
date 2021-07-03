@@ -4,7 +4,7 @@
   margin: 0 auto;
 }
 
-.top__among__users, .subscribed {
+.top__among__users, .liked {
   text-align: center;
   margin: 3rem auto 5rem auto;
 }
@@ -17,7 +17,7 @@
     padding-top: 4rem;
   }
 
-  .top__among__users, .subscribed {
+  .top__among__users, .liked {
     font-size: 2rem;
     text-align: center;
     width: 100vw;
@@ -27,7 +27,7 @@
 
 @media (min-width: 1024px) and (max-width: 1439px) {
 
-  .top__among__users, .subscribed {
+  .top__among__users, .liked {
     width: 75vw;
   }
 }

@@ -1,6 +1,6 @@
 @use '../../../generalSCSS/variables' as *;
 
-.top__wrapper {
+.wrapper {
 	width: 75%;
 	margin: 5rem auto;
 	position: relative;
@@ -69,10 +69,10 @@
 	display: flex;
 }
 
-.first__share__icon,
-.second__share__icon,
-.third__share__icon,
-.fourth__share__icon {
+.facebook__icon,
+.twitter__icon,
+.discord__icon,
+.copy__icon {
 	width: 2rem;
 	height: 2rem;
 	display: block;
@@ -81,31 +81,31 @@
 	flex: 1;
 }
 
-.first__share__icon {
+.facebook__icon {
 	background-image: url('../../../resources/Icons/facebook.svg');
 }
 
-.second__share__icon {
+.twitter__icon {
 	background-image: url('../../../resources/Icons/twitter.svg');
 }
 
-.third__share__icon {
+.discord__icon {
 	background-image: url('../../../resources/Icons/discord.svg');
 }
 
-.fourth__share__icon {
+.copy__icon {
 	background-image: url('../../../resources/Icons/copy.svg');
 }
 
 @media (min-width: 280px) and (max-width: 1023px) {
-	.top__wrapper {
+	.wrapper {
 		margin: 5rem 0;
 		width: 100%;
 	}
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
-	.top__wrapper {
+	.wrapper {
 		margin: 0 auto;
 	}
 

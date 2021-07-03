@@ -1,7 +1,7 @@
 import React from 'react';
 import './Friends.scss';
 
-function Friends() {
+export  const Friends = () => {
   return (
     <div className='friends'>
       <img src='#' className='friends__item' alt='friend one' />
@@ -11,7 +11,5 @@ function Friends() {
       <img src='#' className='friends__item' alt='friend five' />
       <img src='#' className='friends__item' alt='friend six' />
     </div>
-  );
+  )
 }
-
-export default Friends;

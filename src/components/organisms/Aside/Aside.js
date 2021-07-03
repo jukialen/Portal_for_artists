@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
-import Categories from '../../atoms/Categories/Categories';
-import Groups from '../../atoms/Groups/Groups';
-import Friends from '../../atoms/Friends/Friends';
+import { Categories } from '../Categories/Categories';
+import { Groups } from '../Groups/Groups';
+import { Friends } from '../../molecules/Friends/Friends';
 
 import './Aside.scss';
+import { Links } from '../../atoms/Links/Links';
+import { Button } from '../../atoms/Button/Button';
 
 export function Aside() {
   const [isLeftMenu, setLeftMenu] = useState(false);
@@ -15,9 +17,7 @@ export function Aside() {
       id='top__menu'
       className={`aside ${isLeftMenu ? 'aside--active' : ''}`}
     >
-      <button className='aside__right' aria-label='left menu button' onClick={leftMenuClick}>
-        X
-      </button>
+      <Button elementButton='X' classButton='aside__right' ariaLabel='left menu button' onClick={leftMenuClick} />
 
       <h3 className={`${isLeftMenu ? 'first__h3' : ''}`}>Kategorie</h3>
 
@@ -32,10 +32,8 @@ export function Aside() {
       <Friends />
 
       <div>
-        <a href='#'>
-          <h3 className='contact'>Kontakt</h3>
-        </a>
+        <Links hrefLink='#' elementLink={<h3 className='contact'>Kontakt</h3>} />
       </div>
     </aside>
-  );
+  )
 }

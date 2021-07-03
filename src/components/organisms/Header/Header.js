@@ -5,6 +5,7 @@ import 'generalSCSS/darkLightMode.scss';
 import './Header.scss';
 
 import { Nav } from 'components/molecules/Nav/Nav';
+import { Button } from '../../atoms/Button/Button';
 
 export function Header({ isMode, changeMode, showCreateForm, showLoginForm }) {
   const [isMenu, setMenu] = useState('');
@@ -19,18 +20,11 @@ export function Header({ isMode, changeMode, showCreateForm, showLoginForm }) {
         <NavLink to='/'>Portal dla artystów</NavLink>
       </h1>
 
-      <button
-        className={isMode ? 'light__mode' : 'dark__mode'}
-        aria-label='mode button'
-        onClick={changeMode}
-      />
+      <Button classButton={isMode ? 'light__mode' : 'dark__mode'} ariaLabel='mode button' onClick={changeMode} />
 
       <Nav isMenu={isMenu} showCreateForm={showCreateForm} showLoginForm={showLoginForm} />
-      <button
-        className='hamburger__menu'
-        aria-label='menu button'
-        onClick={showMenu}
-      />
+
+      <Button classButton='hamburger__menu' ariaLabel='menu button' onClick={showMenu} />
     </header>
   );
 }

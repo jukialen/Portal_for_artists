@@ -3,14 +3,8 @@ import React from 'react';
 import '../NavForm.scss';
 import * as Yup from 'yup';
 import { Form, Formik } from 'formik';
-import { FormNameField } from '../../../molecules/FormNameField/FormNameField';
-import { FormNameError } from '../../../molecules/FormNameError/FormNameError';
-import { FormPseudonymField } from '../../../molecules/FormPseudonymField/FormPseudonymField';
-import { FormPseudonymError } from '../../../molecules/FormPseudonnymError/FormPseudonymError';
-import { FormEmailField } from '../../../molecules/FormEmailField/FormEmailField';
-import { FormEmailError } from '../../../molecules/FormEmailError/FormEmailError';
-import { FormPasswordField } from '../../../molecules/FormPasswordField/FormPasswordField';
-import { FormPasswordError } from '../../../molecules/FormPasswordError/FormPasswordError';
+import { FormError } from '../../../molecules/FormError/FormError';
+import { FormField } from '../../../molecules/FormField/FormField';
 
 // import { app } from "firebase-config";
 
@@ -26,13 +20,12 @@ const submitAccountData = (values, { setSubmitting }) => {
 export function Create({ isCreate }) {
   return (
     <Formik
-      initialValues={
-        {
-          name: '',
-          pseudonym: '',
-          email: '',
-          password: ''
-        }}
+      initialValues={{
+        name: '',
+        pseudonym: '',
+        email: '',
+        password: '',
+      }}
       validationSchema={Yup.object({
         name: Yup.string()
           .min(3, 'Imię jest za krótkie.')
@@ -65,30 +58,52 @@ export function Create({ isCreate }) {
             /(?=.*?[#?!@$%^&*-]+)/,
             'Pseudonym musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
           )
-          .required('Required')
+          .required('Required'),
       })}
       onSubmit={submitAccountData}
     >
-      <Form className={`create__account ${isCreate ? 'form__menu--active' : ''}`}>
+      <Form
+        className={`create__account ${isCreate ? 'form__menu--active' : ''}`}
+      >
         <h2>Zarejestruj się za darmo!</h2>
 
-        <FormNameField />
+        <FormField
+          titleField="Imię:"
+          nameField="name"
+          typeField="text"
+          placeholderField="Name"
+        />
 
-        <FormNameError />
+        <FormError nameError="name" />
 
-        <FormPseudonymField />
+        <FormField
+          titleField="Pseudonim:"
+          nameField="pseudonym"
+          typeField="text"
+          placeholderField="Pseudonym"
+        />
 
-        <FormPseudonymError />
+        <FormError nameError="pseudonym" />
 
-        <FormEmailField />
+        <FormField
+          titleField="E-mail:"
+          nameField="email"
+          typeField="email"
+          placeholderField="E-mail"
+        />
 
-        <FormEmailError />
+        <FormError nameError="email" />
 
-        <FormPasswordField />
+        <FormField
+          titleField="Hasło:"
+          nameField="password"
+          typeField="password"
+          placeholderField="Password"
+        />
 
-        <FormPasswordError />
+        <FormError nameError="password" />
 
-        <button type='submit' className='button' aria-label='create button'>
+        <button type="submit" className="button" aria-label="create button">
           Submit
         </button>
       </Form>
