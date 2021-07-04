@@ -6,26 +6,32 @@ import { Form, Formik } from 'formik';
 import { FormError } from '../../../molecules/FormError/FormError';
 import { FormField } from '../../../molecules/FormField/FormField';
 
-// import { app } from "firebase-config";
+import { app } from "firebase-config";
 
-// const db = app.firestore();
-const submitAccountData = (values, { setSubmitting }) => {
-  setTimeout(() => {
-    alert(JSON.stringify(values, null, 2));
+import { collection, addDoc } from 'firebase/firestore';
 
-    setSubmitting(false);
-  }, 400);
-};
+const submitAccountData = async () => {
+  const docRef = await addDoc(collection(app, "users"), {
+    name: Formik.value.name,
+    pseudonym: Formik.value.pseudonym,
+    email: Formik.value.email,
+    password: Formik.value.password
+  });
+  console.log("Document written with ID: ", docRef.id);
+  return docRef
+}
+
+const initialValues = {
+  name: '',
+  pseudonym: '',
+  email: '',
+  password: ''
+}
 
 export function Create({ isCreate }) {
   return (
     <Formik
-      initialValues={{
-        name: '',
-        pseudonym: '',
-        email: '',
-        password: '',
-      }}
+      initialValues={initialValues}
       validationSchema={Yup.object({
         name: Yup.string()
           .min(3, 'Imię jest za krótkie.')
