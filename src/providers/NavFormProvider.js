@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, createContext, useMemo, useCallback } from 'react';
 
-export const NavFormContext = React.createContext({
+export const NavFormContext = createContext({
   isLogin: false,
   isCreate: false,
   showLoginForm: () => {},
-  showCreateAccountForm: () => {},
+  showCreateForm: () => {},
 });
 
 export const NavFormProvider = ({ children }) => {
-  const [isLogin, setLogin] = useState();
-  const [isCreate, setCreate] = useState();
+  const [isLogin, setLogin] = useState(false);
+  const [isCreate, setCreate] = useState(false);
 
-  const showLoginForm = () => setLogin(!isLogin);
+  const showLoginForm = useCallback(() => setLogin(!isLogin), [isLogin]);
 
-  const showCreateForm = () => setCreate(!isCreate);
+  const showCreateForm = useCallback(() => setCreate(!isCreate), [isCreate]);
 
   return (
     <NavFormContext.Provider

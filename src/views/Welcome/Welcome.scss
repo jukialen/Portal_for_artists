@@ -1,0 +1,13 @@
+.workspace {
+  display: flex;
+	flex-direction: column ;
+  h1 {
+    margin: 5rem auto;
+  }
+
+  p {
+    font-size: 1.4rem;
+	  line-height: 1.4;
+	  margin: 3rem 10vh;
+  }
+}

@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useContext, useCallback } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 import '../NavForm.scss';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { FormError } from '../../../molecules/FormError/FormError';
+import { NavFormContext } from '../../../../providers/NavFormProvider';
 
-const submitAccountData = (values, { setSubmitting }) => {
-  setTimeout(() => {
-    alert(JSON.stringify(values, null, 2));
+export const Login = () => {
+  let user;
+  const submitAccountData = useCallback((values) => {
+    user = JSON.stringify(values);
+   localStorage.setItem('user', user);
+    console.log(user)},[user])
+  ;
 
-    setSubmitting(false);
-  }, 400);
-};
-
-export const Login = ({ isLogin }) => {
+  const { isLogin } = useContext(NavFormContext);
   return (
     <Formik
       initialValues={{ pseudonym: '', password: '' }}

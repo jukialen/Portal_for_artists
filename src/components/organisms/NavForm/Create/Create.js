@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import '../NavForm.scss';
 import * as Yup from 'yup';
@@ -6,34 +6,38 @@ import { Form, Formik } from 'formik';
 import { FormError } from '../../../molecules/FormError/FormError';
 import { FormField } from '../../../molecules/FormField/FormField';
 
-import { app } from "firebase-config";
+import { app } from 'firebase-config';
 
 import { collection, addDoc } from 'firebase/firestore';
+import { NavFormContext } from '../../../../providers/NavFormProvider';
+import { ShowMenuContext } from '../../../../providers/ShowMenuProvider';
 
 const submitAccountData = async () => {
-  const docRef = await addDoc(collection(app, "users"), {
-    name: Formik.value.name,
-    pseudonym: Formik.value.pseudonym,
-    email: Formik.value.email,
-    password: Formik.value.password
+  const docRef = await addDoc(collection(app, 'users'), {
+    name: Formik.username.value,
+    pseudonym: Formik.pseudonym.value,
+    email: Formik.email.value,
+    password: Formik.password.value,
   });
-  console.log("Document written with ID: ", docRef.id);
-  return docRef
-}
+  console.alert('Document written with ID: ', docRef.id);
+  return docRef;
+};
 
 const initialValues = {
-  name: '',
+  username: '',
   pseudonym: '',
   email: '',
-  password: ''
-}
+  password: '',
+};
 
-export function Create({ isCreate }) {
+export function Create() {
+  const { isCreate } = useContext(NavFormContext);
+
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={Yup.object({
-        name: Yup.string()
+        username: Yup.string()
           .min(3, 'Imię jest za krótkie.')
           .matches(
             /^(?:[A-Z])(?:[a-z]){2,}(?=[0-9]){0}/g,
@@ -68,19 +72,17 @@ export function Create({ isCreate }) {
       })}
       onSubmit={submitAccountData}
     >
-      <Form
-        className={`create__account ${isCreate ? 'form__menu--active' : ''}`}
-      >
+      <Form className={`create__account ${isCreate ? 'form__menu--active' : ''}`}>
         <h2>Zarejestruj się za darmo!</h2>
 
         <FormField
           titleField="Imię:"
-          nameField="name"
+          nameField="username"
           typeField="text"
           placeholderField="Name"
         />
 
-        <FormError nameError="name" />
+        <FormError nameError="username" />
 
         <FormField
           titleField="Pseudonim:"
