@@ -3,26 +3,44 @@ import React, { useContext } from 'react';
 import '../NavForm.scss';
 import * as Yup from 'yup';
 import { Form, Formik } from 'formik';
-import { FormError } from '../../../molecules/FormError/FormError';
-import { FormField } from '../../../molecules/FormField/FormField';
+import { FormError } from 'components/molecules/FormError/FormError';
+import { FormField } from 'components/molecules/FormField/FormField';
 
-import { app } from 'firebase-config';
+import { db } from 'firebase-config';
 
-import { collection, addDoc } from 'firebase/firestore';
-import { NavFormContext } from '../../../../providers/NavFormProvider';
-import { ShowMenuContext } from '../../../../providers/ShowMenuProvider';
-import { Button } from '../../../atoms/Button/Button';
-import { Providers } from '../../../molecules/Providers/Providers';
+// import { collection, addDoc } from 'firebase/firestore';
+import { NavFormContext } from 'providers/NavFormProvider';
+import { Button } from 'components/atoms/Button/Button';
+import { Providers } from 'components/molecules/Providers/Providers';
 
+import { collection, addDoc, getDocs } from "firebase/firestore";
 const submitAccountData = async () => {
-  const docRef = await addDoc(collection(app, 'users'), {
-    name: Formik.username.value,
-    pseudonym: Formik.pseudonym.value,
-    email: Formik.email.value,
-    password: Formik.password.value,
+//   const docRef = await addDoc(collection(db, 'users'), {
+//     name: Formik.username.value,
+//     pseudonym: Formik.pseudonym.value,
+//     email: Formik.email.value,
+//     password: Formik.password.value,
+//   });
+//   console.alert('Document written with ID: ', docRef.id);
+//   return docRef;
+// };
+
+  try {
+    const docRef = await addDoc(collection(db, "users"), {
+      username: Formik.username.value,
+      pseudonym: Formik.pseudonym.value,
+      email: Formik.email.value,
+      password: Formik.password.value,
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+
+  const querySnapshot = await getDocs(collection(db, "users"));
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} => ${doc.data()}`);
   });
-  console.alert('Document written with ID: ', docRef.id);
-  return docRef;
 };
 
 const initialValues = {
