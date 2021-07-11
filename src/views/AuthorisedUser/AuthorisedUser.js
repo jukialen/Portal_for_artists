@@ -7,7 +7,7 @@ import { Authors } from '../Authors/Authors';
 import { Terms } from '../Terms/Terms';
 import { Privacy } from '../Privacy/Privacy';
 import { Faq } from '../Faq/Faq';
-import { Account } from '../Acconut/Account';
+import { Account } from '../Account/Account';
 import { Footer } from '../../components/organisms/Footer/Footer';
 import { ModeContext } from '../../providers/ModeProvider';
 

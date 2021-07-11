@@ -1,20 +1,25 @@
 import React, { useContext, useCallback } from 'react';
-import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
+
+import { NavFormContext } from 'providers/NavFormProvider';
 
 import '../NavForm.scss';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
 import { FormField } from 'components/molecules/FormField/FormField';
-import { FormError } from '../../../molecules/FormError/FormError';
-import { NavFormContext } from '../../../../providers/NavFormProvider';
+import { FormError } from 'components/molecules/FormError/FormError';
+import { Button } from '../../../atoms/Button/Button';
+import { Providers } from 'components/molecules/Providers/Providers';
 
 export const Login = () => {
   let user;
-  const submitAccountData = useCallback((values) => {
-    user = JSON.stringify(values);
-   localStorage.setItem('user', user);
-    console.log(user)},[user])
-  ;
-
+  const submitAccountData = useCallback(
+    (values) => {
+      user = JSON.stringify(values);
+      localStorage.setItem('user', user);
+      console.log(user);
+    },
+    [user]
+  );
   const { isLogin } = useContext(NavFormContext);
   return (
     <Formik
@@ -66,9 +71,13 @@ export const Login = () => {
 
         <FormError nameError="password" />
 
-        <button type="submit" className="button" aria-label="login button">
-          Submit
-        </button>
+        <Button typeButton="submit" classButton="button" ariaLabel="login button" title='Submit' />
+
+        <p className='separator'>______________________________________</p>
+
+        <h4>Lub zaloguj się za pomocą:</h4>
+
+        <Providers />
       </Form>
     </Formik>
   );

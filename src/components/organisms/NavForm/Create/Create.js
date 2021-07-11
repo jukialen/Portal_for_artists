@@ -11,6 +11,8 @@ import { app } from 'firebase-config';
 import { collection, addDoc } from 'firebase/firestore';
 import { NavFormContext } from '../../../../providers/NavFormProvider';
 import { ShowMenuContext } from '../../../../providers/ShowMenuProvider';
+import { Button } from '../../../atoms/Button/Button';
+import { Providers } from '../../../molecules/Providers/Providers';
 
 const submitAccountData = async () => {
   const docRef = await addDoc(collection(app, 'users'), {
@@ -111,9 +113,13 @@ export function Create() {
 
         <FormError nameError="password" />
 
-        <button type="submit" className="button" aria-label="create button">
-          Submit
-        </button>
+        <Button typeButton="submit" classButton="button" ariaLabel="login button" title='Submit' />
+
+        <p className='separator'>______________________________________</p>
+
+        <h4>Lub zarejestruj się za pomocą:</h4>
+
+        <Providers />
       </Form>
     </Formik>
   );
