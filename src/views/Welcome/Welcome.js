@@ -1,11 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import './Welcome.scss';
-import { ModeContext } from '../../providers/ModeProvider';
 
 export const Welcome = () => {
-  const { isMode } = useContext(ModeContext);
-
   return (
     <div className="workspace">
       <h1>Welcome artysto!</h1>

@@ -75,7 +75,7 @@ export const Login = () => {
           typeButton="submit"
           classButton="button"
           ariaLabel="login button"
-          title="Submit"
+          title="Zaloguj się"
         />
 
         <p className="separator">______________________________________</p>
