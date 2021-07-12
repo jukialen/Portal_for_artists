@@ -7,7 +7,7 @@ import './AccountData.scss';
 
 export const AccountData = () => {
   return (
-    <article id='account__data' className='account__data'>
+    <article id="account__data" className="account__data">
       <SubscriptiomAccountData />
 
       <MailAccountData />

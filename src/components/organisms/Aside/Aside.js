@@ -14,10 +14,15 @@ export function Aside() {
 
   return (
     <aside
-      id='top__menu'
+      id="top__menu"
       className={`aside ${isLeftMenu ? 'aside--active' : ''}`}
     >
-      <Button elementButton='X' classButton='aside__right' ariaLabel='left menu button' onClick={leftMenuClick} />
+      <Button
+        elementButton="X"
+        classButton="aside__right"
+        ariaLabel="left menu button"
+        onClick={leftMenuClick}
+      />
 
       <h3 className={`${isLeftMenu ? 'first__h3' : ''}`}>Kategorie</h3>
 
@@ -32,8 +37,11 @@ export function Aside() {
       <Friends />
 
       <div>
-        <Links hrefLink='#' elementLink={<h3 className='contact'>Kontakt</h3>} />
+        <Links
+          hrefLink="#"
+          elementLink={<h3 className="contact">Kontakt</h3>}
+        />
       </div>
     </aside>
-  )
+  );
 }

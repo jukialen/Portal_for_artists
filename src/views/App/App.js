@@ -14,7 +14,13 @@ export function App() {
 
   return (
     <ModeProvider>
-        {user ? user && <AuthorisedUser /> : <NavFormProvider><UnauthorisedUser /></NavFormProvider>}
+      {user ? (
+        user && <AuthorisedUser />
+      ) : (
+        <NavFormProvider>
+          <UnauthorisedUser />
+        </NavFormProvider>
+      )}
     </ModeProvider>
   );
 }

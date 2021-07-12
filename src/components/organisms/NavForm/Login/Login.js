@@ -71,9 +71,14 @@ export const Login = () => {
 
         <FormError nameError="password" />
 
-        <Button typeButton="submit" classButton="button" ariaLabel="login button" title='Submit' />
+        <Button
+          typeButton="submit"
+          classButton="button"
+          ariaLabel="login button"
+          title="Submit"
+        />
 
-        <p className='separator'>______________________________________</p>
+        <p className="separator">______________________________________</p>
 
         <h4>Lub zaloguj się za pomocą:</h4>
 

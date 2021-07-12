@@ -1,16 +1,17 @@
 h2 {
-	margin: 3rem auto;
+  margin: 3rem auto;
 }
 
-.questions__faq, .answers__faq {
-	width: 50%;
-	display: block;
-	justify-content: center;
-	justify-items: center;
-	margin: 2rem auto;
-	font-size: 1.2rem;
+.questions__faq,
+.answers__faq {
+  width: 50%;
+  display: block;
+  justify-content: center;
+  justify-items: center;
+  margin: 2rem auto;
+  font-size: 1.2rem;
 
-	a {
-		text-decoration: underline;
-	}
+  a {
+    text-decoration: underline;
+  }
 }

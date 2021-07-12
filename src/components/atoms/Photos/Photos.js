@@ -3,5 +3,5 @@ import React from 'react';
 import './Photos.scss';
 
 export const Photos = () => {
-  return <div className='photos' />;
-}
+  return <div className="photos" />;
+};

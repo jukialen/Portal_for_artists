@@ -9,11 +9,11 @@ export function Workspace() {
     <section className="workspace">
       <h2 className="top__among__users">TOP10 według użytkowników</h2>
 
-      <Wrapper idWrapper='carouselTop' />
+      <Wrapper idWrapper="carouselTop" />
 
       <h2 className="liked">Ostatnie 10 polubionych</h2>
 
-      <Wrapper idWrapper='carouselLiked' />
+      <Wrapper idWrapper="carouselLiked" />
     </section>
   );
 }

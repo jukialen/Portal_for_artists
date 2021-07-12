@@ -10,23 +10,29 @@ import { ModeContext } from '../../../providers/ModeProvider';
 import { ShowMenuContext } from '../../../providers/ShowMenuProvider';
 
 export function Header({ titleFirstNav, titleSecondNav }) {
-
-
   const { isMode, changeMode } = useContext(ModeContext);
 
   const { showMenu } = useContext(ShowMenuContext);
 
   return (
     <header>
-      <h1 className='title'>
-        <NavLink to='/'>Portal dla artystów</NavLink>
+      <h1 className="title">
+        <NavLink to="/">Portal dla artystów</NavLink>
       </h1>
 
-      <Button classButton={isMode ? 'light__mode' : 'dark__mode'} ariaLabel='mode button' onClick={changeMode} />
+      <Button
+        classButton={isMode ? 'light__mode' : 'dark__mode'}
+        ariaLabel="mode button"
+        onClick={changeMode}
+      />
 
       <Nav titleFirstNav={titleFirstNav} titleSecondNav={titleSecondNav} />
 
-      <Button classButton='hamburger__menu' ariaLabel='menu button' onClick={showMenu} />
+      <Button
+        classButton="hamburger__menu"
+        ariaLabel="menu button"
+        onClick={showMenu}
+      />
     </header>
   );
 }

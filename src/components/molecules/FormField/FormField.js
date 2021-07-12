@@ -1,10 +1,16 @@
 import React from 'react';
 import { Field } from 'formik';
 
-export const FormField = ({ titleField, nameField, typeField, placeholderField, value}) => {
+export const FormField = ({
+  titleField,
+  nameField,
+  typeField,
+  placeholderField,
+  value,
+}) => {
   return (
-    <div className='form__field'>
-      <label htmlFor='pseudonym'>{titleField}</label>
+    <div className="form__field">
+      <label htmlFor="pseudonym">{titleField}</label>
 
       <Field
         name={nameField}
@@ -15,4 +21,4 @@ export const FormField = ({ titleField, nameField, typeField, placeholderField, 
       />
     </div>
   );
-}
+};

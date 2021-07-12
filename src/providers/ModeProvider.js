@@ -14,10 +14,10 @@ export const ModeProvider = ({ children }) => {
     <ModeContext.Provider
       value={{
         isMode,
-        changeMode
+        changeMode,
       }}
     >
       {children}
     </ModeContext.Provider>
-  )
-}
+  );
+};

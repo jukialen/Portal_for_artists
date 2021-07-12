@@ -27,38 +27,37 @@ export const AuthorisedUser = () => {
         <Header
           isMode={isMode}
           changeMode={changeMode}
-          titleFirstNav='Wyloguj'
-          titleSecondNav='Konto'
+          titleFirstNav="Wyloguj"
+          titleSecondNav="Konto"
         />
         <Aside />
         <Switch>
-          <Route exact path='/'>
+          <Route exact path="/">
             <Workspace isMode={isMode} />
           </Route>
-          <Route path='/authors'>
+          <Route path="/authors">
             <Authors />
           </Route>
-          <Route path='/terms'>
+          <Route path="/terms">
             <Terms />
           </Route>
-          <Route path='/privacy'>
+          <Route path="/privacy">
             <Privacy />
           </Route>
-          <Route path='/faq'>
+          <Route path="/faq">
             <Faq />
           </Route>
-          <Route path='/account'>
+          <Route path="/account">
             <Account />
           </Route>
         </Switch>
-        <div className='up'>
-          <a href='#top__menu' aria-label='top of page button'>
+        <div className="up">
+          <a href="#top__menu" aria-label="top of page button">
             ^
           </a>
         </div>
       </div>
       <Footer />
     </Router>
-
-  )
-}
+  );
+};

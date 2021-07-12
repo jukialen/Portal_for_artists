@@ -14,7 +14,7 @@ export const ShowMenuProvider = ({ children }) => {
     <ShowMenuContext.Provider
       value={{
         isMenu,
-        showMenu
+        showMenu,
       }}
     >
       {children}

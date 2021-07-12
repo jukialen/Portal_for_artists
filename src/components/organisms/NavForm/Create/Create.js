@@ -13,31 +13,32 @@ import { NavFormContext } from 'providers/NavFormProvider';
 import { Button } from 'components/atoms/Button/Button';
 import { Providers } from 'components/molecules/Providers/Providers';
 
-import { collection, addDoc, getDocs } from "firebase/firestore";
-const submitAccountData = async () => {
-//   const docRef = await addDoc(collection(db, 'users'), {
-//     name: Formik.username.value,
-//     pseudonym: Formik.pseudonym.value,
-//     email: Formik.email.value,
-//     password: Formik.password.value,
-//   });
-//   console.alert('Document written with ID: ', docRef.id);
-//   return docRef;
-// };
+import { collection, addDoc, getDocs } from 'firebase/firestore';
+const submitAccountData = async (values) => {
+  // const docRef = await addDoc(collection(db, 'users'), {
+  //   username: values.username,
+  //       pseudonym: values.pseudonym,
+  //       email: values.email,
+  //       password: values.password,
+  // });
+  // console.alert('Document written with ID: ', docRef.id);
+  //   return docRef;
 
   try {
-    const docRef = await addDoc(collection(db, "users"), {
-      username: Formik.username.value,
-      pseudonym: Formik.pseudonym.value,
-      email: Formik.email.value,
-      password: Formik.password.value,
+    const docRef = await addDoc(collection(db, 'users'), {
+      username: values.username,
+      pseudonym: values.pseudonym,
+      email: values.email,
+      password: values.password,
     });
-    console.log("Document written with ID: ", docRef.id);
+    console.log('Document written with ID: ', docRef.id);
+    console.alert('test');
   } catch (e) {
-    console.error("Error adding document: ", e);
+    console.error('Error adding document: ', e);
+    console.alert('error');
   }
 
-  const querySnapshot = await getDocs(collection(db, "users"));
+  const querySnapshot = await getDocs(collection(db, 'users'));
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data()}`);
   });
@@ -60,7 +61,7 @@ export function Create() {
         username: Yup.string()
           .min(3, 'Imię jest za krótkie.')
           .matches(
-            /^(?:[A-Z])(?:[a-z]){2,}(?=[0-9]){0}/g,
+            /^(?=[A-Z])(?=[a-z]){2,}(?=[0-9]){0}/g,
             'Imię przyjmuje tylko litery. Pierwsza litera musi być duża.'
           )
           .required('Rquired'),
@@ -92,7 +93,9 @@ export function Create() {
       })}
       onSubmit={submitAccountData}
     >
-      <Form className={`create__account ${isCreate ? 'form__menu--active' : ''}`}>
+      <Form
+        className={`create__account ${isCreate ? 'form__menu--active' : ''}`}
+      >
         <h2>Zarejestruj się za darmo!</h2>
 
         <FormField
@@ -131,9 +134,14 @@ export function Create() {
 
         <FormError nameError="password" />
 
-        <Button typeButton="submit" classButton="button" ariaLabel="login button" title='Submit' />
+        <Button
+          typeButton="submit"
+          classButton="button"
+          ariaLabel="login button"
+          title="Zarejestruj się"
+        />
 
-        <p className='separator'>______________________________________</p>
+        <p className="separator">______________________________________</p>
 
         <h4>Lub zarejestruj się za pomocą:</h4>
 

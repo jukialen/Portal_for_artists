@@ -7,7 +7,7 @@ export const Welcome = () => {
   const { isMode } = useContext(ModeContext);
 
   return (
-    <div className='workspace'>
+    <div className="workspace">
       <h1>Welcome artysto!</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

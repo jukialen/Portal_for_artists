@@ -17,41 +17,41 @@ export const UnauthorisedUser = () => {
   const { isMode } = useContext(ModeContext);
 
   return (
-      <Router>
-        <div className={`whole__page ${isMode ? 'dark' : ''}`}>
-          <ShowMenuProvider>
-            <Header
-              titleFirstNav="Zaloguj się"
-              titleSecondNav="Zarejestruj się"
-            />
-            <Create />
-            <Login />
-          </ShowMenuProvider>
-          <Aside />
-          <Switch>
-            <Route exact path="/">
-              <Welcome />
-            </Route>
-            <Route path="/authors">
-              <Authors />
-            </Route>
-            <Route path="/terms">
-              <Terms />
-            </Route>
-            <Route path="/privacy">
-              <Privacy />
-            </Route>
-            <Route path="/faq">
-              <Faq />
-            </Route>
-          </Switch>
-          <div className="up">
-            <a href="#top__menu" aria-label="top of page button">
-              ^
-            </a>
-          </div>
+    <Router>
+      <div className={`whole__page ${isMode ? 'dark' : ''}`}>
+        <ShowMenuProvider>
+          <Header
+            titleFirstNav="Zaloguj się"
+            titleSecondNav="Zarejestruj się"
+          />
+          <Create />
+          <Login />
+        </ShowMenuProvider>
+        <Aside />
+        <Switch>
+          <Route exact path="/">
+            <Welcome />
+          </Route>
+          <Route path="/authors">
+            <Authors />
+          </Route>
+          <Route path="/terms">
+            <Terms />
+          </Route>
+          <Route path="/privacy">
+            <Privacy />
+          </Route>
+          <Route path="/faq">
+            <Faq />
+          </Route>
+        </Switch>
+        <div className="up">
+          <a href="#top__menu" aria-label="top of page button">
+            ^
+          </a>
         </div>
-        <Footer />
-      </Router>
+      </div>
+      <Footer />
+    </Router>
   );
 };

@@ -7,4 +7,4 @@ export const FormError = ({ nameError }) => {
       <ErrorMessage name={nameError} />
     </p>
   );
-}
+};
