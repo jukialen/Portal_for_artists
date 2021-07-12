@@ -61,7 +61,7 @@ export function Create() {
         username: Yup.string()
           .min(3, 'Imię jest za krótkie.')
           .matches(
-            /^(?=[A-Z])(?=[a-z]){2,}(?=[0-9]){0}/g,
+            /^(?:[A-Z])(?:[a-z]){2,}(?=[0-9]){0}/g,
             'Imię przyjmuje tylko litery. Pierwsza litera musi być duża.'
           )
           .required('Rquired'),

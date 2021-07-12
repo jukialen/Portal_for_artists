@@ -6,7 +6,7 @@ export const FormField = ({
   nameField,
   typeField,
   placeholderField,
-  value,
+  values,
 }) => {
   return (
     <div className="form__field">
@@ -17,7 +17,7 @@ export const FormField = ({
         type={typeField}
         id={nameField}
         placeholder={placeholderField}
-        value={value}
+        value={values}
       />
     </div>
   );
