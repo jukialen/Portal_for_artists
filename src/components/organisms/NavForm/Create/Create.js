@@ -1,48 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import '../NavForm.scss';
 import * as Yup from 'yup';
 import { Form, Formik } from 'formik';
+import { NavFormContext } from 'providers/NavFormProvider';
 import { FormError } from 'components/molecules/FormError/FormError';
 import { FormField } from 'components/molecules/FormField/FormField';
+import { Providers } from 'components/molecules/Providers/Providers';
+import { Button } from 'components/atoms/Button/Button';
 
 import { db } from 'firebase-config';
-
-// import { collection, addDoc } from 'firebase/firestore';
-import { NavFormContext } from 'providers/NavFormProvider';
-import { Button } from 'components/atoms/Button/Button';
-import { Providers } from 'components/molecules/Providers/Providers';
-
-import { collection, addDoc, getDocs } from 'firebase/firestore';
-const submitAccountData = async (values) => {
-  // const docRef = await addDoc(collection(db, 'users'), {
-  //   username: values.username,
-  //       pseudonym: values.pseudonym,
-  //       email: values.email,
-  //       password: values.password,
-  // });
-  // console.alert('Document written with ID: ', docRef.id);
-  //   return docRef;
-
-  try {
-    const docRef = await addDoc(collection(db, 'users'), {
-      username: values.username,
-      pseudonym: values.pseudonym,
-      email: values.email,
-      password: values.password,
-    });
-    console.log('Document written with ID: ', docRef.id);
-    console.alert('test');
-  } catch (e) {
-    console.error('Error adding document: ', e);
-    console.alert('error');
-  }
-
-  const querySnapshot = await getDocs(collection(db, 'users'));
-  querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data()}`);
-  });
-};
+import { collection, addDoc } from "firebase/firestore"; 
 
 const initialValues = {
   username: '',
@@ -53,6 +21,25 @@ const initialValues = {
 
 export function Create() {
   const { isCreate } = useContext(NavFormContext);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const submitAccountData = async (values) => {
+    setIsLoading(true);
+    try {
+      const docRef = await addDoc(collection(db, "users"), {
+        username: values.username,
+        pseudonym: values.pseudonym,
+        email: values.email,
+        password: values.password,
+      });
+      console.log('Document written with ID: ', docRef.id);
+    } catch (e) {
+      console.error('Error adding document: ', e);
+      setErrorMessage('Nie mogliśmy Cię zarejstrować');
+    }
+    setIsLoading(false);
+  };
 
   return (
     <Formik
@@ -138,8 +125,11 @@ export function Create() {
           typeButton="submit"
           classButton="button"
           ariaLabel="login button"
-          title="Zarejestruj się"
+          title={isLoading ? "Rejestruję Cię..." : "Zarejestruj się"}
+          disable={isLoading.toString()}
         />
+
+        {!errorMessage ? null : <p>errorMessage</p>}
 
         <p className="separator">______________________________________</p>
 

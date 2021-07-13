@@ -1,9 +1,8 @@
 import { initializeApp } from 'firebase/app';
-// import 'firebase/firestore';
 import { getFirestore } from 'firebase/firestore';
 import 'firebase/app-check';
-// import firebase from 'firebase/compat';
 
+// eslint-disable-next-line no-unused-vars
 const firebaseApp = initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
@@ -14,7 +13,3 @@ const firebaseApp = initializeApp({
 });
 
 export const db = getFirestore();
-
-// const appCheck = firebase.appCheck();
-//
-// appCheck.activate(process.env.REACT_APP_FIREBASE_APP_CHECK);
