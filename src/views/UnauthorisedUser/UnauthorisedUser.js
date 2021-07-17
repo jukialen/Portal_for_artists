@@ -1,17 +1,22 @@
-import React, { useContext } from 'react';
-import { Create } from '../../components/organisms/NavForm/Create/Create';
-import { Login } from '../../components/organisms/NavForm/Login/Login';
+import React, { useContext, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import { Create } from 'components/organisms/NavForm/Create/Create';
+import { Login } from 'components/organisms/NavForm/Login/Login';
 import { Authors } from '../Authors/Authors';
 import { Terms } from '../Terms/Terms';
 import { Privacy } from '../Privacy/Privacy';
 import { Faq } from '../Faq/Faq';
-import { Header } from '../../components/organisms/Header/Header';
-import { Aside } from '../../components/organisms/Aside/Aside';
-import { Footer } from '../../components/organisms/Footer/Footer';
+import { Header } from 'components/organisms/Header/Header';
+import { Aside } from 'components/organisms/Aside/Aside';
+import { Footer } from 'components/organisms/Footer/Footer';
+
 import { Welcome } from '../Welcome/Welcome';
-import { ModeContext } from '../../providers/ModeProvider';
-import { ShowMenuProvider } from '../../providers/ShowMenuProvider';
+
+import { ModeContext } from 'providers/ModeProvider';
+import { ShowMenuProvider } from 'providers/ShowMenuProvider';
+
+import { AffixButton } from 'components/molecules/AffixButton/AffixButton';
 
 export const UnauthorisedUser = () => {
   const { isMode } = useContext(ModeContext);
@@ -45,11 +50,7 @@ export const UnauthorisedUser = () => {
             <Faq />
           </Route>
         </Switch>
-        <div className="up">
-          <a href="#top__menu" aria-label="top of page button">
-            ^
-          </a>
-        </div>
+        <AffixButton />
       </div>
       <Footer />
     </Router>

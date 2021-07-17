@@ -3,10 +3,12 @@ import React, { useState } from 'react';
 import { Categories } from '../Categories/Categories';
 import { Groups } from '../Groups/Groups';
 import { Friends } from '../../molecules/Friends/Friends';
+import { Links } from 'components/atoms/Links/Links';
+import { Button } from 'components/atoms/Button/Button';
 
 import './Aside.scss';
-import { Links } from '../../atoms/Links/Links';
-import { Button } from '../../atoms/Button/Button';
+
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 export function Aside() {
   const [isLeftMenu, setLeftMenu] = useState(false);
@@ -18,7 +20,7 @@ export function Aside() {
       className={`aside ${isLeftMenu ? 'aside--active' : ''}`}
     >
       <Button
-        elementButton="X"
+        elementButton={isLeftMenu ? <LeftOutlined /> : <RightOutlined />}
         classButton="aside__right"
         ariaLabel="left menu button"
         onClick={leftMenuClick}

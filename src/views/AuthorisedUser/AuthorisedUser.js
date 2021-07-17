@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import { Header } from '../../components/organisms/Header/Header';
 import { Aside } from '../../components/organisms/Aside/Aside';
 import { Workspace } from '../Workspace/Workspace';
@@ -9,14 +10,11 @@ import { Privacy } from '../Privacy/Privacy';
 import { Faq } from '../Faq/Faq';
 import { Account } from '../Account/Account';
 import { Footer } from '../../components/organisms/Footer/Footer';
+
 import { ModeContext } from '../../providers/ModeProvider';
 
-//DARK MODE
-// const [isMode, setMode] = useState(false);
-//
-// const changeMode = () => {
-//   setMode(!isMode);
-// };
+import { AffixButton } from '../../components/molecules/AffixButton/AffixButton';
+
 
 export const AuthorisedUser = () => {
   const { isMode, changeMode } = useContext(ModeContext);
@@ -51,11 +49,7 @@ export const AuthorisedUser = () => {
             <Account />
           </Route>
         </Switch>
-        <div className="up">
-          <a href="#top__menu" aria-label="top of page button">
-            ^
-          </a>
-        </div>
+        <AffixButton />
       </div>
       <Footer />
     </Router>
