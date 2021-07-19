@@ -8,7 +8,17 @@ import { Link } from 'react-router-dom';
 export const Nav = ({ titleFirstNav, titleSecondNav }) => {
   const { showLoginForm, showCreateForm } = useContext(NavFormContext);
 
-  const { isMenu } = useContext(ShowMenuContext);
+  const { isMenu, showMenu } = useContext(ShowMenuContext);
+
+  const hideMenuLogin = () => {
+    showLoginForm();
+    showMenu()
+  }
+
+  const hideMenuCreate = () => {
+    showCreateForm();
+    showMenu()
+  }
 
   return (
     <nav className={isMenu ? 'menu--active' : ''}>
@@ -20,7 +30,7 @@ export const Nav = ({ titleFirstNav, titleSecondNav }) => {
             onClick={
               titleFirstNav === 'Wyloguj'
                 ? localStorage.removeItem('user')
-                : showLoginForm
+                : hideMenuLogin
             }
           >
             {titleFirstNav}
@@ -28,11 +38,9 @@ export const Nav = ({ titleFirstNav, titleSecondNav }) => {
         </li>
         <li className="menu">
           <Link
-            as="a"
             to={titleSecondNav === 'Konto' ? '/account' : '#'}
-            href="#"
             className="sign__out"
-            onClick={showCreateForm}
+            onClick={hideMenuCreate}
           >
             {titleSecondNav}
           </Link>

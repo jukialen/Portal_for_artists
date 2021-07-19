@@ -1,4 +1,6 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback } from 'react';
+
+import { useLocalState } from 'hooks/useLocalState';
 
 export const ModeContext = React.createContext({
   inMode: false,
@@ -6,7 +8,7 @@ export const ModeContext = React.createContext({
 });
 
 export const ModeProvider = ({ children }) => {
-  const [isMode, setMode] = useState(false);
+  const [isMode, setMode] = useLocalState(false, 'mode');
 
   const changeMode = useCallback(() => setMode(!isMode), [isMode]);
 
