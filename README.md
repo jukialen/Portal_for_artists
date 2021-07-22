@@ -6,13 +6,18 @@ It's project for learning all the things to create websites. \
 Title of project is social portal for people, which they create drawings, short animation or films and edite photos
 for hobbyist or professional purpose.
 ## Technologies
-In the project is used: \
+The project uses: \
 a) Front-end:
 - HTML5;
 - SCSS;
-- JS;
+- methodology BEM;
+- React;
+- Atomic Design;
+- Formik with Yup;
+- Ant Design;
+- Firebase; 
 - basic Git;
-- methodology BEM; 
+- basic Webpack, Eslint and Prettier
   
 b) Back-end:
 - Spring;

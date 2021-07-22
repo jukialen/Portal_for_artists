@@ -9,8 +9,8 @@ import { FormField } from 'components/molecules/FormField/FormField';
 import { Providers } from 'components/molecules/Providers/Providers';
 import { Button } from 'components/atoms/Button/Button';
 
-import { db } from 'firebase-config';
-import { collection, addDoc } from "firebase/firestore"; 
+import { db } from 'firebaseConfig';
+import { collection, addDoc } from "firebase/firestore";
 
 const initialValues = {
   username: '',
@@ -26,14 +26,18 @@ export function Create() {
 
   const submitAccountData = async (values) => {
     setIsLoading(true);
+    console.log(values);
     try {
+      console.log(values);
       const docRef = await addDoc(collection(db, "users"), {
         username: values.username,
         pseudonym: values.pseudonym,
         email: values.email,
         password: values.password,
       });
+
       console.log('Document written with ID: ', docRef.id);
+      return setTimeout(<p className='success__info'>Gratulacje! Zostałeś zarejestrowany. Teraz możesz się zalogować.</p>, 1000)
     } catch (e) {
       console.error('Error adding document: ', e);
       setErrorMessage('Nie mogliśmy Cię zarejstrować');
