@@ -24,16 +24,17 @@ export function Create() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const submitAccountData = async (values) => {
+  const submitAccountData = async ({ username, pseudonym, email, password }) => {
     setIsLoading(true);
-    console.log(values);
+    console.log({ username, pseudonym, email, password });
     try {
-      console.log(values);
+      console.log({ username, pseudonym, email, password });
+
       const docRef = await addDoc(collection(db, "users"), {
-        username: values.username,
-        pseudonym: values.pseudonym,
-        email: values.email,
-        password: values.password,
+        username,
+        pseudonym,
+        email,
+        password,
       });
 
       console.log('Document written with ID: ', docRef.id);
@@ -60,7 +61,7 @@ export function Create() {
         pseudonym: Yup.string()
           .min(5, 'Pseudonym jest za krótkie.')
           .max(10, 'Pseudonym jest za długie. Maksymalnie musi mieć 10 znaków.')
-          .matches(/(?=[0-9])+/g, 'Pseudonym musi mieć conajmniej 1 cyfrę.')
+          // .matches(/(?=[0-9])+/g, 'Pseudonym musi mieć conajmniej 1 cyfrę.')
           .matches(
             /(?=.*?[#?!@$%^&*-]+)/,
             'Pseudonym musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
@@ -75,10 +76,10 @@ export function Create() {
             /^(?=.*?[A-Z])/,
             'Hasło musi zawierać conajmniej jedną dużą literę'
           )
-          .matches(/(?=[0-9])+/g, 'Pseudonym musi mieć conajmniej 1 cyfrę.')
+          // .matches(/(?=[0-9])+/g, 'Hasło musi mieć conajmniej 1 cyfrę.')
           .matches(
             /(?=.*?[#?!@$%^&*-]+)/,
-            'Pseudonym musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
+            'Hasło musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
           )
           .required('Required'),
       })}
@@ -133,7 +134,7 @@ export function Create() {
           disable={isLoading.toString()}
         />
 
-        {!errorMessage ? null : <p>errorMessage</p>}
+        {!errorMessage ? null : <p>{errorMessage}</p>}
 
         <p className="separator">______________________________________</p>
 
