@@ -31,6 +31,7 @@ h4 {
 a {
   text-decoration: none;
   color: $link__color;
+  cursor: pointer;
 
   &:hover {
     color: $link__hover;
@@ -52,11 +53,4 @@ a {
 .whole__page {
   position: relative;
   display: flex;
-}
-
-/*MENU*/
-
-.menu--active {
-  margin-right: 0;
-  transition: margin-right 0.8s ease-in-out;
 }

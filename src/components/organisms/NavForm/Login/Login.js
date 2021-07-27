@@ -41,10 +41,10 @@ export const Login = () => {
             /^(?=.*?[A-Z])/,
             'Hasło musi zawierać conajmniej jedną dużą literę'
           )
-          .matches(/(?=[0-9])+/g, 'Pseudonym musi mieć conajmniej 1 cyfrę.')
+          .matches(/(?=[0-9])+/g, 'Hasło musi mieć conajmniej 1 cyfrę.')
           .matches(
             /(?=.*?[#?!@$%^&*-]+)/,
-            'Pseudonym musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
+            'Hasło musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
           )
           .required('Required'),
       })}

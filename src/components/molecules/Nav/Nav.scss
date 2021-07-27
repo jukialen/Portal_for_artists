@@ -47,3 +47,10 @@ nav {
     padding: 0 0.5rem;
   }
 }
+
+/*MENU*/
+
+.menu--active {
+  margin-right: 0;
+  transition: margin-right 0.8s ease-in-out;
+}

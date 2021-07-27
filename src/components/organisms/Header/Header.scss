@@ -40,26 +40,6 @@ header {
       font-size: 2rem;
     }
 
-    nav {
-      width: 17rem;
-      position: absolute;
-      top: 5rem;
-      right: 0;
-      margin-right: -17rem;
-      flex-direction: column-reverse;
-
-      ul {
-        display: grid;
-        height: 8rem;
-        background-color: #1e90ff;
-
-        .menu {
-          margin: 0;
-          padding: 1rem;
-        }
-      }
-    }
-
     .hamburger__menu {
       display: block;
     }
