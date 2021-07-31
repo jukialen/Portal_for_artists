@@ -10,7 +10,7 @@ import { Providers } from 'components/molecules/Providers/Providers';
 import { Button } from 'components/atoms/Button/Button';
 
 import { db } from 'firebaseConfig';
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc } from 'firebase/firestore';
 
 const initialValues = {
   username: '',
@@ -24,21 +24,29 @@ export function Create() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const submitAccountData = async ({ username, pseudonym, email, password }) => {
+  const submitAccountData = async ({
+    username,
+    pseudonym,
+    email,
+    password,
+  }) => {
     setIsLoading(true);
     console.log({ username, pseudonym, email, password });
     try {
       console.log({ username, pseudonym, email, password });
 
-      const docRef = await addDoc(collection(db, "users"), {
+      const docRef = await addDoc(collection(db, 'users'), {
         username,
-        pseudonym,
         email,
-        password,
       });
 
       console.log('Document written with ID: ', docRef.id);
-      return setTimeout(<p className='success__info'>Gratulacje! Zostałeś zarejestrowany. Teraz możesz się zalogować.</p>, 1000)
+      return setTimeout(
+        <p className="success__info">
+          Gratulacje! Zostałeś zarejestrowany. Teraz możesz się zalogować.
+        </p>,
+        1000
+      );
     } catch (e) {
       console.error('Error adding document: ', e);
       setErrorMessage('Nie mogliśmy Cię zarejstrować');
@@ -51,21 +59,27 @@ export function Create() {
       initialValues={initialValues}
       validationSchema={Yup.object({
         username: Yup.string()
-          .min(3, 'Imię jest za krótkie.')
+          .matches(/^[A-Z]/g, 'Pierwsza litera musi być duża.')
           .matches(
-            /^(?:[A-Z])(?:[a-z]){2,}(?=[0-9]){0}/g,
-            'Imię przyjmuje tylko litery. Pierwsza litera musi być duża.'
+            /[a-ząćęłńóśźżĄĘŁŃÓŚŹŻぁ-んァ-ヾ一-龯]/g,
+            'Imię przyjmuje tylko litery. Mogą to być znaki Hiragany, Katakany i kanji'
           )
+          .matches(/\D/g, 'Imię nie może zawierać cyfr')
+          .min(3, 'Imię jest za krótkie.')
           .required('Rquired'),
 
         pseudonym: Yup.string()
-          .min(5, 'Pseudonym jest za krótkie.')
-          .max(10, 'Pseudonym jest za długie. Maksymalnie musi mieć 10 znaków.')
-          // .matches(/(?=[0-9])+/g, 'Pseudonym musi mieć conajmniej 1 cyfrę.')
+          .matches(/[0-9０-９]+/g, 'Pseudonym musi mieć conajmniej 1 cyfrę.')
           .matches(
-            /(?=.*?[#?!@$%^&*-]+)/,
+            /[#?!@$%^&*-]+/g,
             'Pseudonym musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
           )
+          .matches(
+            /[a-ząćęłńóśźżĄĘŁŃÓŚŹŻぁ-んァ-ヾ一-龯]/g,
+            'Pseudonym przyjmuje tylko litery. Mogą to być znaki Hiragany, Katakany i kanji'
+          )
+          .min(5, 'Pseudonym jest za krótkie.')
+          .max(10, 'Pseudonym jest za długi. Maksymalnie musi mieć 10 znaków.')
           .required('Required'),
 
         email: Yup.string().email('Invalid email address').required('Required'),
@@ -73,12 +87,16 @@ export function Create() {
         password: Yup.string()
           .min(9, 'Hasło jest za krótkie. Minimum 9 znaków')
           .matches(
-            /^(?=.*?[A-Z])/,
+            /[A-Z]+/g,
             'Hasło musi zawierać conajmniej jedną dużą literę'
           )
-          // .matches(/(?=[0-9])+/g, 'Hasło musi mieć conajmniej 1 cyfrę.')
           .matches(
-            /(?=.*?[#?!@$%^&*-]+)/,
+            /[a-ząćęłńóśźżĄĘŁŃÓŚŹŻぁ-んァ-ヾ一-龯]/g,
+            'Hasło przyjmuje tylko litery. Mogą to być znaki Hiragany, Katakany i kanji'
+          )
+          .matches(/[0-9]+/g, 'Hasło musi mieć conajmniej 1 cyfrę.')
+          .matches(
+            /[#?!@$%^&*-]+/g,
             'Hasło musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
           )
           .required('Required'),
@@ -130,7 +148,7 @@ export function Create() {
           typeButton="submit"
           classButton="button"
           ariaLabel="login button"
-          title={isLoading ? "Rejestruję Cię..." : "Zarejestruj się"}
+          title={isLoading ? 'Rejestruję Cię...' : 'Zarejestruj się'}
           disable={isLoading.toString()}
         />
 
