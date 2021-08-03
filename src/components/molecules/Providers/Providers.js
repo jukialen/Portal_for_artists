@@ -5,6 +5,8 @@ import './Providers.scss';
 
 import { AppleFilled, GoogleOutlined, YahooFilled } from '@ant-design/icons';
 
+import { signInWithGoogle } from 'firebaseConfig'
+
 export const Providers = () => {
   return (
     <div className="providers">
@@ -13,6 +15,7 @@ export const Providers = () => {
         typeButton="submit"
         ariaLabel="google provider"
         elementButton={<GoogleOutlined />}
+        onClick={signInWithGoogle}
       />
       <Button
         classButton="apple"

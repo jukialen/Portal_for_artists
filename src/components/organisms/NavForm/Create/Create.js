@@ -31,22 +31,22 @@ export function Create() {
     password,
   }) => {
     setIsLoading(true);
-    console.log({ username, pseudonym, email, password });
     try {
-      console.log({ username, pseudonym, email, password });
-
       const docRef = await addDoc(collection(db, 'users'), {
         username,
+        pseudonym,
         email,
+        password,
       });
 
       console.log('Document written with ID: ', docRef.id);
-      return setTimeout(
-        <p className="success__info">
-          Gratulacje! Zostałeś zarejestrowany. Teraz możesz się zalogować.
-        </p>,
-        1000
-      );
+      // setTimeout(
+      // <p className="success__info">
+      // 'Gratulacje! Zostałeś zarejestrowany. Teraz możesz się zalogować.'
+        /*</p>,*/
+        /*1000);*/
+
+      return ({ username, pseudonym, email, password } = initialValues);
     } catch (e) {
       console.error('Error adding document: ', e);
       setErrorMessage('Nie mogliśmy Cię zarejstrować');
