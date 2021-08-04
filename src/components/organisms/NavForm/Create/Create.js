@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 
 import '../NavForm.scss';
 import * as Yup from 'yup';
@@ -19,40 +19,33 @@ const initialValues = {
   password: '',
 };
 
-export function Create() {
+export const Create = () => {
   const { isCreate } = useContext(NavFormContext);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [valuesFields, setValuesFields] = useState(false);
 
-  const submitAccountData = async ({
-    username,
-    pseudonym,
-    email,
-    password,
-  }) => {
-    setIsLoading(true);
-    try {
-      const docRef = await addDoc(collection(db, 'users'), {
-        username,
-        pseudonym,
-        email,
-        password,
-      });
+  const submitAccountData = useCallback(
+    async ({ username, pseudonym, email, password }, { resetForm }) => {
+      setIsLoading(true);
+      try {
+        await addDoc(collection(db, 'users'), {
+          username,
+          pseudonym,
+          email,
+          password,
+        });
 
-      console.log('Document written with ID: ', docRef.id);
-      // setTimeout(
-      // <p className="success__info">
-      // 'Gratulacje! Zostałeś zarejestrowany. Teraz możesz się zalogować.'
-        /*</p>,*/
-        /*1000);*/
-
-      return ({ username, pseudonym, email, password } = initialValues);
-    } catch (e) {
-      console.error('Error adding document: ', e);
-      setErrorMessage('Nie mogliśmy Cię zarejstrować');
-    }
-    setIsLoading(false);
-  };
+        setValuesFields(!valuesFields);
+        resetForm(initialValues);
+      } catch (e) {
+        console.error('Error adding document: ', e);
+        setErrorMessage('Nie mogliśmy Cię zarejestrować');
+      }
+      setIsLoading(false);
+    },
+    []
+  );
 
   return (
     <Formik
@@ -149,10 +142,15 @@ export function Create() {
           classButton="button"
           ariaLabel="login button"
           title={isLoading ? 'Rejestruję Cię...' : 'Zarejestruj się'}
-          disable={isLoading.toString()}
         />
 
-        {!errorMessage ? null : <p>{errorMessage}</p>}
+        {valuesFields ? (
+          <p className="success__info">
+            Gratulacje! Zostałeś zarejestrowany. Teraz możesz się zalogować.
+          </p>
+        ) : null}
+
+        {errorMessage ? <p>{errorMessage}</p> : null}
 
         <p className="separator">______________________________________</p>
 
@@ -162,4 +160,4 @@ export function Create() {
       </Form>
     </Formik>
   );
-}
+};

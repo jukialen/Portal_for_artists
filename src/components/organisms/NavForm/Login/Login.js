@@ -1,4 +1,4 @@
-import React, { useContext, useCallback } from 'react';
+import React, { useContext, useCallback, useState } from 'react';
 
 import { NavFormContext } from 'providers/NavFormProvider';
 
@@ -10,20 +10,35 @@ import { FormError } from 'components/molecules/FormError/FormError';
 import { Button } from '../../../atoms/Button/Button';
 import { Providers } from 'components/molecules/Providers/Providers';
 
+const initialValues = {
+  username: '',
+  pseudonym: '',
+  email: '',
+  password: '',
+};
+
 export const Login = () => {
   let user;
   const submitAccountData = useCallback(
-    (values) => {
-      user = JSON.stringify(values);
-      localStorage.setItem('user', user);
-      console.log(user);
+    async ({ pseudonym, password }, { resetForm }) => {
+      try {
+        user = JSON.stringify({ pseudonym, password });
+        await localStorage.setItem('user', user);
+        console.log(user);
+        resetForm(initialValues);
+      } catch (e) {
+        console.error('Error adding document: ', e);
+        setErrorMessage('Nie mogliśmy Cię zarejestrować');
+      }
     },
     [user]
   );
   const { isLogin } = useContext(NavFormContext);
+  const [errorMessage, setErrorMessage] = useState('');
+
   return (
     <Formik
-      initialValues={{ pseudonym: '', password: '' }}
+      initialValues={initialValues}
       validationSchema={Yup.object({
         pseudonym: Yup.string()
           .min(5, 'Pseudonym jest za krótkie.')
@@ -77,6 +92,8 @@ export const Login = () => {
           ariaLabel="login button"
           title="Zaloguj się"
         />
+
+        {errorMessage ? <p>{errorMessage}</p> : null}
 
         <p className="separator">______________________________________</p>
 

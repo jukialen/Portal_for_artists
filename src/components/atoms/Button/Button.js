@@ -12,7 +12,6 @@ export const Button = ({
   ariaLabel,
   elementButton,
   onClick,
-  disable,
   ...props
 } = defaultProps) => {
   return (
@@ -22,7 +21,7 @@ export const Button = ({
       type={typeButton}
       aria-label={ariaLabel}
       onClick={onClick}
-      disable={disable}
+      {...props}
     >
       {title}
       {elementButton}
