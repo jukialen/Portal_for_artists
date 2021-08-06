@@ -18,7 +18,11 @@ const initialValues = {
 };
 
 export const Login = () => {
+  const { isLogin, showLoginForm } = useContext(NavFormContext);
+  const [errorMessage, setErrorMessage] = useState('');
+
   let user;
+
   const submitAccountData = useCallback(
     async ({ pseudonym, password }, { resetForm }) => {
       try {
@@ -28,13 +32,13 @@ export const Login = () => {
         resetForm(initialValues);
       } catch (e) {
         console.error('Error adding document: ', e);
-        setErrorMessage('Nie mogliśmy Cię zarejestrować');
+        setErrorMessage('Nie mogliśmy Cię zalogować');
       }
+      showLoginForm();
+      console.log(showLoginForm)
     },
     [user]
   );
-  const { isLogin } = useContext(NavFormContext);
-  const [errorMessage, setErrorMessage] = useState('');
 
   return (
     <Formik

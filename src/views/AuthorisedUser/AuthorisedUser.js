@@ -15,7 +15,6 @@ import { ModeContext } from '../../providers/ModeProvider';
 
 import { AffixButton } from '../../components/molecules/AffixButton/AffixButton';
 
-
 export const AuthorisedUser = () => {
   const { isMode, changeMode } = useContext(ModeContext);
 
@@ -30,7 +29,7 @@ export const AuthorisedUser = () => {
         />
         <Aside />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/app">
             <Workspace isMode={isMode} />
           </Route>
           <Route path="/authors">

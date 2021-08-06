@@ -9,6 +9,8 @@ import { Button } from '../../atoms/Button/Button';
 import { ModeContext } from '../../../providers/ModeProvider';
 import { ShowMenuContext } from '../../../providers/ShowMenuProvider';
 
+import { currentUser } from "firebaseConfig";
+
 export function Header({ titleFirstNav, titleSecondNav }) {
   const { isMode, changeMode } = useContext(ModeContext);
 
@@ -17,7 +19,7 @@ export function Header({ titleFirstNav, titleSecondNav }) {
   return (
     <header>
       <h1 className="title">
-        <NavLink to="/">Portal dla artystów</NavLink>
+        <NavLink to={currentUser ? '/app' : '/'}>Portal dla artystów</NavLink>
       </h1>
 
       <Button

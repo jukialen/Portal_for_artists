@@ -9,13 +9,15 @@ import './App.scss';
 
 import 'generalSCSS/reset.scss';
 
+import { currentUser } from "firebaseConfig";
+
 export function App() {
-  const user = localStorage.getItem('user');
+  // const user = localStorage.getItem('user');
 
   return (
     <ModeProvider>
-      {user ? (
-        user && <AuthorisedUser />
+      {currentUser ? (
+        <AuthorisedUser />
       ) : (
         <NavFormProvider>
           <UnauthorisedUser />

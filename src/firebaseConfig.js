@@ -1,7 +1,13 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  // OAuthProvider,
+  // signOut,
+} from 'firebase/auth';
 
 const firebaseApp = initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
@@ -9,36 +15,50 @@ const firebaseApp = initializeApp({
   projectId: process.env.REACT_APP_FIREBASE_ID,
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 });
-console.log(firebaseApp)
+
 export const db = getFirestore(firebaseApp);
 
-const auth = getAuth(firebaseApp);
+export const auth = getAuth(firebaseApp);
+
+export const currentUser = auth.currentUser;
+
 auth.useDeviceLanguage();
 
-const provider = new GoogleAuthProvider();
+// export const providersSignOut = () => {
+//   signOut(auth)
+//     .then(() => {
+//       console.log('SignOut Successful');
+//     })
+//     .catch((error) => {
+//       console.log('SignOut Failed');
+//     });
+// };
 
-console.log(provider);
+//YAHOO PROVIDER
 
-export const signInWithGoogle = signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = provider.credentialFromResult(result);
-    const token = credential.accessToken;
-
-    localStorage.setItem('googleToken', token);
-    // The signed-in user info.
-    const user = result.user;
-    // ...
-  })
-  .catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
-  });
+// const yahooProvider = new OAuthProvider('yahoo.com');
+//
+// export const signInWithYahoo = signInWithPopup(auth, yahooProvider)
+//   .then((result) => {
+//     // IdP data available in result.additionalUserInfo.profile
+//     // ...
+//
+//       console.log(yahooProvider);
+//     // Yahoo OAuth access token and ID token can be retrieved by calling:
+//     const credential = OAuthProvider.credentialFromResult(result);
+//     const accessToken = credential.accessToken;
+//     const idToken = credential.idToken;
+//
+//     localStorage.setItem('yahooToken', idToken);
+//
+//     console.log(credential)
+//       console.log(accessToken)
+//       console.log(idToken)
+//
+//   })
+//   .catch((error) => {
+//     // Handle error.
+//   });
+//

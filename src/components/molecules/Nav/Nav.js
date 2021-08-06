@@ -4,6 +4,7 @@ import './Nav.scss';
 import { NavFormContext } from '../../../providers/NavFormProvider';
 import { ShowMenuContext } from '../../../providers/ShowMenuProvider';
 import { Link } from 'react-router-dom';
+// import { providersSignOut } from 'firebaseConfig';
 
 export const Nav = ({ titleFirstNav, titleSecondNav }) => {
   const { showLoginForm, showCreateForm } = useContext(NavFormContext);
@@ -12,13 +13,14 @@ export const Nav = ({ titleFirstNav, titleSecondNav }) => {
 
   const hideMenuLogin = () => {
     showLoginForm();
-    showMenu()
-  }
+    showMenu();
+    // {titleSecondNav === 'Konto' && providersSignOut()}
+  };
 
   const hideMenuCreate = () => {
     showCreateForm();
-    showMenu()
-  }
+    showMenu();
+  };
 
   return (
     <nav className={isMenu ? 'menu--active' : ''}>
