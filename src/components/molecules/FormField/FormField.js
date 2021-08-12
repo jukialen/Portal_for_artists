@@ -1,11 +1,12 @@
 import React from 'react';
+
 import { Field } from 'formik';
 
 export const FormField = ({
   titleField,
   nameField,
   typeField,
-  placeholderField
+  placeholderField,
 }) => {
   return (
     <div className="form__field">

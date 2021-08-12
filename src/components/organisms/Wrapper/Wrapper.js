@@ -1,5 +1,7 @@
 import React from 'react';
-import { Article } from '../../molecules/Article/Article';
+
+import { Article } from 'components/molecules/Article/Article';
+
 import './Wrapper.scss';
 
 export const Wrapper = ({ idWrapper }) => {

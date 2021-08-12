@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import './Footer.scss';
 import { Link } from 'react-router-dom';
+
+import './Footer.scss';
 
 export function Footer() {
   const [isLanguage, setLanguage] = useState(false);

@@ -11,7 +11,6 @@ export const Button = ({
   title,
   ariaLabel,
   elementButton,
-  onClick,
   ...props
 } = defaultProps) => {
   return (
@@ -20,7 +19,6 @@ export const Button = ({
       className={classButton}
       type={typeButton}
       aria-label={ariaLabel}
-      onClick={onClick}
       {...props}
     >
       {title}

@@ -1,13 +1,16 @@
 import React, { useCallback, useContext, useState } from 'react';
 
-import '../NavForm.scss';
-import * as Yup from 'yup';
-import { Form, Formik } from 'formik';
-import { NavFormContext } from 'providers/NavFormProvider';
 import { FormError } from 'components/molecules/FormError/FormError';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { Providers } from 'components/molecules/Providers/Providers';
 import { Button } from 'components/atoms/Button/Button';
+
+import '../NavForm.scss';
+
+import { NavFormContext } from 'providers/NavFormProvider';
+
+import { Form, Formik } from 'formik';
+import * as Yup from 'yup';
 
 import { db } from 'firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
@@ -28,6 +31,7 @@ export const Create = () => {
   const submitAccountData = useCallback(
     async ({ username, pseudonym, email, password }, { resetForm }) => {
       setIsLoading(true);
+
       try {
         await addDoc(collection(db, 'users'), {
           username,
@@ -44,7 +48,7 @@ export const Create = () => {
       }
       setIsLoading(false);
     },
-    []
+    [valuesFields]
   );
 
   return (

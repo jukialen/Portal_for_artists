@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Categories } from '../Categories/Categories';
 import { Groups } from '../Groups/Groups';
-import { Friends } from '../../molecules/Friends/Friends';
+import { Friends } from 'components/molecules/Friends/Friends';
 import { Links } from 'components/atoms/Links/Links';
 import { Button } from 'components/atoms/Button/Button';
 

@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Header } from '../../components/organisms/Header/Header';
-import { Aside } from '../../components/organisms/Aside/Aside';
+import { Header } from 'components/organisms/Header/Header';
+import { Aside } from 'components/organisms/Aside/Aside';
 import { Workspace } from '../Workspace/Workspace';
 import { Authors } from '../Authors/Authors';
 import { Terms } from '../Terms/Terms';
 import { Privacy } from '../Privacy/Privacy';
 import { Faq } from '../Faq/Faq';
 import { Account } from '../Account/Account';
-import { Footer } from '../../components/organisms/Footer/Footer';
+import { Footer } from 'components/organisms/Footer/Footer';
 
-import { ModeContext } from '../../providers/ModeProvider';
+import { ModeContext } from 'providers/ModeProvider';
 
-import { AffixButton } from '../../components/molecules/AffixButton/AffixButton';
+import { AffixButton } from 'components/molecules/AffixButton/AffixButton';
 
 export const AuthorisedUser = () => {
   const { isMode, changeMode } = useContext(ModeContext);

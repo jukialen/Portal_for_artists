@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Friends.scss';
 
 export const Friends = () => {

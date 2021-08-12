@@ -1,14 +1,16 @@
 import React, { useContext, useCallback, useState } from 'react';
 
-import { NavFormContext } from 'providers/NavFormProvider';
-
-import '../NavForm.scss';
-import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
 import { FormField } from 'components/molecules/FormField/FormField';
 import { FormError } from 'components/molecules/FormError/FormError';
-import { Button } from '../../../atoms/Button/Button';
 import { Providers } from 'components/molecules/Providers/Providers';
+import { Button } from 'components/atoms/Button/Button';
+
+import '../NavForm.scss';
+
+import { NavFormContext } from 'providers/NavFormProvider';
+
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
 
 const initialValues = {
   username: '',
@@ -18,15 +20,14 @@ const initialValues = {
 };
 
 export const Login = () => {
-  const { isLogin, showLoginForm } = useContext(NavFormContext);
+  const { isLogin } = useContext(NavFormContext);
   const [errorMessage, setErrorMessage] = useState('');
-
-  let user;
+  const [user, setUser] = useState('');
 
   const submitAccountData = useCallback(
     async ({ pseudonym, password }, { resetForm }) => {
       try {
-        user = JSON.stringify({ pseudonym, password });
+        setUser(JSON.stringify({ pseudonym, password }));
         await localStorage.setItem('user', user);
         console.log(user);
         resetForm(initialValues);
@@ -34,8 +35,7 @@ export const Login = () => {
         console.error('Error adding document: ', e);
         setErrorMessage('Nie mogliśmy Cię zalogować');
       }
-      showLoginForm();
-      console.log(showLoginForm)
+      console.log('showLoginForm:');
     },
     [user]
   );

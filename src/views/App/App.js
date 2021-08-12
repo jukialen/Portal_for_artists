@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { AuthorisedUser } from '../AuthorisedUser/AuthorisedUser';
-import { UnauthorisedUser } from '../UnauthorisedUser/UnauthorisedUser';
+import { AuthorisedUser } from 'views/AuthorisedUser/AuthorisedUser';
+import { UnauthorisedUser } from 'views/UnauthorisedUser/UnauthorisedUser';
 
-import { NavFormProvider } from '../../providers/NavFormProvider';
-import { ModeProvider } from '../../providers/ModeProvider';
 import './App.scss';
+
+import { NavFormProvider } from 'providers/NavFormProvider';
+import { ModeProvider } from 'providers/ModeProvider';
 
 import 'generalSCSS/reset.scss';
 
-import { currentUser } from "firebaseConfig";
+import { currentUser } from 'firebaseConfig';
 
 export function App() {
-  // const user = localStorage.getItem('user');
 
   return (
     <ModeProvider>

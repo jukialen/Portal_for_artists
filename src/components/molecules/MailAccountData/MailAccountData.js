@@ -1,6 +1,7 @@
 import React from 'react';
-import { Inputs } from '../../atoms/Inputs/Inputs';
-import { Button } from '../../atoms/Button/Button';
+
+import { Inputs } from 'components/atoms/Inputs/Inputs';
+import { Button } from 'components/atoms/Button/Button';
 
 export const MailAccountData = () => {
   return (

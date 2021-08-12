@@ -1,7 +1,9 @@
 import React from 'react';
+
+import { Button } from 'components/atoms/Button/Button';
+import { Links } from 'components/atoms/Links/Links';
+
 import './Groups.scss';
-import { Button } from '../../atoms/Button/Button';
-import { Links } from '../../atoms/Links/Links';
 
 export const Groups = () => {
   return (

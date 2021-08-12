@@ -1,10 +1,11 @@
 import React from 'react';
-import { Button } from '../../atoms/Button/Button';
+
+import { Button } from 'components/atoms/Button/Button';
 
 export const SubscriptiomAccountData = () => {
   return (
     <form>
-      <label htmlFor="subscription__info">Subskrybcja:</label>
+      <label htmlFor="subscription__info">Subskrypcja:</label>
       <Button
         idButton="subscription__info"
         title="Aktualny plan"

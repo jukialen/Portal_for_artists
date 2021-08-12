@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
-import { Button } from '../../atoms/Button/Button';
+import { useHistory } from 'react-router-dom';
+import { Button } from 'components/atoms/Button/Button';
 
 import './Providers.scss';
-
 import { AppleFilled, GoogleOutlined, YahooFilled } from '@ant-design/icons';
 
 import { auth, db } from 'firebaseConfig';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-
-import { NavFormContext } from '../../../providers/NavFormProvider';
-
-import { useHistory } from 'react-router-dom';
 import { addDoc, collection } from 'firebase/firestore';
+import {
+  GoogleAuthProvider,
+  OAuthProvider,
+  signInWithPopup,
+} from 'firebase/auth';
+
+import { NavFormContext } from 'providers/NavFormProvider';
 
 //GOOGLE PROVIDER
 const googleProvider = new GoogleAuthProvider();
@@ -19,8 +21,10 @@ const googleProvider = new GoogleAuthProvider();
 googleProvider.addScope('profile');
 googleProvider.addScope('email');
 
-export const Providers = () => {
+//YAHOO PROVIDER
+const yahooProvider = new OAuthProvider('yahoo.com');
 
+export const Providers = () => {
   const { isLogin } = useContext(NavFormContext);
 
   let history = useHistory();
@@ -47,11 +51,9 @@ export const Providers = () => {
 
       console.log('Credential:', credential);
       console.log('Token:', token);
-
       console.log('User:', user);
-      {
-        isLogin ? history.push('/app') : history.push('/');
-      }
+
+      isLogin && history.push('/app');
     })
     .catch((error) => {
       // Handle Errors here.
@@ -71,15 +73,35 @@ export const Providers = () => {
       console.log('Message:', error.message);
 
       if (errorCode === 'auth/account-exists-with-different-credential') {
-        alert(
-          'You have already signed up with a different auth provider for that email.'
-        );
+        alert('You have already signed up with this email.');
         // If you are using multiple auth providers on your app you should handle linking
         // the user's accounts here.
       } else {
         console.error('Error:', error);
       }
     });
+
+  const signInWithYahoo = signInWithPopup(auth, yahooProvider)
+    .then((result) => {
+      // IdP data available in result.additionalUserInfo.profile
+      // ...
+      console.log(yahooProvider);
+      // Yahoo OAuth access token and ID token can be retrieved by calling:
+      const credential = OAuthProvider.credentialFromResult(result);
+      const accessToken = credential.accessToken;
+      const idToken = credential.idToken;
+
+      localStorage.setItem('yahooToken', idToken);
+
+      console.log('Crediential', credential);
+      console.log('Accesss token:', accessToken);
+      console.log('ID token:', idToken);
+    })
+    .catch((error) => {
+      // Handle error.
+      console.log('Error:', error);
+    });
+
   return (
     <div className="providers">
       <Button
@@ -87,7 +109,7 @@ export const Providers = () => {
         typeButton="submit"
         ariaLabel="google provider"
         elementButton={<GoogleOutlined />}
-        onClick={() => signInWithGoogle()}
+        onClick={signInWithGoogle}
       />
       <Button
         classButton="apple"
@@ -100,7 +122,7 @@ export const Providers = () => {
         typeButton="submit"
         ariaLabel="yahoo provider"
         elementButton={<YahooFilled />}
-        // onClick={() => signInWithYahoo()}
+        onClick={signInWithYahoo}
       />
     </div>
   );

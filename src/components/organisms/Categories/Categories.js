@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './Categories.scss';
 
-import { Links } from '../../atoms/Links/Links';
+import { Links } from 'components/atoms/Links/Links';
+
+import './Categories.scss';
 
 export const Categories = () => {
   const [openSubCategories, setOpenCategories] = useState(false);

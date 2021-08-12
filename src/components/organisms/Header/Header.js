@@ -5,9 +5,10 @@ import 'generalSCSS/darkLightMode.scss';
 import './Header.scss';
 
 import { Nav } from 'components/molecules/Nav/Nav';
-import { Button } from '../../atoms/Button/Button';
-import { ModeContext } from '../../../providers/ModeProvider';
-import { ShowMenuContext } from '../../../providers/ShowMenuProvider';
+import { Button } from 'components/atoms/Button/Button';
+
+import { ModeContext } from 'providers/ModeProvider';
+import { ShowMenuContext } from 'providers/ShowMenuProvider';
 
 import { currentUser } from "firebaseConfig";
 
