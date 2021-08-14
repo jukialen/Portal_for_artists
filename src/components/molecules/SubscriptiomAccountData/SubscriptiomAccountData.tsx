@@ -14,7 +14,6 @@ export const SubscriptiomAccountData = () => {
       <Button
         classButton="subscription__check"
         title="Zmień"
-        typeButton="text"
         ariaLabel="Change subscription"
       />
     </form>

@@ -10,18 +10,21 @@ export const PasswordAccountData = () => {
 
       <Inputs
         idInputs="password"
-        typeIput="password"
+        typeInput="password"
         placeholderInput="Wpisz aktualne hasło"
+        // @ts-ignore
         required="required"
       />
       <Inputs
         typeInput="password"
         placeholderInput="Wpisz nowe hasło"
+        // @ts-ignore
         required="required"
       />
       <Inputs
         typeInput="password"
         placeholderInput="Powtórz nowe hasło"
+        // @ts-ignore
         required="required"
       />
 

@@ -4,7 +4,11 @@ import { Article } from 'components/molecules/Article/Article';
 
 import './Wrapper.scss';
 
-export const Wrapper = ({ idWrapper }) => {
+type wrapperType = {
+  idWrapper: string
+};
+
+export const Wrapper = ({ idWrapper }: wrapperType) => {
   return (
     <div className="wrapper">
       <div id={idWrapper} className="carousel">

@@ -8,7 +8,7 @@ import './Groups.scss';
 export const Groups = () => {
   return (
     <div className="groups">
-      <Button classButton="groups__item" title="Dodaj grupę" />
+      <Button classButton="groups__item" title="Dodaj grupę" ariaLabel='Adding a group' />
 
       <Links
         hrefLink="#"

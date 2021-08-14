@@ -11,7 +11,8 @@ import './Aside.scss';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 export function Aside() {
-  const [isLeftMenu, setLeftMenu] = useState(false);
+  const [isLeftMenu, setLeftMenu] = useState<boolean>(false);
+
   const leftMenuClick = () => setLeftMenu(!isLeftMenu);
 
   return (
@@ -23,6 +24,7 @@ export function Aside() {
         elementButton={isLeftMenu ? <LeftOutlined /> : <RightOutlined />}
         classButton="aside__right"
         ariaLabel="left menu button"
+        // @ts-ignore
         onClick={leftMenuClick}
       />
 

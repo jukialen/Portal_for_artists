@@ -11,7 +11,7 @@ export function Faq() {
     <section className="workspace">
       <h2>Częste pytania</h2>
 
-      <Collapse destroyInactivePanel>
+      <Collapse destroyInactivePanel={true}>
         <Panel
           header="Czy korzystanie z serwisu jest darmowe?"
           className="questions__faq"

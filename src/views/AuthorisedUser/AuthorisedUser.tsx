@@ -1,41 +1,34 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Create } from 'components/organisms/NavForm/Create/Create';
-import { Login } from 'components/organisms/NavForm/Login/Login';
+import { Header } from 'components/organisms/Header/Header';
+import { Aside } from 'components/organisms/Aside/Aside';
+import { Workspace } from '../Workspace/Workspace';
 import { Authors } from '../Authors/Authors';
 import { Terms } from '../Terms/Terms';
 import { Privacy } from '../Privacy/Privacy';
 import { Faq } from '../Faq/Faq';
-import { Header } from 'components/organisms/Header/Header';
-import { Aside } from 'components/organisms/Aside/Aside';
+import { Account } from '../Account/Account';
 import { Footer } from 'components/organisms/Footer/Footer';
 
-import { Welcome } from '../Welcome/Welcome';
-
 import { ModeContext } from 'providers/ModeProvider';
-import { ShowMenuProvider } from 'providers/ShowMenuProvider';
 
 import { AffixButton } from 'components/molecules/AffixButton/AffixButton';
 
-export const UnauthorisedUser = () => {
+export const AuthorisedUser = () => {
   const { isMode } = useContext(ModeContext);
 
   return (
     <Router>
       <div className={`whole__page ${isMode ? 'dark' : ''}`}>
-        <ShowMenuProvider>
-          <Header
-            titleFirstNav="Zaloguj się"
-            titleSecondNav="Zarejestruj się"
-          />
-          <Create />
-          <Login />
-        </ShowMenuProvider>
+        <Header
+          titleFirstNav="Wyloguj"
+          titleSecondNav="Konto"
+        />
         <Aside />
         <Switch>
-          <Route exact path="/">
-            <Welcome />
+          <Route exact={true} path="/app">
+            <Workspace />
           </Route>
           <Route path="/authors">
             <Authors />
@@ -48,6 +41,9 @@ export const UnauthorisedUser = () => {
           </Route>
           <Route path="/faq">
             <Faq />
+          </Route>
+          <Route path="/account">
+            <Account />
           </Route>
         </Switch>
         <AffixButton />

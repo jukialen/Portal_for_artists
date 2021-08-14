@@ -21,8 +21,8 @@ const initialValues = {
 
 export const Login = () => {
   const { isLogin } = useContext(NavFormContext);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [user, setUser] = useState('');
+  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [user, setUser] = useState<string>('');
 
   const submitAccountData = useCallback(
     async ({ pseudonym, password }, { resetForm }) => {

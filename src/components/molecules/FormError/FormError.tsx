@@ -2,7 +2,11 @@ import React from 'react';
 
 import { ErrorMessage } from 'formik';
 
-export const FormError = ({ nameError }) => {
+type fE = {
+  nameError: string;
+};
+
+export const FormError = ({ nameError }: fE) => {
   return (
     <p>
       <ErrorMessage name={nameError} />

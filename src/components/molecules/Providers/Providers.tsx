@@ -15,25 +15,26 @@ import {
 
 import { NavFormContext } from 'providers/NavFormProvider';
 
-//GOOGLE PROVIDER
+// GOOGLE PROVIDER
 const googleProvider = new GoogleAuthProvider();
 
 googleProvider.addScope('profile');
 googleProvider.addScope('email');
 
-//YAHOO PROVIDER
+// YAHOO PROVIDER
 const yahooProvider = new OAuthProvider('yahoo.com');
 
 export const Providers = () => {
   const { isLogin } = useContext(NavFormContext);
 
-  let history = useHistory();
+  const history = useHistory();
 
   // auth.useEmulator('http://localhost:5000');
 
   const signInWithGoogle = signInWithPopup(auth, googleProvider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
+      // @ts-ignore
       const credential = googleProvider.credentialFromResult(result);
 
       const token = credential.accessToken;
@@ -48,6 +49,7 @@ export const Providers = () => {
         email: result.user,
         token,
       });
+
 
       console.log('Credential:', credential);
       console.log('Token:', token);
@@ -88,13 +90,16 @@ export const Providers = () => {
       console.log(yahooProvider);
       // Yahoo OAuth access token and ID token can be retrieved by calling:
       const credential = OAuthProvider.credentialFromResult(result);
+      // @ts-ignore
       const accessToken = credential.accessToken;
+      // @ts-ignore
       const idToken = credential.idToken;
 
+      // @ts-ignore
       localStorage.setItem('yahooToken', idToken);
 
-      console.log('Crediential', credential);
-      console.log('Accesss token:', accessToken);
+      console.log('Credential', credential);
+      console.log('Access token:', accessToken);
       console.log('ID token:', idToken);
     })
     .catch((error) => {
@@ -109,6 +114,7 @@ export const Providers = () => {
         typeButton="submit"
         ariaLabel="google provider"
         elementButton={<GoogleOutlined />}
+        // @ts-ignore
         onClick={signInWithGoogle}
       />
       <Button
@@ -122,6 +128,7 @@ export const Providers = () => {
         typeButton="submit"
         ariaLabel="yahoo provider"
         elementButton={<YahooFilled />}
+        // @ts-ignore
         onClick={signInWithYahoo}
       />
     </div>

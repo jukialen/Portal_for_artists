@@ -8,7 +8,11 @@ import { providersSignOut } from 'firebaseConfig';
 import { NavFormContext } from 'providers/NavFormProvider';
 import { ShowMenuContext } from 'providers/ShowMenuProvider';
 
-export const Nav = ({ titleFirstNav, titleSecondNav }) => {
+type titleNavType = {
+  titleFirstNav: string;
+  titleSecondNav: string;
+}
+export const Nav = ({ titleFirstNav, titleSecondNav }: titleNavType) => {
   const { showLoginForm, showCreateForm } = useContext(NavFormContext);
 
   const { isMenu, showMenu } = useContext(ShowMenuContext);
@@ -16,7 +20,6 @@ export const Nav = ({ titleFirstNav, titleSecondNav }) => {
   const hideMenuLogin = () => {
     showLoginForm();
     showMenu();
-    titleFirstNav === 'Wyloguj' && providersSignOut();
   };
 
   const hideMenuCreate = () => {
@@ -33,7 +36,7 @@ export const Nav = ({ titleFirstNav, titleSecondNav }) => {
             className="sign__in"
             onClick={
               titleFirstNav === 'Wyloguj'
-                ? localStorage.removeItem('user')
+                ? providersSignOut
                 : hideMenuLogin
             }
           >

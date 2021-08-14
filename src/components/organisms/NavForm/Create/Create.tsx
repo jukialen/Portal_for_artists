@@ -51,6 +51,10 @@ export const Create = () => {
     [valuesFields]
   );
 
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
   return (
     <Formik
       initialValues={initialValues}

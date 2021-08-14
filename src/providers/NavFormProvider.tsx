@@ -1,4 +1,4 @@
-import React, { useState, createContext, useCallback } from 'react';
+import React, { ReactNode, useState, createContext, useCallback } from 'react';
 
 export const NavFormContext = createContext({
   isLogin: false,
@@ -7,9 +7,13 @@ export const NavFormContext = createContext({
   showCreateForm: () => {},
 });
 
-export const NavFormProvider = ({ children }) => {
-  const [isLogin, setLogin] = useState(false);
-  const [isCreate, setCreate] = useState(false);
+type childrenType = {
+  children: ReactNode;
+};
+
+export const NavFormProvider = ({ children }: childrenType) => {
+  const [isLogin, setLogin] = useState<boolean>(false);
+  const [isCreate, setCreate] = useState<boolean>(false);
 
   const showLoginForm = useCallback(() => setLogin(!isLogin), [isLogin]);
 

@@ -1,14 +1,14 @@
-import React, { useRef, useState } from 'react';
+import React, { MouseEventHandler, useState } from 'react';
 
 import './AffixButton.scss';
 
 import { Affix, Button } from 'antd';
 import { UpOutlined } from '@ant-design/icons';
 
-export const AffixButton = () => {
-  const [bottom, setBottom] = useState(10);
+export const AffixButton: React.FC = () => {
+  const [bottom, setBottom] = useState<number>(0);
 
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState<boolean>(false);
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -19,11 +19,15 @@ export const AffixButton = () => {
     }
   };
 
+  const setBootom:MouseEventHandler = () => {
+    setBottom(0)
+  };
+  
   window.addEventListener('scroll', toggleVisible);
 
   return (
     <Affix offsetBottom={bottom}>
-      <Button type="primary" href="#top__menu" onClick={() => setBottom(10)}>
+      <Button type="primary" href="#top__menu" onClick={setBootom}>
         <UpOutlined
           className={`up ${visible ? 'up__active' : null}`}
           aria-label="top of page button"

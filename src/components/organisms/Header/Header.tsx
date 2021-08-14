@@ -10,9 +10,14 @@ import { Button } from 'components/atoms/Button/Button';
 import { ModeContext } from 'providers/ModeProvider';
 import { ShowMenuContext } from 'providers/ShowMenuProvider';
 
-import { currentUser } from "firebaseConfig";
+import { currentUser } from 'firebaseConfig';
 
-export function Header({ titleFirstNav, titleSecondNav }) {
+type titleValues = {
+  titleFirstNav: string;
+  titleSecondNav: string;
+};
+
+export function Header({ titleFirstNav, titleSecondNav }: titleValues) {
   const { isMode, changeMode } = useContext(ModeContext);
 
   const { showMenu } = useContext(ShowMenuContext);

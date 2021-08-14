@@ -2,7 +2,17 @@ import React from 'react';
 
 import './Article.scss';
 
-export const Article = ({ imgLink, imgDescription, authorName }) => {
+type articleImg = {
+  imgLink: string;
+  imgDescription: string;
+  authorName: string;
+};
+
+export const Article = ({
+  imgLink,
+  imgDescription,
+  authorName,
+}: articleImg) => {
   return (
     <article className="article">
       <img className="item" src={imgLink} alt={imgDescription} />
