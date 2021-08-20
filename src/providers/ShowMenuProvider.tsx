@@ -6,8 +6,8 @@ export const ShowMenuContext = createContext({
 });
 
 type childrenType = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export const ShowMenuProvider = ({ children }: childrenType) => {
   const [isMenu, setMenu] = useState<boolean>(false);

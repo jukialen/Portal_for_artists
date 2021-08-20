@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from 'react';
+import React, { FC, useCallback, useContext, useState } from 'react';
 
 import { FormError } from 'components/molecules/FormError/FormError';
 import { FormField } from 'components/molecules/FormField/FormField';
@@ -22,7 +22,7 @@ const initialValues = {
   password: '',
 };
 
-export const Create = () => {
+export const Create: FC = () => {
   const { isCreate } = useContext(NavFormContext);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -48,12 +48,9 @@ export const Create = () => {
       }
       setIsLoading(false);
     },
-    [valuesFields]
+    [valuesFields],
   );
 
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
   // @ts-ignore
   return (
     <Formik
@@ -63,7 +60,7 @@ export const Create = () => {
           .matches(/^[A-Z]/g, 'Pierwsza litera musi być duża.')
           .matches(
             /[a-ząćęłńóśźżĄĘŁŃÓŚŹŻぁ-んァ-ヾ一-龯]/g,
-            'Imię przyjmuje tylko litery. Mogą to być znaki Hiragany, Katakany i kanji'
+            'Imię przyjmuje tylko litery. Mogą to być znaki Hiragany, Katakany i kanji',
           )
           .matches(/\D/g, 'Imię nie może zawierać cyfr')
           .min(3, 'Imię jest za krótkie.')
@@ -73,11 +70,11 @@ export const Create = () => {
           .matches(/[0-9０-９]+/g, 'Pseudonym musi mieć conajmniej 1 cyfrę.')
           .matches(
             /[#?!@$%^&*-]+/g,
-            'Pseudonym musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
+            'Pseudonym musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-',
           )
           .matches(
             /[a-ząćęłńóśźżĄĘŁŃÓŚŹŻぁ-んァ-ヾ一-龯]/g,
-            'Pseudonym przyjmuje tylko litery. Mogą to być znaki Hiragany, Katakany i kanji'
+            'Pseudonym przyjmuje tylko litery. Mogą to być znaki Hiragany, Katakany i kanji',
           )
           .min(5, 'Pseudonym jest za krótkie.')
           .max(10, 'Pseudonym jest za długi. Maksymalnie musi mieć 10 znaków.')
@@ -87,26 +84,18 @@ export const Create = () => {
 
         password: Yup.string()
           .min(9, 'Hasło jest za krótkie. Minimum 9 znaków')
-          .matches(
-            /[A-Z]+/g,
-            'Hasło musi zawierać conajmniej jedną dużą literę'
-          )
+          .matches(/[A-Z]+/g, 'Hasło musi zawierać conajmniej jedną dużą literę')
           .matches(
             /[a-ząćęłńóśźżĄĘŁŃÓŚŹŻぁ-んァ-ヾ一-龯]/g,
-            'Hasło przyjmuje tylko litery. Mogą to być znaki Hiragany, Katakany i kanji'
+            'Hasło przyjmuje tylko litery. Mogą to być znaki Hiragany, Katakany i kanji',
           )
           .matches(/[0-9]+/g, 'Hasło musi mieć conajmniej 1 cyfrę.')
-          .matches(
-            /[#?!@$%^&*-]+/g,
-            'Hasło musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
-          )
+          .matches(/[#?!@$%^&*-]+/g, 'Hasło musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-')
           .required('Required'),
       })}
       onSubmit={submitAccountData}
     >
-      <Form
-        className={`create__account ${isCreate ? 'form__menu--active' : ''}`}
-      >
+      <Form className={`create__account ${isCreate ? 'form__menu--active' : ''}`}>
         <h2>Zarejestruj się za darmo!</h2>
 
         <FormField

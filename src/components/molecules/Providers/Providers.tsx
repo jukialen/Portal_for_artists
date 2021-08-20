@@ -7,11 +7,7 @@ import { AppleFilled, GoogleOutlined, YahooFilled } from '@ant-design/icons';
 
 import { auth, db } from 'firebaseConfig';
 import { addDoc, collection } from 'firebase/firestore';
-import {
-  GoogleAuthProvider,
-  OAuthProvider,
-  signInWithPopup,
-} from 'firebase/auth';
+import { GoogleAuthProvider, OAuthProvider, signInWithPopup } from 'firebase/auth';
 
 import { NavFormContext } from 'providers/NavFormProvider';
 
@@ -49,7 +45,6 @@ export const Providers = () => {
         email: result.user,
         token,
       });
-
 
       console.log('Credential:', credential);
       console.log('Token:', token);

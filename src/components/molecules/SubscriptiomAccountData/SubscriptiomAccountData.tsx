@@ -11,11 +11,7 @@ export const SubscriptiomAccountData = () => {
         title="Aktualny plan"
         ariaLabel="Info about subscription"
       />
-      <Button
-        classButton="subscription__check"
-        title="Zmień"
-        ariaLabel="Change subscription"
-      />
+      <Button classButton="subscription__check" title="Zmień" ariaLabel="Change subscription" />
     </form>
   );
 };

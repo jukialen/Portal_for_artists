@@ -28,11 +28,7 @@ export const PasswordAccountData = () => {
         required="required"
       />
 
-      <Button
-        typeButton="submit"
-        title="Zmień hasło"
-        ariaLabel="Submit new password"
-      />
+      <Button typeButton="submit" title="Zmień hasło" ariaLabel="Submit new password" />
     </form>
   );
 };

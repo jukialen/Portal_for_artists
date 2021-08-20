@@ -25,10 +25,7 @@ export const UnauthorisedUser = () => {
     <Router>
       <div className={`whole__page ${isMode ? 'dark' : ''}`}>
         <ShowMenuProvider>
-          <Header
-            titleFirstNav="Zaloguj się"
-            titleSecondNav="Zarejestruj się"
-          />
+          <Header titleFirstNav="Zaloguj się" titleSecondNav="Zarejestruj się" />
           <Create />
           <Login />
         </ShowMenuProvider>

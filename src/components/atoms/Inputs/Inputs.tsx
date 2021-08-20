@@ -5,7 +5,7 @@ type InputsTypes = {
   typeInput?: string;
   placeholderInput: string;
   // required?: boolean
-  props?:string[]
+  props?: string[];
 };
 
 export const Inputs = ({

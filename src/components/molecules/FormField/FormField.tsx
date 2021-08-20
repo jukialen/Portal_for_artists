@@ -9,13 +9,7 @@ type fF = {
   placeholderField: string;
 };
 
-export const FormField = ({
-  titleField,
-  nameField,
-  typeField,
-  placeholderField,
-  ...props
-}: fF) => {
+export const FormField = ({ titleField, nameField, typeField, placeholderField, ...props }: fF) => {
   return (
     <div className="form__field">
       <label htmlFor="pseudonym">{titleField}</label>

@@ -22,10 +22,12 @@ export function Header({ titleFirstNav, titleSecondNav }: titleValues) {
 
   const { showMenu } = useContext(ShowMenuContext);
 
+  const user = localStorage.getItem('user');
+
   return (
     <header>
       <h1 className="title">
-        <NavLink to={currentUser ? '/app' : '/'}>Portal dla artystów</NavLink>
+        <NavLink to={currentUser || user ? '/app' : '/'}>Portal dla artystów</NavLink>
       </h1>
 
       <Button
@@ -36,11 +38,7 @@ export function Header({ titleFirstNav, titleSecondNav }: titleValues) {
 
       <Nav titleFirstNav={titleFirstNav} titleSecondNav={titleSecondNav} />
 
-      <Button
-        classButton="hamburger__menu"
-        ariaLabel="menu button"
-        onClick={showMenu}
-      />
+      <Button classButton="hamburger__menu" ariaLabel="menu button" onClick={showMenu} />
     </header>
   );
 }

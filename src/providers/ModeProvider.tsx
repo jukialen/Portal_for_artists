@@ -3,8 +3,8 @@ import React, { ReactNode, useCallback } from 'react';
 import { useLocalState } from 'hooks/useLocalState';
 
 type childrenType = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export const ModeContext = React.createContext({
   isMode: false,

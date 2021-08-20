@@ -1,18 +1,19 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import './Nav.scss';
 
-import { providersSignOut } from 'firebaseConfig';
+// import { providersSignOut, currentUser } from 'firebaseConfig';
 
 import { NavFormContext } from 'providers/NavFormProvider';
 import { ShowMenuContext } from 'providers/ShowMenuProvider';
 
-type titleNavType = {
+type TitleNavType = {
   titleFirstNav: string;
   titleSecondNav: string;
-}
-export const Nav = ({ titleFirstNav, titleSecondNav }: titleNavType) => {
+};
+
+export const Nav = ({ titleFirstNav, titleSecondNav }: TitleNavType) => {
   const { showLoginForm, showCreateForm } = useContext(NavFormContext);
 
   const { isMenu, showMenu } = useContext(ShowMenuContext);
@@ -27,6 +28,13 @@ export const Nav = ({ titleFirstNav, titleSecondNav }: titleNavType) => {
     showMenu();
   };
 
+  const signOut = () => {
+    // currentUser && providersSignOut();
+    localStorage.removeItem('user');
+    const history = useHistory();
+    history.push('/');
+  };
+
   return (
     <nav className={isMenu ? 'menu--active' : ''}>
       <ul>
@@ -34,11 +42,7 @@ export const Nav = ({ titleFirstNav, titleSecondNav }: titleNavType) => {
           <a
             href="#"
             className="sign__in"
-            onClick={
-              titleFirstNav === 'Wyloguj'
-                ? providersSignOut
-                : hideMenuLogin
-            }
+            onClick={titleFirstNav === 'Wyloguj' ? signOut : hideMenuLogin}
           >
             {titleFirstNav}
           </a>

@@ -6,10 +6,7 @@ import './GalleryAccount.scss';
 
 export const GalleryAccount = () => {
   return (
-    <article
-      id="user__gallery__in__account"
-      className="user__gallery__in__account"
-    >
+    <article id="user__gallery__in__account" className="user__gallery__in__account">
       <em>Twoje zdjęcia i rysunki</em>
 
       <div className="user__photos">

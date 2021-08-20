@@ -21,12 +21,12 @@ export const AuthorisedUser = () => {
   return (
     <Router>
       <div className={`whole__page ${isMode ? 'dark' : ''}`}>
-        <Header
-          titleFirstNav="Wyloguj"
-          titleSecondNav="Konto"
-        />
+        <Header titleFirstNav="Wyloguj" titleSecondNav="Konto" />
         <Aside />
         <Switch>
+          <Route exact={true} path="/app">
+            <Workspace />
+          </Route>
           <Route exact={true} path="/app">
             <Workspace />
           </Route>

@@ -12,25 +12,16 @@ export function Faq() {
       <h2>Częste pytania</h2>
 
       <Collapse destroyInactivePanel={true}>
-        <Panel
-          header="Czy korzystanie z serwisu jest darmowe?"
-          className="questions__faq"
-          key="1"
-        >
+        <Panel header="Czy korzystanie z serwisu jest darmowe?" className="questions__faq" key="1">
           <p className="answers__faq">
-            Tak. Z serwisu można korzystać za darmo. Jednak aby skorzystać z
-            dodatkowych korzyści, należy wykupić plan Premium.
+            Tak. Z serwisu można korzystać za darmo. Jednak aby skorzystać z dodatkowych korzyści,
+            należy wykupić plan Premium.
           </p>
         </Panel>
-        <Panel
-          header="Jakie korzyści daje plan Premium?"
-          className="questions__faq"
-          key="2"
-        >
+        <Panel header="Jakie korzyści daje plan Premium?" className="questions__faq" key="2">
           <p className="answers__faq">
-            Plan Premium m. in. zapewnia priorytetowe wsparcie naszegu wsparcia
-            klienta oraz brak reklam. Jeśli chcesz się więcej dowiedzieć, możesz
-            dowiedzieć się <a href="#">tutaj</a>.
+            Plan Premium m. in. zapewnia priorytetowe wsparcie naszego wsparcia klienta oraz brak
+            reklam. Jeśli chcesz się więcej dowiedzieć, możesz dowiedzieć się <a href="#">tutaj</a>.
           </p>
         </Panel>
         <Panel

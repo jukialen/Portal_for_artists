@@ -1,4 +1,5 @@
-import React, { useContext, useCallback, useState } from 'react';
+import React, { FC, useContext, useCallback, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { FormField } from 'components/molecules/FormField/FormField';
 import { FormError } from 'components/molecules/FormError/FormError';
@@ -13,31 +14,36 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 const initialValues = {
-  username: '',
   pseudonym: '',
-  email: '',
   password: '',
 };
 
-export const Login = () => {
+type LoginType = {
+  pseudonym: string;
+  password: string;
+};
+
+export const Login: FC = () => {
   const { isLogin } = useContext(NavFormContext);
   const [errorMessage, setErrorMessage] = useState<string>('');
-  const [user, setUser] = useState<string>('');
+  const [user, setUser] = useState('');
 
   const submitAccountData = useCallback(
-    async ({ pseudonym, password }, { resetForm }) => {
+    async ({ pseudonym, password }: LoginType, { resetForm }) => {
       try {
-        setUser(JSON.stringify({ pseudonym, password }));
-        await localStorage.setItem('user', user);
-        console.log(user);
+        await setUser(JSON.stringify({ pseudonym, password }));
+        localStorage.setItem('user', user);
+        console.log('User:', user);
         resetForm(initialValues);
+        const history = useHistory();
+        return history.push('/app');
       } catch (e) {
         console.error('Error adding document: ', e);
         setErrorMessage('Nie mogliśmy Cię zalogować');
       }
-      console.log('showLoginForm:');
+      console.log('showLoginForm:', user);
     },
-    [user]
+    [user],
   );
 
   return (
@@ -50,20 +56,17 @@ export const Login = () => {
           .matches(/(?=[0-9])+/g, 'Pseudonym musi mieć conajmniej 1 cyfrę.')
           .matches(
             /(?=.*?[#?!@$%^&*-]+)/,
-            'Pseudonym musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
+            'Pseudonym musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-',
           )
           .required('Required'),
 
         password: Yup.string()
           .min(9, 'Hasło jest za krótkie. Minimum 9 znaków')
-          .matches(
-            /^(?=.*?[A-Z])/,
-            'Hasło musi zawierać conajmniej jedną dużą literę'
-          )
+          .matches(/^(?=.*?[A-Z])/, 'Hasło musi zawierać conajmniej jedną dużą literę')
           .matches(/(?=[0-9])+/g, 'Hasło musi mieć conajmniej 1 cyfrę.')
           .matches(
             /(?=.*?[#?!@$%^&*-]+)/,
-            'Hasło musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-'
+            'Hasło musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-',
           )
           .required('Required'),
       })}

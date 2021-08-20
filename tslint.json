@@ -14,5 +14,6 @@
   },
   "jsRules": {
     "no-console": false
-  }
+  },
+  "defaultSeverity": "warning"
 }

@@ -5,7 +5,7 @@ import { Article } from 'components/molecules/Article/Article';
 import './Wrapper.scss';
 
 type wrapperType = {
-  idWrapper: string
+  idWrapper: string;
 };
 
 export const Wrapper = ({ idWrapper }: wrapperType) => {
@@ -13,56 +13,16 @@ export const Wrapper = ({ idWrapper }: wrapperType) => {
     <div className="wrapper">
       <div id={idWrapper} className="carousel">
         <div className="content">
-          <Article
-            imgLink="#"
-            imgDescription="Photo title"
-            authorName="Z bazy"
-          />
-          <Article
-            imgLink="#"
-            imgDescription="Photo title"
-            authorName="Z bazy"
-          />
-          <Article
-            imgLink="#"
-            imgDescription="Photo title"
-            authorName="Z bazy"
-          />
-          <Article
-            imgLink="#"
-            imgDescription="Photo title"
-            authorName="Z bazy"
-          />
-          <Article
-            imgLink="#"
-            imgDescription="Photo title"
-            authorName="Z bazy"
-          />
-          <Article
-            imgLink="#"
-            imgDescription="Photo title"
-            authorName="Z bazy"
-          />
-          <Article
-            imgLink="#"
-            imgDescription="Photo title"
-            authorName="Z bazy"
-          />
-          <Article
-            imgLink="#"
-            imgDescription="Photo title"
-            authorName="Z bazy"
-          />
-          <Article
-            imgLink="#"
-            imgDescription="Photo title"
-            authorName="Z bazy"
-          />
-          <Article
-            imgLink="#"
-            imgDescription="Photo title"
-            authorName="Z bazy"
-          />
+          <Article imgLink="#" imgDescription="Photo title" authorName="Z bazy" />
+          <Article imgLink="#" imgDescription="Photo title" authorName="Z bazy" />
+          <Article imgLink="#" imgDescription="Photo title" authorName="Z bazy" />
+          <Article imgLink="#" imgDescription="Photo title" authorName="Z bazy" />
+          <Article imgLink="#" imgDescription="Photo title" authorName="Z bazy" />
+          <Article imgLink="#" imgDescription="Photo title" authorName="Z bazy" />
+          <Article imgLink="#" imgDescription="Photo title" authorName="Z bazy" />
+          <Article imgLink="#" imgDescription="Photo title" authorName="Z bazy" />
+          <Article imgLink="#" imgDescription="Photo title" authorName="Z bazy" />
+          <Article imgLink="#" imgDescription="Photo title" authorName="Z bazy" />
         </div>
       </div>
 

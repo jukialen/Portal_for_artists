@@ -6,7 +6,7 @@ type linksType = {
   classLink?: string;
   title?: string;
   elementLink?: ReactNode;
-}
+};
 
 export const Links = ({
   idInput,

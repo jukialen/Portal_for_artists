@@ -8,20 +8,18 @@ export const Welcome = () => {
       <h1>Welcome artysto!</h1>
 
       <h3>
-        Szukassz serwisu, który spełni będzie dedykowany tobie, a nie milionom
-        osób więc nikomu?
+        Szukassz serwisu, który spełni będzie dedykowany tobie, a nie milionom osób więc nikomu?
         <br />
         <br />
-        Szukasz derwisu, który sprawdzi się jako graficzny pamiętnik? A może
-        chcesz się pochwalić swoimi artystycznymi dziełami?
+        Szukasz derwisu, który sprawdzi się jako graficzny pamiętnik? A może chcesz się pochwalić
+        swoimi artystycznymi dziełami?
       </h3>
 
       <h2>
         Dobrze trafiłeś! Jest to serwis dedykowany takim osobom jak ty.
         <br />
         <br />
-        Od ludzi z "niedzielnych" artystów po ludzi tworzących swoje wirtualne
-        podręczne portfolio.
+        Od ludzi z "niedzielnych" artystów po ludzi tworzących swoje wirtualne podręczne portfolio.
       </h2>
 
       <div className="main__container">
@@ -70,9 +68,8 @@ export const Welcome = () => {
           <h4>Design?</h4>
 
           <p>
-            Oczywiście minimalistyczny! Twoje ma być na wierzchu, nie nasze.
-            Dzięki temu wszystko wszystko jest też czytelniejsze, więc nic się
-            nie zlewa w jedną animację lub obraz.
+            Oczywiście minimalistyczny! Twoje ma być na wierzchu, nie nasze. Dzięki temu wszystko
+            wszystko jest też czytelniejsze, więc nic się nie zlewa w jedną animację lub obraz.
           </p>
         </div>
 
@@ -94,8 +91,7 @@ export const Welcome = () => {
           <h4>Chcesz znaleść coś o określonym typie?</h4>
 
           <p>
-            Wybierz tag. A może sam coś dodałeś/aś i chcesz by łatwiej ludzie
-            znaleźli? <br />
+            Wybierz tag. A może sam coś dodałeś/aś i chcesz by łatwiej ludzie znaleźli? <br />
             Dodaj tag.
           </p>
         </div>
@@ -117,10 +113,7 @@ export const Welcome = () => {
         <div className="container">
           <h4>Masz tutaj artystycznych przyjaciół?</h4>
 
-          <p>
-            Zawsze masz ich pod ręką. Szybko, więc wiesz czym się ostatnio
-            pochwalili.
-          </p>
+          <p>Zawsze masz ich pod ręką. Szybko, więc wiesz czym się ostatnio pochwalili.</p>
         </div>
 
         <img src="#" className="image" alt="picture.jpg" />

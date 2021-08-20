@@ -1,8 +1,5 @@
 const replaceMenu = () => {
-  if (
-    $linkSignIn.classList.contains('sign__in') &&
-    $linkSignOut.classList.contains('sign__out')
-  ) {
+  if ($linkSignIn.classList.contains('sign__in') && $linkSignOut.classList.contains('sign__out')) {
     const accountNavbar = document.createElement('li');
     accountNavbar.classList.add('menu');
     $ulNavbar.appendChild(accountNavbar);

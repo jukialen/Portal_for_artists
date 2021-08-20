@@ -8,7 +8,7 @@ type buttonType = {
   ariaLabel: string;
   elementButton?: ReactNode;
   onClick?: MouseEventHandler;
-  props?: string[]
+  props?: string[];
 };
 
 export const Button = ({

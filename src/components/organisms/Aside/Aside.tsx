@@ -16,10 +16,7 @@ export function Aside() {
   const leftMenuClick = () => setLeftMenu(!isLeftMenu);
 
   return (
-    <aside
-      id="top__menu"
-      className={`aside ${isLeftMenu ? 'aside--active' : ''}`}
-    >
+    <aside id="top__menu" className={`aside ${isLeftMenu ? 'aside--active' : ''}`}>
       <Button
         elementButton={isLeftMenu ? <LeftOutlined /> : <RightOutlined />}
         classButton="aside__right"
@@ -41,10 +38,7 @@ export function Aside() {
       <Friends />
 
       <div>
-        <Links
-          hrefLink="#"
-          elementLink={<h3 className="contact">Kontakt</h3>}
-        />
+        <Links hrefLink="#" elementLink={<h3 className="contact">Kontakt</h3>} />
       </div>
     </aside>
   );

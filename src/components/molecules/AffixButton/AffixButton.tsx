@@ -19,10 +19,10 @@ export const AffixButton: React.FC = () => {
     }
   };
 
-  const setBootom:MouseEventHandler = () => {
-    setBottom(0)
+  const setBootom: MouseEventHandler = () => {
+    setBottom(0);
   };
-  
+
   window.addEventListener('scroll', toggleVisible);
 
   return (
