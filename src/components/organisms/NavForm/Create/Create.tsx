@@ -21,13 +21,12 @@ const initialValues = {
   email: '',
   password: '',
 };
-
 export const Create: FC = () => {
   const { isCreate } = useContext(NavFormContext);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [valuesFields, setValuesFields] = useState(false);
 
+  const [valuesFields, setValuesFields] = useState(false);
   const submitAccountData = useCallback(
     async ({ username, pseudonym, email, password }, { resetForm }) => {
       setIsLoading(true);

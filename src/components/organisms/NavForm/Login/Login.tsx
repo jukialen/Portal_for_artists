@@ -13,15 +13,17 @@ import { NavFormContext } from 'providers/NavFormProvider';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
+type LoginType = {
+  pseudonym: string;
+  password: string;
+};
+
 const initialValues = {
   pseudonym: '',
   password: '',
 };
 
-type LoginType = {
-  pseudonym: string;
-  password: string;
-};
+export let pseudonymName: string;
 
 export const Login: FC = () => {
   const { isLogin } = useContext(NavFormContext);
@@ -36,7 +38,9 @@ export const Login: FC = () => {
         console.log('User:', user);
         resetForm(initialValues);
         const history = useHistory();
-        return history.push('/app');
+        history.push('/app');
+        pseudonymName = pseudonym;
+        console.log(pseudonymName)
       } catch (e) {
         console.error('Error adding document: ', e);
         setErrorMessage('Nie mogliśmy Cię zalogować');

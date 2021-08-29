@@ -3,6 +3,8 @@ import { getFirestore } from 'firebase/firestore';
 
 import { getAuth, signOut } from 'firebase/auth';
 
+import { getStorage, ref } from "firebase/storage";
+
 const firebaseApp = initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
@@ -30,3 +32,7 @@ export const providersSignOut = () => {
       alert('SignOut Failed');
     });
 };
+
+// CLOUD STORAGE
+export const storage = getStorage(firebaseApp);
+
