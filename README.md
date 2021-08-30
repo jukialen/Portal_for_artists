@@ -1,10 +1,9 @@
 # Portal_for_artists
-It is created by <a href="https://github.com/jukialen">jukialen</a> (front-end) i
-<a href="https://github.com/beginnerProgrammer3">beginnerProgrammer3</a> (back-end).
+It is created by <a href="https://github.com/jukialen">jukialen</a> 
 ## Purpose of the project
 It's project for learning all the things to create websites. \
-Title of project is social portal for people, which they create drawings, short animation or films and edite photos
-for hobbyist or professional purpose.
+Title of project is social portal for people, which they create drawings, short animations 
+or films and editing photos for hobbyist or professional purpose.
 ## Technologies
 The project uses: \
 a) Front-end:
@@ -15,14 +14,12 @@ a) Front-end:
 - Atomic Design;
 - Formik with Yup;
 - Ant Design;
-- Firebase; 
 - basic Git;
-- basic Webpack, Eslint and Prettier
-  
+- basic Webpack and Prettier;
+- basic Typescript and TsLint;
+
 b) Back-end:
-- Spring;
-- Maven;
-- REST API;
-  
+- Firebase;
+
 
 Site's in full responsive on target devices from small smartphones to TV and SMART TV.
