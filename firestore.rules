@@ -1,9 +1,0 @@
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /users/{pseudonym} {
-      allow read, update, delete: if request.auth != null;
-      allow create: if true;
-    }
-  }
-}

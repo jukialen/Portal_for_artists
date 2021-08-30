@@ -8,10 +8,7 @@ import './GalleryAccount.scss';
 
 // import { Button } from 'components/atoms/Button/Button';
 
-import { storage } from 'firebaseConfig';
 // import { userId } from 'components/organisms/NavForm/Create/Create';
-import { pseudonymName } from 'components/organisms/NavForm/Login/Login';
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import {
   LoadingOutlined,
   PauseCircleTwoTone,
@@ -21,42 +18,42 @@ import {
 
 // @ts-ignore
 export const GalleryAccount: FC = () => {
-  const [image, setImage] = useState([]);
-
-  const onFileChange = (e: ChangeEventHandler<HTMLInputElement>) => {
-    const reader = new FileReader();
-    // @ts-ignore
-    let file = e.target.files[0]; // get the supplied file
-    // if there is a file, set image to that file
-    if (file) {
-      reader.onload = () => {
-        if (reader.readyState === 2) {
-          console.log(file);
-          setImage(file);
-        }
-      };
-      // @ts-ignore
-      reader.readAsDataURL(e.target.files[0]);
-      // if there is no file, set image back to null
-    } else {
-      setImage([]);
-    }
-  };
-
-  const uploadToFirebase = async () => {
-    if (image) {
-      // @ts-ignore
-      const storageRef = ref(storage, `${image.name}`);
-      // @ts-ignore
-      const uploadTask = await uploadBytesResumable(storageRef, image.name)
-        .then(() => {
-          alert('Image uploaded successfully to Firebase.');
-        })
-        .catch(() => {
-          alert('Please upload an image first.');
-        });
-    }
-  };
+  // const [image, setImage] = useState([]);
+  //
+  // const onFileChange = (e: ChangeEventHandler<HTMLInputElement>) => {
+  //   const reader = new FileReader();
+  //   // @ts-ignore
+  //   let file = e.target.files[0]; // get the supplied file
+  //   // if there is a file, set image to that file
+  //   if (file) {
+  //     reader.onload = () => {
+  //       if (reader.readyState === 2) {
+  //         console.log(file);
+  //         setImage(file);
+  //       }
+  //     };
+  //     // @ts-ignore
+  //     reader.readAsDataURL(e.target.files[0]);
+  //     // if there is no file, set image back to null
+  //   } else {
+  //     setImage([]);
+  //   }
+  // };
+  //
+  // const uploadToFirebase = async () => {
+  //   if (image) {
+  //     // @ts-ignore
+  //     const storageRef = ref(storage, `${image.name}`);
+  //     // @ts-ignore
+  //     const uploadTask = await uploadBytesResumable(storageRef, image.name)
+  //       .then(() => {
+  //         alert('Image uploaded successfully to Firebase.');
+  //       })
+  //       .catch(() => {
+  //         alert('Please upload an image first.');
+  //       });
+  //   }
+  // };
 
   // const onUploadSubmission = (
   //   e: MouseEventHandler<HTMLButtonElement> | ChangeEventHandler<HTMLInputElement>,

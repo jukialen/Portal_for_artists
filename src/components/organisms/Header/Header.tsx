@@ -10,8 +10,6 @@ import { Button } from 'components/atoms/Button/Button';
 import { ModeContext } from 'providers/ModeProvider';
 import { ShowMenuContext } from 'providers/ShowMenuProvider';
 
-import { currentUser } from 'firebaseConfig';
-
 type titleValues = {
   titleFirstNav: string;
   titleSecondNav: string;
@@ -27,7 +25,7 @@ export function Header({ titleFirstNav, titleSecondNav }: titleValues) {
   return (
     <header>
       <h1 className="title">
-        <NavLink to={currentUser || user ? '/app' : '/'}>Portal dla artystów</NavLink>
+        <NavLink to={user ? '/app' : '/'}>Portal dla artystów</NavLink>
       </h1>
 
       <Button

@@ -40,7 +40,7 @@ export const Login: FC = () => {
         const history = useHistory();
         history.push('/app');
         pseudonymName = pseudonym;
-        console.log(pseudonymName)
+        console.log(pseudonymName);
       } catch (e) {
         console.error('Error adding document: ', e);
         setErrorMessage('Nie mogliśmy Cię zalogować');

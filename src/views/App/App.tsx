@@ -11,8 +11,6 @@ import { ModeProvider } from 'providers/ModeProvider';
 
 import 'generalSCSS/reset.scss';
 
-import { currentUser } from 'firebaseConfig';
-
 export function App() {
   const user = localStorage.getItem('user');
 
@@ -20,7 +18,7 @@ export function App() {
   // user ? history.push('/') : history.push('/app');
   return (
     <ModeProvider>
-      {currentUser || user ? (
+      {user ? (
         <AuthorisedUser />
       ) : (
         <NavFormProvider>

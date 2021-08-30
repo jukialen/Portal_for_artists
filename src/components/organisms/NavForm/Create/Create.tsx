@@ -12,34 +12,44 @@ import { NavFormContext } from 'providers/NavFormProvider';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 
-import { db } from 'firebaseConfig';
-import { collection, addDoc } from 'firebase/firestore';
-
 const initialValues = {
   username: '',
   pseudonym: '',
   email: '',
   password: '',
 };
+
+type UserDataType = {
+  username: string;
+  pseudonym: string;
+  email: string;
+  password: string;
+};
+
+// @ts-ignore
 export const Create: FC = () => {
   const { isCreate } = useContext(NavFormContext);
-  const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
-  const [valuesFields, setValuesFields] = useState(false);
+  const [valuesFields, setValuesFields] = useState<boolean>(false);
+
   const submitAccountData = useCallback(
-    async ({ username, pseudonym, email, password }, { resetForm }) => {
+    async ({ username, pseudonym, email, password }: UserDataType, { resetForm }) => {
       setIsLoading(true);
 
       try {
-        await addDoc(collection(db, 'users'), {
-          username,
-          pseudonym,
-          email,
-          password,
-        });
-
+        console.log(`Username: ${username}; \n\
+        Pseudonym: ${pseudonym};
+        E-mail: ${email};
+        Password: ${password}`);
+        // await addDoc(collection(db, 'users'), {
+        //   username,
+        //   pseudonym,
+        //   email,
+        //   password,
         setValuesFields(!valuesFields);
+        // @ts-ignore
         resetForm(initialValues);
       } catch (e) {
         console.error('Error adding document: ', e);
