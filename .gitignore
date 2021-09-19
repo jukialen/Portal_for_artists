@@ -1,7 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+*/node_modules
+backend/node_modules/select-hose
 /.pnp
 .pnp.js
 
@@ -9,7 +10,7 @@
 /coverage
 
 # production
-/build
+*/build
 
 # misc
 .DS_Store
@@ -25,15 +26,65 @@ yarn-error.log*
 
 
 #idea
-.idea/
 .idea
 
 
 #firebase
 .firebase
-firebase-debug.log
 *.log
 
 #css subfiles
 *.css
 *.css.map
+
+############################
+# OS X
+############################
+.AppleDouble
+.LSOverride
+Icon
+.Spotlight-V100
+.Trashes
+._*
+
+
+############################
+# Logs and databases
+############################
+
+.tmp
+*.sql
+
+############################
+# Misc.
+############################
+
+*#
+ssl
+nbproject
+public/uploads/*
+!public/uploads/.gitkeep
+
+############################
+# Tests
+############################
+
+testApp
+coverage
+
+############################
+# Strapi
+############################
+license.txt
+exports
+*.cache
+*/.strapi-updater.json
+*/.travis.yml
+*/hose.js
+select-hose/package.json
+*/select-hose/README.md
+*/select-hose/test/api-test.js
+*/select-hose/test/fixtures.js
+*/select-hose/.npmignore
+*/select-hose/.jshintrc
+*/select-hose/.jscsrc

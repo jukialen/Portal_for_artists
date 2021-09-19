@@ -12,7 +12,7 @@ services:
       DATABASE_USERNAME: strapi
       DATABASE_PASSWORD: strapi
     volumes:
-      - ./backend:/srv/backend
+      - ./backend:/srv/app
     ports:
       - '1337:1337'
     depends_on:
@@ -21,15 +21,18 @@ services:
   postgres:
     image: postgres:11.13-stretch
     container_name: postgres
-    restart: always
+    restart: unless-stopped
     environment:
       POSTGRES_DB: strapi
       POSTGRES_USER: strapi
       POSTGRES_PASSWORD: strapi
     volumes:
       - ./prostgres:/var/lib/postgresql/data
+
   frontend:
-    image: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     container_name: frontend
     volumes:
       - ./frontend:/frontend
