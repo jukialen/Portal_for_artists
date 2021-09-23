@@ -1,4 +1,5 @@
-version: '3'
+version: '3.9'
+
 services:
   strapi:
     image: strapi/strapi:3.6.8-node14
@@ -12,7 +13,7 @@ services:
       DATABASE_USERNAME: strapi
       DATABASE_PASSWORD: strapi
     volumes:
-      - ./backend:/srv/app
+      -  ./backend:/srv/app
     ports:
       - '1337:1337'
     depends_on:
@@ -27,18 +28,17 @@ services:
       POSTGRES_USER: strapi
       POSTGRES_PASSWORD: strapi
     volumes:
-      - ./prostgres:/var/lib/postgresql/data
+      - ~/Portal_for_artists/postgres:/var/lib/postgresql/data
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+    image: frontend
     container_name: frontend
     volumes:
-      - ./frontend:/frontend
-      - /frontend/node_modules
+      - ./frontend:/srv/frontend
     ports:
       - '3000:3000'
-    stdin_open: true
-    depends_on:
+    links:
       - strapi

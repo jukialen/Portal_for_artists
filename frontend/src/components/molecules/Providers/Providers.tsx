@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 // import { useHistory } from 'react-router-dom';
-import { Button } from 'frontend/src/components/atoms/Button/Button';
+import { Button } from 'components/atoms/Button/Button';
 
 import './Providers.scss';
 import { AppleFilled, GoogleOutlined, YahooFilled } from '@ant-design/icons';
@@ -22,7 +22,7 @@ export const Providers = () => {
         ariaLabel="google provider"
         elementButton={<GoogleOutlined />}
         // @ts-ignore
-        onClick={signInWithGoogle}
+        // onClick={signInWithGoogle}
       />
       <Button
         classButton="apple"
@@ -36,7 +36,7 @@ export const Providers = () => {
         ariaLabel="yahoo provider"
         elementButton={<YahooFilled />}
         // @ts-ignore
-        onClick={signInWithYahoo}
+        // onClick={signInWithYahoo}
       />
     </div>
   );

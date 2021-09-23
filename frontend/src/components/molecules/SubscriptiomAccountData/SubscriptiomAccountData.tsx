@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from 'frontend/src/components/atoms/Button/Button';
+import { Button } from 'components/atoms/Button/Button';
 
 export const SubscriptiomAccountData = () => {
   return (

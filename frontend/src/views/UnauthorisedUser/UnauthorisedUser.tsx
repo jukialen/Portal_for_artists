@@ -1,22 +1,22 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Create } from 'frontend/src/components/organisms/NavForm/Create/Create';
-import { Login } from 'frontend/src/components/organisms/NavForm/Login/Login';
-import { Authors } from '../Authors/Authors';
-import { Terms } from '../Terms/Terms';
-import { Privacy } from '../Privacy/Privacy';
-import { Faq } from '../Faq/Faq';
-import { Header } from 'frontend/src/components/organisms/Header/Header';
-import { Aside } from 'frontend/src/components/organisms/Aside/Aside';
-import { Footer } from 'frontend/src/components/organisms/Footer/Footer';
+import { Create } from 'components/organisms/NavForm/Create/Create';
+import { Login } from 'components/organisms/NavForm/Login/Login';
+import { Authors } from 'views/Authors/Authors';
+import { Terms } from 'views/Terms/Terms';
+import { Privacy } from 'views/Privacy/Privacy';
+import { Faq } from 'views/Faq/Faq';
+import { Header } from 'components/organisms/Header/Header';
+import { Aside } from 'components/organisms/Aside/Aside';
+import { Footer } from 'components/organisms/Footer/Footer';
 
-import { Welcome } from '../Welcome/Welcome';
+import { Welcome } from 'views/Welcome/Welcome';
 
-import { ModeContext } from 'frontend/src/providers/ModeProvider';
-import { ShowMenuProvider } from 'frontend/src/providers/ShowMenuProvider';
+import { ModeContext } from 'providers/ModeProvider';
+import { ShowMenuProvider } from 'providers/ShowMenuProvider';
 
-import { AffixButton } from 'frontend/src/components/molecules/AffixButton/AffixButton';
+import { AffixButton } from 'components/molecules/AffixButton/AffixButton';
 
 export const UnauthorisedUser = () => {
   const { isMode } = useContext(ModeContext);

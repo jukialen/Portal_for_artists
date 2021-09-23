@@ -1,14 +1,14 @@
 import React, { FC, useContext, useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { FormField } from 'frontend/src/components/molecules/FormField/FormField';
-import { FormError } from 'frontend/src/components/molecules/FormError/FormError';
-import { Providers } from 'frontend/src/components/molecules/Providers/Providers';
-import { Button } from 'frontend/src/components/atoms/Button/Button';
+import { FormField } from 'components/molecules/FormField/FormField';
+import { FormError } from 'components/molecules/FormError/FormError';
+import { Providers } from 'components/molecules/Providers/Providers';
+import { Button } from 'components/atoms/Button/Button';
 
 import '../NavForm.scss';
 
-import { NavFormContext } from 'frontend/src/providers/NavFormProvider';
+import { NavFormContext } from 'providers/NavFormProvider';
 
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';

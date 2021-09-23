@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Inputs } from 'frontend/src/components/atoms/Inputs/Inputs';
-import { Button } from 'frontend/src/components/atoms/Button/Button';
+import { Inputs } from 'components/atoms/Inputs/Inputs';
+import { Button } from 'components/atoms/Button/Button';
 
 export const MailAccountData = () => {
   return (

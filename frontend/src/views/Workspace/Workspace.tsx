@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Wrapper } from 'frontend/src/components/organisms/Wrapper/Wrapper';
+import { Wrapper } from 'components/organisms/Wrapper/Wrapper';
 
 import './Workspace.scss';
 

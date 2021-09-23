@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import 'frontend/src/generalSCSS/darkLightMode.scss';
+import 'generalSCSS/darkLightMode.scss';
 import './Header.scss';
 
-import { Nav } from 'frontend/src/components/molecules/Nav/Nav';
-import { Button } from 'frontend/src/components/atoms/Button/Button';
+import { Nav } from 'components/molecules/Nav/Nav';
+import { Button } from 'components/atoms/Button/Button';
 
-import { ModeContext } from 'frontend/src/providers/ModeProvider';
-import { ShowMenuContext } from 'frontend/src/providers/ShowMenuProvider';
+import { ModeContext } from 'providers/ModeProvider';
+import { ShowMenuContext } from 'providers/ShowMenuProvider';
 
 type titleValues = {
   titleFirstNav: string;

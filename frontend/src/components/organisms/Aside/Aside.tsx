@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import { Categories } from '../Categories/Categories';
-import { Groups } from '../Groups/Groups';
-import { Friends } from 'frontend/src/components/molecules/Friends/Friends';
-import { Links } from 'frontend/src/components/atoms/Links/Links';
-import { Button } from 'frontend/src/components/atoms/Button/Button';
+import { Categories } from 'components/organisms/Categories/Categories';
+import { Groups } from 'components/organisms/Groups/Groups';
+import { Friends } from 'components/molecules/Friends/Friends';
+import { Links } from 'components/atoms/Links/Links';
+import { Button } from 'components/atoms/Button/Button';
 
 import './Aside.scss';
 

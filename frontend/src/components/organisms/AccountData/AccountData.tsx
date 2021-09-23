@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { SubscriptiomAccountData } from 'frontend/src/components/molecules/SubscriptiomAccountData/SubscriptiomAccountData';
-import { MailAccountData } from 'frontend/src/components/molecules/MailAccountData/MailAccountData';
-import { PasswordAccountData } from 'frontend/src/components/molecules/PasswordAccountData/PasswordAccountData';
+import { SubscriptiomAccountData } from 'components/molecules/SubscriptiomAccountData/SubscriptiomAccountData';
+import { MailAccountData } from 'components/molecules/MailAccountData/MailAccountData';
+import { PasswordAccountData } from 'components/molecules/PasswordAccountData/PasswordAccountData';
 
 import './AccountData.scss';
 

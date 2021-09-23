@@ -3,7 +3,7 @@ module.exports = ({ env }) => ({
   port: env.int('PORT', 1337),
   admin: {
     auth: {
-      secret: env('ADMIN_JWT_SECRET', '143ae2e716bb3347b7660d416259a6d3'),
+      secret: env('ADMIN_JWT_SECRET', '2b87676634486a9ef600cbb218ee09fd'),
     },
   },
 });

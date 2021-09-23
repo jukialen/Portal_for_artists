@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Button } from 'frontend/src/components/atoms/Button/Button';
-import { Links } from 'frontend/src/components/atoms/Links/Links';
+import { Button } from 'components/atoms/Button/Button';
+import { Links } from 'components/atoms/Links/Links';
 
 import './Groups.scss';
 

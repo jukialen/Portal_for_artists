@@ -5,8 +5,8 @@ import './Nav.scss';
 
 // import { providersSignOut, currentUser } from 'firebaseConfig';
 
-import { NavFormContext } from 'frontend/src/providers/NavFormProvider';
-import { ShowMenuContext } from 'frontend/src/providers/ShowMenuProvider';
+import { NavFormContext } from 'providers/NavFormProvider';
+import { ShowMenuContext } from 'providers/ShowMenuProvider';
 
 type TitleNavType = {
   titleFirstNav: string;

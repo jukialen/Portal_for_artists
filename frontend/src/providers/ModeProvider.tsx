@@ -1,6 +1,6 @@
 import React, { ReactNode, useCallback } from 'react';
 
-import { useLocalState } from 'frontend/src/hooks/useLocalState';
+import { useLocalState } from 'hooks/useLocalState';
 
 type childrenType = {
   children: ReactNode;

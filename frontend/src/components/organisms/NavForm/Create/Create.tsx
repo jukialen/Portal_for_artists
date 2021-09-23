@@ -1,13 +1,13 @@
 import React, { FC, useCallback, useContext, useState } from 'react';
 
-import { FormError } from 'frontend/src/components/molecules/FormError/FormError';
-import { FormField } from 'frontend/src/components/molecules/FormField/FormField';
-import { Providers } from 'frontend/src/components/molecules/Providers/Providers';
-import { Button } from 'frontend/src/components/atoms/Button/Button';
+import { FormError } from 'components/molecules/FormError/FormError';
+import { FormField } from 'components/molecules/FormField/FormField';
+import { Providers } from 'components/molecules/Providers/Providers';
+import { Button } from 'components/atoms/Button/Button';
 
 import '../NavForm.scss';
 
-import { NavFormContext } from 'frontend/src/providers/NavFormProvider';
+import { NavFormContext } from 'providers/NavFormProvider';
 
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';

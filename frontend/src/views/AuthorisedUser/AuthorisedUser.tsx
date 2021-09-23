@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Header } from 'frontend/src/components/organisms/Header/Header';
-import { Aside } from 'frontend/src/components/organisms/Aside/Aside';
-import { Workspace } from '../Workspace/Workspace';
-import { Authors } from '../Authors/Authors';
-import { Terms } from '../Terms/Terms';
-import { Privacy } from '../Privacy/Privacy';
-import { Faq } from '../Faq/Faq';
-import { Account } from '../Account/Account';
-import { Footer } from 'frontend/src/components/organisms/Footer/Footer';
+import { Header } from 'components/organisms/Header/Header';
+import { Aside } from 'components/organisms/Aside/Aside';
+import { Workspace } from 'views/Workspace/Workspace';
+import { Authors } from 'views/Authors/Authors';
+import { Terms } from 'views/Terms/Terms';
+import { Privacy } from 'views/Privacy/Privacy';
+import { Faq } from 'views/Faq/Faq';
+import { Account } from 'views/Account/Account';
+import { Footer } from 'components/organisms/Footer/Footer';
 
-import { ModeContext } from 'frontend/src/providers/ModeProvider';
+import { ModeContext } from 'providers/ModeProvider';
 
-import { AffixButton } from 'frontend/src/components/molecules/AffixButton/AffixButton';
+import { AffixButton } from 'components/molecules/AffixButton/AffixButton';
 
 export const AuthorisedUser = () => {
   const { isMode } = useContext(ModeContext);

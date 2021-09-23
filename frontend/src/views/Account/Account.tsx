@@ -1,8 +1,8 @@
 import React from 'react';
-import { AccountMenu } from 'frontend/src/components/molecules/AccountMenu/AccountMenu';
-import { AccountData } from 'frontend/src/components/organisms/AccountData/AccountData';
-import { GalleryAccount } from 'frontend/src/components/organisms/GalleryAccount/GalleryAccount';
-import { ProfileAccount } from 'frontend/src/components/organisms/ProfileAccount/ProfileAccount';
+import { AccountMenu } from 'components/molecules/AccountMenu/AccountMenu';
+import { AccountData } from 'components/organisms/AccountData/AccountData';
+import { GalleryAccount } from 'components/organisms/GalleryAccount/GalleryAccount';
+import { ProfileAccount } from 'components/organisms/ProfileAccount/ProfileAccount';
 
 import './Account.scss';
 

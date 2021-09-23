@@ -2,7 +2,7 @@
 
 import React, { ChangeEvent, ChangeEventHandler, FC, MouseEventHandler, useState } from 'react';
 
-import { Photos } from 'frontend/src/components/atoms/Photos/Photos';
+import { Photos } from 'components/atoms/Photos/Photos';
 
 import './GalleryAccount.scss';
 

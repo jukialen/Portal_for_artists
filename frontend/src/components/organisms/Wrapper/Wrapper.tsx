@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Article } from 'frontend/src/components/molecules/Article/Article';
+import { Article } from 'components/molecules/Article/Article';
 
 import './Wrapper.scss';
 

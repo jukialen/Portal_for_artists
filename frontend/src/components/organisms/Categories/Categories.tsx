@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Links } from 'frontend/src/components/atoms/Links/Links';
+import { Links } from 'components/atoms/Links/Links';
 
 import './Categories.scss';
 
