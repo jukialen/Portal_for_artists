@@ -78,3 +78,5 @@ license.txt
 exports
 *.cache
 .strapi-updater.json
+
+postgres
