@@ -1,4 +1,5 @@
 import React, { FC, useCallback, useContext, useState } from 'react';
+import axios from 'axios';
 
 import { FormError } from 'components/molecules/FormError/FormError';
 import { FormField } from 'components/molecules/FormField/FormField';
@@ -37,22 +38,22 @@ export const Create: FC = () => {
   const submitAccountData = useCallback(
     async ({ username, pseudonym, email, password }: UserDataType, { resetForm }) => {
       setIsLoading(true);
-
       try {
-        console.log(`Username: ${username}; \n\
-        Pseudonym: ${pseudonym};
-        E-mail: ${email};
-        Password: ${password}`);
-        // await addDoc(collection(db, 'users'), {
-        //   username,
-        //   pseudonym,
-        //   email,
-        //   password,
+        const { data } = await axios.post(
+          `${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_API_PORT}${process.env.REACT_APP_API_CREATE_USER}`,
+          {
+            username,
+            pseudonym,
+            email,
+            password,
+          },
+        );
+        console.log(data);
         setValuesFields(!valuesFields);
         // @ts-ignore
         resetForm(initialValues);
-      } catch (e) {
-        console.error('Error adding document: ', e);
+      } catch (error) {
+        console.log({ error });
         setErrorMessage('Nie mogliśmy Cię zarejestrować');
       }
       setIsLoading(false);
@@ -73,7 +74,7 @@ export const Create: FC = () => {
           )
           .matches(/\D/g, 'Imię nie może zawierać cyfr')
           .min(3, 'Imię jest za krótkie.')
-          .required('Rquired'),
+          .required('Required'),
 
         pseudonym: Yup.string()
           .matches(/[0-9０-９]+/g, 'Pseudonym musi mieć conajmniej 1 cyfrę.')

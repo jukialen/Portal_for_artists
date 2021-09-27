@@ -1,15 +1,16 @@
 import React, { FC, useContext, useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 import { FormField } from 'components/molecules/FormField/FormField';
 import { FormError } from 'components/molecules/FormError/FormError';
 import { Providers } from 'components/molecules/Providers/Providers';
+
 import { Button } from 'components/atoms/Button/Button';
 
 import '../NavForm.scss';
 
 import { NavFormContext } from 'providers/NavFormProvider';
-
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
@@ -33,9 +34,17 @@ export const Login: FC = () => {
   const submitAccountData = useCallback(
     async ({ pseudonym, password }: LoginType, { resetForm }) => {
       try {
-        await setUser(JSON.stringify({ pseudonym, password }));
-        localStorage.setItem('user', user);
-        console.log('User:', user);
+        const { data } = await axios.post(
+          `${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_API_PORT}${process.env.REACT_APP_API_CREATE_USER}`,
+          {
+            pseudonym,
+            password,
+          },
+        );
+        console.log(data);
+        await setUser(JSON.stringify(data));
+        // localStorage.setItem('user', user);
+        // console.log('User:', user);
         resetForm(initialValues);
         const history = useHistory();
         history.push('/app');

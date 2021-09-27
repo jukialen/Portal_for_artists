@@ -1,5 +1,4 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { AuthorisedUser } from 'views/AuthorisedUser/AuthorisedUser';
 import { UnauthorisedUser } from 'views/UnauthorisedUser/UnauthorisedUser';
