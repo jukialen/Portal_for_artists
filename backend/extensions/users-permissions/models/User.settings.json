@@ -61,11 +61,11 @@
     },
     "pseudonym": {
       "type": "string",
-      "required": true,
+      "required": false,
       "unique": true,
       "minLength": 5,
       "maxLength": 10,
-      "regex": "[0-9０-９]+[#?!@$%^&*-]+[a-ząćęłńóśźżĄĘŁŃÓŚŹŻぁ-んァ-ヾ一-龯]/g"
+      "regex": "[0-9０-９]+[#?!@$%^&*-]+[a-ząćęłńóśźżĄĘŁŃÓŚŹŻぁ-んァ-ヾ一-龯]"
     },
     "avatar": {
       "model": "file",
@@ -78,8 +78,8 @@
       "pluginOptions": {}
     },
     "file": {
-      "via": "users",
-      "model": "files"
+      "model": "files",
+      "via": "users"
     }
   }
 }

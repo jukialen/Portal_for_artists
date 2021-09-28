@@ -41,8 +41,7 @@
       "required": true
     },
     "users": {
-      "unique": true,
-      "via": "file",
+      "via": "files",
       "plugin": "users-permissions",
       "collection": "user"
     }

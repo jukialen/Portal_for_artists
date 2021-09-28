@@ -19,7 +19,8 @@ a) Front-end:
 - basic Typescript and TsLint;
 
 b) Back-end:
-- Firebase;
+- Strapi;
+- Docker;
 
 
 Site's in full responsive on target devices from small smartphones to TV and SMART TV.

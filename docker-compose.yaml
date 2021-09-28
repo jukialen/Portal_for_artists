@@ -40,5 +40,3 @@ services:
       - ./frontend:/srv/frontend
     ports:
       - '3000:3000'
-    links:
-      - strapi

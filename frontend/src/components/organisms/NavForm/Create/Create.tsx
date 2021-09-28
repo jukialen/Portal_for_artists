@@ -48,12 +48,13 @@ export const Create: FC = () => {
             password,
           },
         );
-        console.log(data);
+        console.log('User profile', data.user);
+        console.log('User token', data.jwt);
         setValuesFields(!valuesFields);
         // @ts-ignore
         resetForm(initialValues);
-      } catch (error) {
-        console.log({ error });
+      } catch ({ response}) {
+        console.log(response.data);
         setErrorMessage('Nie mogliśmy Cię zarejestrować');
       }
       setIsLoading(false);
@@ -87,7 +88,7 @@ export const Create: FC = () => {
             'Pseudonym przyjmuje tylko litery. Mogą to być znaki Hiragany, Katakany i kanji',
           )
           .min(5, 'Pseudonym jest za krótkie.')
-          .max(10, 'Pseudonym jest za długi. Maksymalnie musi mieć 10 znaków.')
+          .max(15, 'Pseudonym jest za długi. Maksymalnie musi mieć 15 znaków.')
           .required('Required'),
 
         email: Yup.string().email('Invalid email address').required('Required'),

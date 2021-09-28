@@ -15,16 +15,14 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 type LoginType = {
-  pseudonym: string;
+  email: string;
   password: string;
 };
 
 const initialValues = {
-  pseudonym: '',
+  email: '',
   password: '',
 };
-
-export let pseudonymName: string;
 
 export const Login: FC = () => {
   const { isLogin } = useContext(NavFormContext);
@@ -32,26 +30,25 @@ export const Login: FC = () => {
   const [user, setUser] = useState('');
 
   const submitAccountData = useCallback(
-    async ({ pseudonym, password }: LoginType, { resetForm }) => {
+    async ({ email, password }: LoginType, { resetForm }) => {
       try {
         const { data } = await axios.post(
-          `${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_API_PORT}${process.env.REACT_APP_API_CREATE_USER}`,
+          `${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_API_PORT}${process.env.REACT_APP_API_LOGIN_USER}`,
           {
-            pseudonym,
+            identifier: email,
             password,
           },
         );
-        console.log(data);
-        await setUser(JSON.stringify(data));
-        // localStorage.setItem('user', user);
-        // console.log('User:', user);
+        console.log('User profile', data.user);
+        console.log('User token', data.jwt);
+        await setUser(JSON.stringify(data.jwt));
+        localStorage.setItem('user', user);
+        console.log('User:', user);
         resetForm(initialValues);
         const history = useHistory();
         history.push('/app');
-        pseudonymName = pseudonym;
-        console.log(pseudonymName);
-      } catch (e) {
-        console.error('Error adding document: ', e);
+      } catch ({ response }) {
+        console.error('Error login: ', response);
         setErrorMessage('Nie mogliśmy Cię zalogować');
       }
       console.log('showLoginForm:', user);
@@ -63,15 +60,7 @@ export const Login: FC = () => {
     <Formik
       initialValues={initialValues}
       validationSchema={Yup.object({
-        pseudonym: Yup.string()
-          .min(5, 'Pseudonym jest za krótkie.')
-          .max(10, 'Pseudonym jest za długie. Maksymalnie musi mieć 10 znaków.')
-          .matches(/(?=[0-9])+/g, 'Pseudonym musi mieć conajmniej 1 cyfrę.')
-          .matches(
-            /(?=.*?[#?!@$%^&*-]+)/,
-            'Pseudonym musi zawierać conajmniej 1 znak specjalny: #?!@$%^&*-',
-          )
-          .required('Required'),
+        email: Yup.string().email('Invalid email address').required('Required'),
 
         password: Yup.string()
           .min(9, 'Hasło jest za krótkie. Minimum 9 znaków')
@@ -89,13 +78,13 @@ export const Login: FC = () => {
         <h2>Zaloguj się!</h2>
 
         <FormField
-          titleField="Pseudonim:"
-          nameField="pseudonym"
-          typeField="text"
-          placeholderField="Pseudonym"
+          titleField="E-mail:"
+          nameField="email"
+          typeField="email"
+          placeholderField="E-mail"
         />
 
-        <FormError nameError="pseudonym" />
+        <FormError nameError="email" />
 
         <FormField
           titleField="Hasło:"
