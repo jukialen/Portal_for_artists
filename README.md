@@ -14,9 +14,11 @@ a) Front-end:
 - Atomic Design;
 - Formik with Yup;
 - Ant Design;
-- basic Git;
-- basic Webpack and Prettier;
-- basic Typescript and TsLint;
+- Git;
+- REST API;
+- axios;
+- Webpack and Prettier;
+- Typescript and TsLint;
 
 b) Back-end:
 - Strapi;

@@ -67,19 +67,9 @@
       "maxLength": 10,
       "regex": "[0-9０-９]+[#?!@$%^&*-]+[a-ząćęłńóśźżĄĘŁŃÓŚŹŻぁ-んァ-ヾ一-龯]"
     },
-    "avatar": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
-    },
-    "file": {
-      "model": "files",
-      "via": "users"
+    "files": {
+      "via": "user",
+      "collection": "files"
     }
   }
 }

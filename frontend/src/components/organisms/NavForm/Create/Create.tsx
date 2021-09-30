@@ -53,7 +53,7 @@ export const Create: FC = () => {
         setValuesFields(!valuesFields);
         // @ts-ignore
         resetForm(initialValues);
-      } catch ({ response}) {
+      } catch ({ response }) {
         console.log(response.data);
         setErrorMessage('Nie mogliśmy Cię zarejestrować');
       }

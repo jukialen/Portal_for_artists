@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/avatar",
+      "handler": "avatar.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/avatar",
+      "handler": "avatar.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/avatar",
+      "handler": "avatar.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
