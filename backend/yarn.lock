@@ -6895,7 +6895,7 @@
   dependencies:
     "nodemailer-fetch" "1.6.0"
 
-"nodemailer@^6.4.6", "nodemailer@6.6.1":
+"nodemailer@^6.4.6":
   "integrity" "sha512-1xzFN3gqv+/qJ6YRyxBxfTYstLNt0FCtZaFRvf4Sg9wxNGWbwFmGXVpfSi6ThGK6aRxAo+KjHtYSW8NvCsNSAg=="
   "resolved" "https://registry.npmjs.org/nodemailer/-/nodemailer-6.6.1.tgz"
   "version" "6.6.1"
@@ -9864,14 +9864,6 @@
     "strapi-helper-plugin" "3.6.8"
     "strapi-utils" "3.6.8"
     "uuid" "^3.1.0"
-
-"strapi-provider-email-nodemailer@^3.6.8":
-  "integrity" "sha512-yvACKxB1F6Lyk5JvLsTquXgJVwYG0vTZEN4YiTPX3I1L5Df1Izzkjzm9pjZwu24ucGCmq9nNyLh688lG/6L1ow=="
-  "resolved" "https://registry.npmjs.org/strapi-provider-email-nodemailer/-/strapi-provider-email-nodemailer-3.6.8.tgz"
-  "version" "3.6.8"
-  dependencies:
-    "lodash" "4.17.21"
-    "nodemailer" "6.6.1"
 
 "strapi-provider-email-sendmail@3.6.8":
   "integrity" "sha512-cdlucUiBJpltSJd0/q67SsShTlCUJC8SqU3sMFiJgqsPptbTMxKIG98kUOqRwPbripnBn1ZGIaGjOL0Jlf4fPA=="
