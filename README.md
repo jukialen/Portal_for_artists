@@ -23,6 +23,13 @@ a) Front-end:
 b) Back-end:
 - Strapi;
 - Docker;
+- Postgres;
 
 
 Site's in full responsive on target devices from small smartphones to TV and SMART TV.
+
+
+Branches:
+- <a href="https://github.com/jukialen/Portal_for_artists">main</a> - Stable version;
+- <a href="https://github.com/jukialen/Portal_for_artists/tree/Beta">Beta</a> - Beta stable version;
+- Other branches - Branches for developing individual functionalities
