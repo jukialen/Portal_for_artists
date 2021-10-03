@@ -54,3 +54,7 @@ a {
   position: relative;
   display: flex;
 }
+
+input:required, textarea:required, select:required {
+  border: .1rem solid #80000000;
+}

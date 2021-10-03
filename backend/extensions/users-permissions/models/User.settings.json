@@ -64,7 +64,7 @@
       "required": false,
       "unique": true,
       "minLength": 5,
-      "maxLength": 10,
+      "maxLength": 15,
       "regex": "[0-9０-９]+[#?!@$%^&*-]+[a-ząćęłńóśźżĄĘŁŃÓŚŹŻぁ-んァ-ヾ一-龯]"
     },
     "files": {

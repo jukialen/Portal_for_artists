@@ -40,7 +40,7 @@ export const Create: FC = () => {
       setIsLoading(true);
       try {
         const { data } = await axios.post(
-          `${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_API_PORT}${process.env.REACT_APP_API_CREATE_USER}`,
+          `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_API_CREATE_USER}`,
           {
             username,
             pseudonym,

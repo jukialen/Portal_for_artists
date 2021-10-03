@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/30/2021 1:43:38 PM"
+    "x-generation-date": "10/02/2021 11:39:46 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -350,77 +350,6 @@
           "Avatar"
         ],
         "parameters": []
-      }
-    },
-    "/emails": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Email"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
       }
     },
     "/files": {
@@ -3832,7 +3761,7 @@
           },
           "pseudonym": {
             "type": "string",
-            "maxLength": 10,
+            "maxLength": 15,
             "minLength": 5
           },
           "files": {
@@ -3923,7 +3852,7 @@
           },
           "pseudonym": {
             "type": "string",
-            "maxLength": 10,
+            "maxLength": 15,
             "minLength": 5
           },
           "files": {
@@ -3967,9 +3896,6 @@
   "tags": [
     {
       "name": "Avatar"
-    },
-    {
-      "name": "Email"
     },
     {
       "name": "Files"

@@ -33,7 +33,7 @@ export const Login: FC = () => {
     async ({ email, password }: LoginType, { resetForm }) => {
       try {
         const { data } = await axios.post(
-          `${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_API_PORT}${process.env.REACT_APP_API_LOGIN_USER}`,
+          `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_API_LOGIN_USER}`,
           {
             identifier: email,
             password,
@@ -46,7 +46,7 @@ export const Login: FC = () => {
         console.log('User:', user);
         resetForm(initialValues);
         const history = useHistory();
-        history.push('/app');
+        return history.push(`${process.env.REACT_APP_FRONT_HOST_URL}/app`);
       } catch ({ response }) {
         console.error('Error login: ', response);
         setErrorMessage('Nie mogliśmy Cię zalogować');

@@ -1253,7 +1253,7 @@
           },
           "pseudonym": {
             "type": "string",
-            "maxLength": 10,
+            "maxLength": 15,
             "minLength": 5
           },
           "files": {
@@ -1344,7 +1344,7 @@
           },
           "pseudonym": {
             "type": "string",
-            "maxLength": 10,
+            "maxLength": 15,
             "minLength": 5
           },
           "files": {

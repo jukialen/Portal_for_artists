@@ -3,8 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 
 import './Nav.scss';
 
-// import { providersSignOut, currentUser } from 'firebaseConfig';
-
 import { NavFormContext } from 'providers/NavFormProvider';
 import { ShowMenuContext } from 'providers/ShowMenuProvider';
 
@@ -14,25 +12,24 @@ type TitleNavType = {
 };
 
 export const Nav = ({ titleFirstNav, titleSecondNav }: TitleNavType) => {
+  const history = useHistory();
+
   const { showLoginForm, showCreateForm } = useContext(NavFormContext);
 
   const { isMenu, showMenu } = useContext(ShowMenuContext);
-
   const hideMenuLogin = () => {
     showLoginForm();
     showMenu();
-  };
 
+  };
   const hideMenuCreate = () => {
     showCreateForm();
     showMenu();
-  };
 
+  };
   const signOut = () => {
-    // currentUser && providersSignOut();
     localStorage.removeItem('user');
-    const history = useHistory();
-    history.push('/');
+    return history.push('/');
   };
 
   return (

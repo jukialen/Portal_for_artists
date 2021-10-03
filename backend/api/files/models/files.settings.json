@@ -41,9 +41,9 @@
       "required": true
     },
     "user": {
+      "via": "files",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "files"
+      "model": "user"
     }
   }
 }
