@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
 
 import { Header } from 'components/organisms/Header/Header';
 import { Aside } from 'components/organisms/Aside/Aside';
@@ -18,15 +18,19 @@ import { AffixButton } from 'components/molecules/AffixButton/AffixButton';
 export const AuthorisedUser = () => {
   const { isMode } = useContext(ModeContext);
 
+  const user = localStorage.getItem('user');
+
+  const history = useHistory();
+  useEffect(() => {
+    !user && history.push('/');
+  }, [user]);
+
   return (
     <Router>
       <div className={`whole__page ${isMode ? 'dark' : ''}`}>
         <Header titleFirstNav="Wyloguj" titleSecondNav="Konto" />
         <Aside />
         <Switch>
-          <Route exact={true} path="/app">
-            <Workspace />
-          </Route>
           <Route exact={true} path="/app">
             <Workspace />
           </Route>
@@ -42,7 +46,7 @@ export const AuthorisedUser = () => {
           <Route path="/faq">
             <Faq />
           </Route>
-          <Route path="/account">
+          <Route path="/app/account">
             <Account />
           </Route>
         </Switch>

@@ -46,7 +46,7 @@ export const Nav = ({ titleFirstNav, titleSecondNav }: TitleNavType) => {
         </li>
         <li className="menu">
           <Link
-            to={titleSecondNav === 'Konto' ? '/account' : '#'}
+            to={titleSecondNav === 'Konto' ? '/app/account' : '#'}
             className="sign__out"
             onClick={hideMenuCreate}
           >

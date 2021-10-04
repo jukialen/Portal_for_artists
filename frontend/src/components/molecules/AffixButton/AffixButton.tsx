@@ -27,7 +27,7 @@ export const AffixButton: React.FC = () => {
 
   return (
     <Affix offsetBottom={bottom}>
-      <Button type="primary" href="#top__menu" onClick={setBootom}>
+      <Button type="primary" href="#" onClick={setBootom}>
         <UpOutlined
           className={`up ${visible ? 'up__active' : null}`}
           aria-label="top of page button"

@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { Photos } from 'components/atoms/Photos/Photos';
 
 import './GalleryAccount.scss';
-import { FilesUpload } from '../../molecules/FilesUpload';
+import { FilesUpload } from 'components/molecules/FilesUpload/FilesUpload';
 
 export const GalleryAccount: FC = () => {
   return (

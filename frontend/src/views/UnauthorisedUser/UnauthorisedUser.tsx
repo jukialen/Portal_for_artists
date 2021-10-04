@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
 
 import { Create } from 'components/organisms/NavForm/Create/Create';
 import { Login } from 'components/organisms/NavForm/Login/Login';
@@ -21,6 +21,13 @@ import { AffixButton } from 'components/molecules/AffixButton/AffixButton';
 export const UnauthorisedUser = () => {
   const { isMode } = useContext(ModeContext);
 
+  const user = localStorage.getItem('user');
+
+  const history = useHistory();
+  useEffect(() => {
+    console.log('Najpierw się zaloguj');
+    !!user && history.push('/app');
+  }, [user]);
   return (
     <Router>
       <div className={`whole__page ${isMode ? 'dark' : ''}`}>

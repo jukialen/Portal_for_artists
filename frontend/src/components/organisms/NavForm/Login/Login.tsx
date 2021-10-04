@@ -28,6 +28,7 @@ export const Login: FC = () => {
   const { isLogin } = useContext(NavFormContext);
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [user, setUser] = useState('');
+  const [valuesFields, setValuesFields] = useState<string>('');
 
   const submitAccountData = useCallback(
     async ({ email, password }: LoginType, { resetForm }) => {
@@ -45,6 +46,7 @@ export const Login: FC = () => {
         localStorage.setItem('user', user);
         console.log('User:', user);
         resetForm(initialValues);
+        setValuesFields(`${data.user.pseudonym} zostałaś/eś zalogowana/y`);
         const history = useHistory();
         return history.push(`${process.env.REACT_APP_FRONT_HOST_URL}/app`);
       } catch ({ response }) {
@@ -101,6 +103,8 @@ export const Login: FC = () => {
           ariaLabel="login button"
           title="Zaloguj się"
         />
+
+        {!!valuesFields ? <p className="success__info">{valuesFields}.</p> : null}
 
         {errorMessage ? <p>{errorMessage}</p> : null}
 
