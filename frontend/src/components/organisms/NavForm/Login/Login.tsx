@@ -1,4 +1,4 @@
-import React, { FC, useContext, useCallback, useState } from 'react';
+import React, { FC, useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
@@ -27,36 +27,34 @@ const initialValues = {
 export const Login: FC = () => {
   const { isLogin } = useContext(NavFormContext);
   const [errorMessage, setErrorMessage] = useState<string>('');
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState<string>('');
   const [valuesFields, setValuesFields] = useState<string>('');
 
-  const submitAccountData = useCallback(
-    async ({ email, password }: LoginType, { resetForm }) => {
-      try {
-        const { data } = await axios.post(
-          `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_API_LOGIN_USER}`,
-          {
-            identifier: email,
-            password,
-          },
-        );
-        console.log('User profile', data.user);
-        console.log('User token', data.jwt);
-        await setUser(JSON.stringify(data.jwt));
-        localStorage.setItem('user', user);
-        console.log('User:', user);
-        resetForm(initialValues);
-        setValuesFields(`${data.user.pseudonym} zostałaś/eś zalogowana/y`);
-        const history = useHistory();
-        return history.push(`${process.env.REACT_APP_FRONT_HOST_URL}/app`);
-      } catch ({ response }) {
-        console.error('Error login: ', response);
-        setErrorMessage('Nie mogliśmy Cię zalogować');
-      }
-      console.log('showLoginForm:', user);
-    },
-    [user],
-  );
+  // @ts-ignore
+  const submitAccountData = async ({ email, password }: LoginType, { resetForm }) => {
+    try {
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_API_LOGIN_USER}`,
+        {
+          identifier: email,
+          password,
+        },
+      );
+      console.log('User profile', data.user);
+      console.log('User token', data.jwt);
+      setUser(data.jwt);
+      await localStorage.setItem('user', user);
+      console.log('User:', user);
+      resetForm(initialValues);
+      setValuesFields(`${data.user.pseudonym} zostałaś/eś zalogowana/y`);
+      const history = useHistory();
+      return history.push(`${process.env.REACT_APP_FRONT_HOST_URL}/app`);
+    } catch ({ response }) {
+      console.error('Error login: ', response);
+      setErrorMessage('Nie mogliśmy Cię zalogować');
+    }
+    console.log('showLoginForm:', user);
+  };
 
   return (
     <Formik
