@@ -25,7 +25,6 @@ export const UnauthorisedUser = () => {
 
   const history = useHistory();
   useEffect(() => {
-    console.log('Najpierw się zaloguj');
     !!user && history.push('/app');
   }, [user]);
   return (

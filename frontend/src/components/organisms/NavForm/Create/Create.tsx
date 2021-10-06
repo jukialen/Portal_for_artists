@@ -39,7 +39,7 @@ export const Create: FC = () => {
     async ({ username, pseudonym, email, password }: UserDataType, { resetForm }) => {
       setIsLoading(true);
       try {
-        const { data } = await axios.post(
+        await axios.post(
           `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_API_CREATE_USER}`,
           {
             username,
@@ -48,13 +48,10 @@ export const Create: FC = () => {
             password,
           },
         );
-        console.log('User profile', data.user);
-        console.log('User token', data.jwt);
         setValuesFields(!valuesFields);
         // @ts-ignore
         resetForm(initialValues);
       } catch ({ response }) {
-        console.log(response.data);
         setErrorMessage('Nie mogliśmy Cię zarejestrować');
       }
       setIsLoading(false);
@@ -154,7 +151,8 @@ export const Create: FC = () => {
 
         {valuesFields ? (
           <p className="success__info">
-            Gratulacje! Zostałeś zarejestrowany. Teraz możesz się zalogować.
+            Gratulacje! Zostałeś zarejestrowany. Sprawdź skrzynkę mailową i potwierdź e-mail, aby
+            móc się zalogować.
           </p>
         ) : null}
 

@@ -1,21 +1,15 @@
-module.exports = () => ({
-  email: {
-    provider: process.env.EMAIL_PROVIDER,
-    providerOptions: {
-      host: process.env.EMAIL_SMTP_HOST,
-      port: process.env.EMAIL_SMTP_PORT,
-      //secure: true,
-      username: process.env.EMAIL_SMTP_USER,
-      password: process.env.EMAIL_SMTP_PASS,
-      //rejectUnauthorized: false,
-      //requireTLS: false,
-      connectionTimeout: 3,
+module.exports = ({ env }) => ({
+    email: {
+      provider: 'sendgrid',
+      providerOptions: {
+        apiKey: env('SENDGRID_API_KEY'),
+      },
+      settings: {
+        defaultFrom: env('EMAIL_FORM_TO'),
+        defaultReplyTo: env('EMAIL_FORM_TO'),
+        testAddress: env('EMAIL_FORM_TO'),
+      },
     },
-    settings: {
-      from: process.env.EMAIL_ADDRESS_FROM,
-      replyTo: process.env.EMAIL_ADDRESS_REPLY,
-    },
-  },
 
   upload: {
     breakpoints: {

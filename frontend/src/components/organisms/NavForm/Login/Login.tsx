@@ -27,7 +27,6 @@ const initialValues = {
 export const Login: FC = () => {
   const { isLogin } = useContext(NavFormContext);
   const [errorMessage, setErrorMessage] = useState<string>('');
-  const [user, setUser] = useState<string>('');
   const [valuesFields, setValuesFields] = useState<string>('');
 
   // @ts-ignore
@@ -40,20 +39,14 @@ export const Login: FC = () => {
           password,
         },
       );
-      console.log('User profile', data.user);
-      console.log('User token', data.jwt);
-      setUser(data.jwt);
-      await localStorage.setItem('user', user);
-      console.log('User:', user);
+      localStorage.setItem('user', JSON.stringify(data.jwt));
       resetForm(initialValues);
       setValuesFields(`${data.user.pseudonym} zostałaś/eś zalogowana/y`);
       const history = useHistory();
       return history.push(`${process.env.REACT_APP_FRONT_HOST_URL}/app`);
-    } catch ({ response }) {
-      console.error('Error login: ', response);
+    } catch (error) {
       setErrorMessage('Nie mogliśmy Cię zalogować');
     }
-    console.log('showLoginForm:', user);
   };
 
   return (
