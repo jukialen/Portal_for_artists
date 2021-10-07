@@ -26,9 +26,7 @@ yarn-error.log*
 #idea
 .idea
 
-
-#firebase
-.firebase
+#logs
 *.log
 
 #css subfiles
@@ -79,3 +77,7 @@ exports
 .strapi-updater.json
 
 postgres
+
+public
+
+package-lock.json
