@@ -1,10 +1,10 @@
 name: 'Deploy docker compose Heroku' #set whatevername you want to your github job
-on: {
+on: 
       workflow_dispatch:
       push:
-        branchs:
+        branches:
           - main
-} # set the events you would like to trigger this job
+ # set the events you would like to trigger this job
 jobs:
   build:
     runs-on: ubuntu-latest
