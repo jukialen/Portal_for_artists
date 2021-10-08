@@ -4,16 +4,9 @@ services:
  strapi:
    image: strapi/strapi:3.6.8-node14
    container_name: strapi
-   restart: unless-stopped
-   environment:
-     DATABASE_CLIENT: postgres
-     DATABASE_NAME: strapi
-     DATABASE_HOST: postgres
-     DATABASE_PORT: 5432
-     DATABASE_USERNAME: strapi
-     DATABASE_PASSWORD: strapi
+   restart: always
    volumes:
-     -  ./backend:/srv/app
+     -  /srv/app
 
  frontend:
    build:
@@ -22,4 +15,4 @@ services:
    image: frontend
    container_name: frontend
    volumes:
-     - ./frontend:/srv/frontend
+     - /srv/frontend
