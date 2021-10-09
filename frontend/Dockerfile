@@ -6,7 +6,7 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY frontend/src ./ $$ public ./
+COPY src ./ $$ public ./
 
 EXPOSE 3000
 
